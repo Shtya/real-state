@@ -1,0 +1,9 @@
+{
+    "HomePage": {
+        "readDocs": "Read our docs"
+    },
+    "LocaleSwitcher": {
+        "label": "Change language",
+        "locale": "{locale, select, en {🇺🇸 English} ar {🇸🇦 Arabic} other {Unknown}}"
+    }
+}
