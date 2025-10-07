@@ -1,9 +1,44 @@
 {
-    "HomePage": {
-        "readDocs": "Read our docs"
+    "Header": {
+        "logo": "Qanouf",
+        "nav": {
+            "home": "Home",
+            "about": "About Us",
+            "realEstate": "Real Estate",
+            "blog": "Blog",
+            "contact": "Contact",
+            "dashboard": "Dashboard"
+        }
     },
-    "LocaleSwitcher": {
-        "label": "Change language",
-        "locale": "{locale, select, en {🇺🇸 English} ar {🇸🇦 Arabic} other {Unknown}}"
+    "HomePage": {
+        "Hero": {
+            "heading": "Choose the property\nthat suits you for rent",
+            "clients": "{count} Clients"
+        },
+        "Filters": {
+            "labels": {
+                "location": "Location",
+                "propertyType": "Property Type",
+                "category": "Categories"
+            },
+            "options": {
+                "locations": {
+                    "cairo": "Cairo",
+                    "alex": "Alexandria",
+                    "giza": "Giza"
+                },
+                "propertyTypes": {
+                    "apartment": "Apartment",
+                    "villa": "Villa",
+                    "duplex": "Duplex"
+                },
+                "categories": {
+                    "furnished": "Furnished",
+                    "unfurnished": "Unfurnished"
+                }
+            },
+            "search": "Search",
+            "adjustments": "Filters"
+        }
     }
 }

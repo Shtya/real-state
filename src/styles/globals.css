@@ -5,7 +5,11 @@
   --secondary: #4B3D25;
   --accent: #C0B283;
   --dark: #2A2A2A;
+  --gray: #D9D9D9;
   --light: #F1E3D3;
+
+  --primary-80: rgba(138, 110, 78, 0.8);
+  --accent-80: rgba(240, 230, 140, 0.8);
 }
 
 
@@ -14,10 +18,49 @@
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-dark: var(--dark);
+  --color-gray: var(--gray);
   --color-light: var(--light);
 }
 
 
 body {
-  font-family: var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-app), Arial, sans-serif;
+}
+
+@layer base {
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  [disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    /* prevent clicks */
+    cursor: not-allowed;
+  }
+
+}
+
+@layer components {
+  .basic-shadow {
+    box-shadow: 0px 4px 32px 0px #00000026;
+  }
+
+
+}
+
+#hero {
+  background: linear-gradient(180deg, var(--primary-80) 21.27%, var(--accent-80) 85.1%);
+}
+
+.hero-title {
+  margin-inline-start: 0;
+}
+
+@media (min-width: 96rem) {
+  .hero-title {
+    margin-inline-start: 30%;
+  }
+
 }

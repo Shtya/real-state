@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans } from "next/font/google";
+import { Open_Sans, IBM_Plex_Mono } from "next/font/google";
 import "../../styles/globals.css";
 import Providers from "../ServerProviders";
 import { routing } from "@/i18n/routing";
@@ -7,10 +7,11 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
-const inter = Inter({
-  variable: "--font-inter",
-  display: 'swap',
+const plexMomo = IBM_Plex_Mono({
+  variable: "--font-app",
+  display: "swap",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 const openSans = Open_Sans({
@@ -39,9 +40,9 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} className={`${inter.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
+    <html lang={locale} className={`${plexMomo.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
       <body
-        className={`${inter.variable}`}
+        className={`${plexMomo.variable}`}
       >
         <Providers>
           {children}
