@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { useOutsideClick } from "@/hooks/useOutsideClick";
 import LocaleSwitcher from "../LocaleSwitcher";
 import { useTranslations } from "next-intl";
+import Logo from "../Logo";
 
 
 export default function Header() {
@@ -55,11 +56,7 @@ export default function Header() {
         >
             <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 ${isSticky ? 'bg-white ' : 'bg-[#FAFAFA]'} xl:rounded-full px-3 sm:px-5 md:px-8 py-3 sm:py-3 md:py-5`}>
                 {/* Logo */}
-                <Link href="/" className="flex items-center flex-shrink-0 lg:ms-[50px]">
-                    <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-primary">
-                        {t("logo")}
-                    </h1>
-                </Link>
+                <Logo />
 
                 {/* Desktop nav */}
                 <nav className="navbar hidden lg:flex items-center gap-4 sm:gap-5 md:gap-7 text-base sm:text-lg md:text-xl text-dark font-bold">
