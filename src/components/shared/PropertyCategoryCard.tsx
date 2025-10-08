@@ -19,7 +19,7 @@ export default function PropertyCategoryCard({
     const period = locale === 'ar' ? '/ شهرى' : '/ Monthly';
 
     return (
-        <div className="relative w-full max-w-[486px] h-[484px] rounded-[24px]  bg-white overflow-hidden flex flex-col gap-6">
+        <div className="relative w-full max-w-full h-[484px] rounded-[24px]  bg-white overflow-hidden flex flex-col gap-6">
             {/* Accent corner blocks */}
             <div className="z-[1] absolute top-0 rtl:start-0 ltr:end-0 bg-white rounded-tr-[24px] w-[94px] h-[47px]" />
             <div className="z-[1] absolute top-0 rtl:start-0 ltr:end-0 bg-white rounded-tr-[24px] w-[47px] h-[94px]" />

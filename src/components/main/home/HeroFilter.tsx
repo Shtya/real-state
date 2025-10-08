@@ -1,20 +1,18 @@
 'use client'
 
 import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { CiSearch } from "react-icons/ci";
-import SelectInput from "@/components/shared/forms/SelectInput";
+import SelectInput, { Option } from "@/components/shared/forms/SelectInput";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 
 export default function HeroFilter() {
-    const router = useRouter();
     const t = useTranslations("HomePage.Filters");
-    const [location, setLocation] = useState<any>(null);
-    const [propertyType, setPropertyType] = useState<any>(null);
-    const [category, setCategory] = useState<any>(null);
+    const [location, setLocation] = useState<Option | null>(null);
+    const [propertyType, setPropertyType] = useState<Option | null>(null);
+    const [category, setCategory] = useState<Option | null>(null);
 
 
     const search = useMemo(() => {

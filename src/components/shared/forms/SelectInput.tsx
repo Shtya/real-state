@@ -5,7 +5,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 
 
-type Option = {
+export type Option = {
     label: string;
     value: string;
 };

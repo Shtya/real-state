@@ -1,9 +1,28 @@
 'use client'
 import PrimaryButton from "@/components/shared/PrimaryButton";
 import PropertyCategoryCard from "@/components/shared/PropertyCategoryCard";
+import SwiperNav from "@/components/shared/SwiperNav";
+import { useState } from "react";
 import { useLocale, useTranslations } from "use-intl";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const properties = [
+    {
+        id: "property-1",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-4.jpg",
+    },
     {
         id: "property-1",
         title: {
@@ -31,11 +50,27 @@ const properties = [
         imageUrl: "/properties/property-6.jpg",
     },
 
+    {
+        id: "property-2",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-7.jpg",
+    },
+
 ];
 
 
 export default function PropertyCategorySection() {
     const t = useTranslations('HomePage.PropertyCategory');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
     const locale = useLocale();
     const isRTL = locale === 'ar';
 
@@ -63,23 +98,62 @@ export default function PropertyCategorySection() {
 
                 </div>
             </div>
-            <div className="bg-white flex gap-4 mt-[45px] ">
+            <div className=" mt-[45px]  bg-white ">
 
-                {properties.map((property) => (
+                <Swiper
+                    modules={[Navigation]}
+                    spaceBetween={20}
+                    navigation={{
+                        nextEl: isRTL ? '.category-prev' : '.category-next',
+                        prevEl: isRTL ? '.category-next' : '.category-prev',
+                    }}
 
-                    <PropertyCategoryCard
-                        key={property.id}
-                        property={{
-                            id: property.id,
-                            title: property.title[locale as 'ar' | 'en'],
-                            address: property.address[locale as 'ar' | 'en'],
-                            price: property.price,
-                            imageUrl: property.imageUrl,
-                        }}
-                        locale={locale as 'ar' | 'en'}
-                    />
+                    breakpoints={{
 
-                ))}
+                        0: { slidesPerView: 1 },
+                        1020: { slidesPerView: 2 },
+                        1280: { slidesPerView: 3 },
+
+                    }}
+                    loop={true}
+                    onInit={(swiper) => {
+                        const perView = swiper.params.slidesPerView as number;
+                        setTotalPages(Math.ceil(properties.length / perView));
+                    }}
+                    onSlideChange={(swiper) => {
+                        const perView = swiper.params.slidesPerView as number;
+                        const page = Math.floor(swiper.realIndex / perView) + 1;
+                        setTotalPages(Math.ceil(properties.length / perView));
+                        setCurrentPage(page);
+                    }}
+                    className="swiper"
+                >
+                    {properties.map((property) => (
+                        <SwiperSlide key={property.id}>
+                            <PropertyCategoryCard
+                                property={{
+                                    id: property.id,
+                                    title: property.title[locale as 'ar' | 'en'],
+                                    address: property.address[locale as 'ar' | 'en'],
+                                    price: property.price,
+                                    imageUrl: property.imageUrl,
+                                }}
+                                locale={locale as 'ar' | 'en'}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+            <div className="flex-center mt-[40px]">
+
+                <SwiperNav
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    prevClass="category-prev"
+                    nextClass="category-next"
+                    dir="rtl"
+                />
+
             </div>
         </section>
     );

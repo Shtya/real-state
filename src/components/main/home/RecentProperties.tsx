@@ -7,8 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import PropertyCard from "@/components/shared/PropertyCard";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useLocale, useTranslations } from 'use-intl';
+import SwiperNav from '@/components/shared/SwiperNav';
 
 const properties = [
     {
@@ -101,23 +101,14 @@ export default function RecentProperties() {
                     <p className="text-sm sm:text-base text-dark leading-[26px]">
                         {t('description')}
                     </p>
-                    <div className="flex gap-4 items-center" dir='rtl'>
-                        {/* Prev button */}
-                        <button className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} recent-prev !block text-secondary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-secondary rounded-[70px] flex-center`}>
-                            <GoArrowRight size={24} />
-                        </button>
-                        <div className="text-black">
-                            <span className="font-bold">
-                                {String(currentPage).padStart(2, '0')}
-                            </span>
-                            /
-                            <span>{String(totalPages).padStart(2, '0')}</span>
-                        </div>
-                        {/* Next button */}
-                        <button className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} recent-next !block text-secondary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-secondary rounded-[70px] flex-center`}>
-                            <GoArrowLeft size={24} />
-                        </button>
-                    </div>
+                    <SwiperNav
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        prevClass="recent-prev"
+                        nextClass="recent-next"
+                        dir="rtl"
+                    />
+
                 </div>
             </div>
 
