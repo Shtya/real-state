@@ -46,7 +46,12 @@
         },
         "PropertyCategory": {
             "title": "Property Category",
-            "description": "Lörem ipsum päde hypertropi eller mitin antir evis ofäns i jonin som pseudonäning. Manat preber. Pös vil gigana: nisöbel på igt. "
+            "description": "Lörem ipsum päde hypertropi eller mitin antir evis ofäns i jonin som pseudonäning. Manat preber. Pös vil gigana: nisöbel på igt. ",
+            "filters": {
+                "house": "House",
+                "realEstate": "Real Estate",
+                "apartment": "Apartment"
+            }
         }
     }
 }

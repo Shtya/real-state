@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Open_Sans, Cairo } from "next/font/google";
 import "../../styles/globals.css";
 import Providers from "../ServerProviders";
 import { routing } from "@/i18n/routing";
@@ -7,11 +7,11 @@ import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
 
-const plexMomo = IBM_Plex_Mono({
+const plexMomo = Cairo({
   variable: "--font-app",
   display: "swap",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 const openSans = Open_Sans({
@@ -41,7 +41,6 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={`${plexMomo.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
       <body
-        className={`${plexMomo.variable}`}
       >
         <Providers>
           {children}

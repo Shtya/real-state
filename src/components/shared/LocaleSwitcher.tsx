@@ -1,7 +1,7 @@
 'use client'
 import { routing } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useTransition } from 'react';
 
@@ -11,23 +11,29 @@ export default function LocaleSwitcher() {
     const [isPending, startTransition] = useTransition();
     const pathname = usePathname();
     const params = useParams();
+    const searchParams = useSearchParams(); // ✅ get current query string
     const currentLocale = useLocale();
+
     const nextLocale =
         currentLocale === routing.locales[0]
             ? routing.locales[1]
             : routing.locales[0];
 
-
     function toggleLocale() {
-
         startTransition(() => {
+            const paramsObj: Record<string, string> = {};
+            searchParams.forEach((value, key) => {
+                paramsObj[key] = value;
+            });
+
             router.replace(
                 // @ts-expect-error — Next validates params at runtime
-                { pathname, params },
+                { pathname, params, query: paramsObj }, // ✅ pass object, not string
                 { locale: nextLocale }
             );
         });
     }
+
 
     return (
         <div className="">
