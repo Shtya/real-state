@@ -76,6 +76,12 @@
                 "description": "Accept applications, process rent payments online, and sign digital leases all powered on a single platform.",
                 "button": "Find Out More"
             }
+        },
+        "ContactUs": {
+            "title": "Subscribe Our Newsletter",
+            "description": "Lorem ipsum dolor sit amet consectetur. Feugiat ut aliquet sit pellentesque sollicitudin. Egestas faucibus lacus diam in senectus consectetur. Mattis elit adipiscing quisque tellus scelerisque vehicula ante nunc.",
+            "placeholder": "Enter your email",
+            "button": "Get a Quote"
         }
     }
 }

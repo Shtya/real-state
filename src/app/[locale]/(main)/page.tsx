@@ -1,4 +1,5 @@
 import BasedOnLocationSection from "@/components/main/home/BasedOnLocationSection";
+import ContactUsSection from "@/components/main/home/ContactUsSection";
 import Features from "@/components/main/home/Features";
 import HeroSection from "@/components/main/home/HeroSection";
 import PaymentsRow from "@/components/main/home/PaymentsRow";
@@ -15,6 +16,7 @@ export default async function Home() {
       <BasedOnLocationSection />
       <PaymentsRow />
       <Features />
+      <ContactUsSection />
     </div>
   );
 }
