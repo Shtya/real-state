@@ -87,7 +87,7 @@ export default function RecentProperties() {
     const locale = useLocale();
     const isRTL = locale === 'ar';
 
-    console.log(totalPages, totalPages == 1)
+
     return (
         <section
             className="rounded-[24px] sm:rounded-[40px] md:rounded-[60px] lg:rounded-[83px] mt-10 p-[30px] sm:p-[40px] md:p-[50px] lg:p-[60px]"

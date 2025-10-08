@@ -53,7 +53,7 @@ export default function Header() {
             className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition ${isSticky ? "!fixed !top-0 left-0 w-full bg-white shadow-md z-50" : ""
                 }`}
         >
-            <div className="w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 bg-[#FAFAFA] xl:rounded-full px-3 sm:px-5 md:px-8 py-3 sm:py-3 md:py-5">
+            <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 ${isSticky ? 'bg-white ' : 'bg-[#FAFAFA]'} xl:rounded-full px-3 sm:px-5 md:px-8 py-3 sm:py-3 md:py-5`}>
                 {/* Logo */}
                 <Link href="/" className="flex items-center flex-shrink-0 lg:ms-[50px]">
                     <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-primary">
