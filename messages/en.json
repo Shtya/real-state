@@ -62,6 +62,20 @@
             "bathrooms": "Bathrooms",
             "guests": "Guests",
             "bedrooms": "Bedrooms"
+        },
+        "Features": {
+            "mainTitle": "The Perfect Place to Manage Your Property",
+            "mainDescription": "Work with the best suite of property management tools on the market.",
+            "card1": {
+                "title": "Advertise Your Rental",
+                "description": "Connect with more than 75 million renters looking for new homes using our comprehensive marketing platform.",
+                "button": "List Your Property"
+            },
+            "card2": {
+                "title": "Lease 100% Online",
+                "description": "Accept applications, process rent payments online, and sign digital leases all powered on a single platform.",
+                "button": "Find Out More"
+            }
         }
     }
 }
