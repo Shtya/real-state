@@ -13,7 +13,7 @@
     "HomePage": {
         "Hero": {
             "heading": "اختار العقار\nالمناسب لك للايجار",
-            "clients": "عملاء {count}"
+            "clients": "عملاء +{count}"
         },
         "Filters": {
             "labels": {

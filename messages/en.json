@@ -1,25 +1,25 @@
 {
     "Header": {
-        "logo": "Qanouf",
+        "logo": "QUNUF",
         "nav": {
             "home": "Home",
             "about": "About Us",
-            "realEstate": "Real Estate",
-            "blog": "Blog",
-            "contact": "Contact",
+            "realEstate": "Property",
+            "blog": "Blogs",
+            "contact": "Contact Us",
             "dashboard": "Dashboard"
         }
     },
     "HomePage": {
         "Hero": {
-            "heading": "Choose the property\nthat suits you for rent",
-            "clients": "{count} Clients"
+            "heading": "Designing Your\nNext Chapter",
+            "clients": "{count}+ Happy Clients"
         },
         "Filters": {
             "labels": {
                 "location": "Location",
                 "propertyType": "Property Type",
-                "category": "Categories"
+                "category": "Category"
             },
             "options": {
                 "locations": {
@@ -41,8 +41,8 @@
             "adjustments": "Filters"
         },
         "RecentProperties": {
-            "title": "Recent Properties",
-            "description": "We have completed many housing, villa, and property requests with our specialized team, at costs that suit you."
+            "title": "Lates property",
+            "description": "We have completed several housing, villa and property orders with our professional team, at costs that suit you"
         }
     }
 }

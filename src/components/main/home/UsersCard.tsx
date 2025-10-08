@@ -15,8 +15,8 @@ export default function UsersCard() {
     return (
         <div className="absolute  w-full sm:w-fit  end-0 bottom-0">
 
-            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] text-white text-center font-bold mb-5 sm:mb-7 lg:mb-9">
-                {t('clients', { count: '+50K' })}
+            <h2 className="text-[24px] sm:text-[28px] lg:text-[32px] text-white text-center font-bold mb-5 sm:mb-7 lg:mb-9" >
+                {t('clients', { count: '50K' })}
             </h2>
             <div className=" bg-white py-4 px-[6px] flex flex-col-reverse sm:flex-row items-center sm:items-end gap-2 sm:gap-6">
                 <div className="flex flex-row-reverse sm:flex-col gap-2 justify-center text-center sm:text-end">

@@ -8,14 +8,84 @@ import 'swiper/css/navigation';
 
 import PropertyCard from "@/components/shared/PropertyCard";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import { useTranslations } from 'use-intl';
+import { useLocale, useTranslations } from 'use-intl';
 
-const properties = ["1", "2", "3", "4", "5"];
+const properties = [
+    {
+        id: "property-1",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-1.jpg",
+    },
+    {
+        id: "property-2",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-2.jpg",
+    },
+    {
+        id: "property-3",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-3.jpg",
+    },
+    {
+        id: "property-4",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-4.jpg",
+    },
+    {
+        id: "property-5",
+        title: {
+            ar: "منزل سيكاروانجي",
+            en: "Sekarwangi Village",
+        },
+        address: {
+            ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
+            en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+        },
+        price: 943.65,
+        imageUrl: "/properties/property-4.jpg",
+    },
+
+];
+
 
 export default function RecentProperties() {
     const t = useTranslations('HomePage.RecentProperties');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const locale = useLocale();
+    const isRTL = locale === 'ar';
 
     console.log(totalPages, totalPages == 1)
     return (
@@ -31,7 +101,7 @@ export default function RecentProperties() {
                     <p className="text-sm sm:text-base text-dark leading-[26px]">
                         {t('description')}
                     </p>
-                    <div className="flex gap-4 items-center">
+                    <div className="flex gap-4 items-center" dir='rtl'>
                         {/* Prev button */}
                         <button className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} recent-prev !block text-secondary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-secondary rounded-[70px] flex-center`}>
                             <GoArrowRight size={24} />
@@ -56,9 +126,10 @@ export default function RecentProperties() {
                     modules={[Navigation]}
                     spaceBetween={20}
                     navigation={{
-                        nextEl: '.recent-next',
-                        prevEl: '.recent-prev',
+                        nextEl: isRTL ? '.recent-prev' : '.recent-next',
+                        prevEl: isRTL ? '.recent-next' : '.recent-prev',
                     }}
+
                     breakpoints={{
                         0: { slidesPerView: 1 },
                         768: { slidesPerView: 2 },
@@ -79,19 +150,21 @@ export default function RecentProperties() {
                     }}
                     className="swiper"
                 >
-                    {properties.map((num) => (
-                        <SwiperSlide key={num}>
+                    {properties.map((property) => (
+                        <SwiperSlide key={property.id}>
                             <PropertyCard
                                 property={{
-                                    id: `property-${num}`,
-                                    title: "منزل سيكاروانجي",
-                                    address: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
-                                    price: 943.65,
-                                    imageUrl: `/properties/property-${num}.jpg`,
+                                    id: property.id,
+                                    title: property.title[locale as 'ar' | 'en'],
+                                    address: property.address[locale as 'ar' | 'en'],
+                                    price: property.price,
+                                    imageUrl: property.imageUrl,
                                 }}
+                                locale={locale as 'ar' | 'en'}
                             />
                         </SwiperSlide>
                     ))}
+
                 </Swiper>
             </div>
         </section>
