@@ -64,7 +64,7 @@ export default function Header() {
                         <Link
                             key={href}
                             href={href}
-                            className={`nav-item hover:text-primary text-[16px] xl:text-lg ${normalizedPath === href
+                            className={`nav-item hover:text-primary text-[16px] pb-1 xl:text-lg ${normalizedPath === href
                                 ? "text-primary border-b-[3px] border-b-primary"
                                 : ""
                                 }`}
