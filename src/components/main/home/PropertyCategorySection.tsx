@@ -92,8 +92,8 @@ export default function PropertyCategorySection() {
         params.set("category", value);
         setActiveCategory(value)
 
-        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-
+        const newUrl = `${pathname}?${params.toString()}`;
+        window.history.replaceState(null, '', newUrl);
     };
 
 

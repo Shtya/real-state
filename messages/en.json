@@ -83,5 +83,26 @@
             "placeholder": "Enter your email",
             "button": "Get a Quote"
         }
+    },
+    "Footer": {
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "about": {
+            "title": "About",
+            "menu": "Menu",
+            "features": "Features",
+            "blogs": "News & Blogs",
+            "support": "Help & Support"
+        },
+        "company": {
+            "title": "Company",
+            "how": "How We Work",
+            "terms": "Terms of Service",
+            "pricing": "Pricing",
+            "faq": "FAQ"
+        },
+        "contact": {
+            "title": "Contact Us",
+            "address": "Akshaya Nagar 1st Block 1st Cross, Ramurthy Nagar, Bangalore 560016"
+        }
     }
 }

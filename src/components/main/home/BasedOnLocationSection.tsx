@@ -217,7 +217,8 @@ export default function BasedOnLocationSection() {
         const params = new URLSearchParams(searchParams.toString());
         params.set("rentalType", value);
         setActiveRentalType(value);
-        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+        const newUrl = `${pathname}?${params.toString()}`;
+        window.history.replaceState(null, '', newUrl);
     };
 
 

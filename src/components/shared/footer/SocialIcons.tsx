@@ -4,7 +4,7 @@ import { AiFillInstagram } from "react-icons/ai";
 
 export default function SocialIcons() {
     return (
-        <div className="flex gap-2 sm:ms-auto ">
+        <div className="flex gap-2 sm:self-end ">
             {/* Twitter */}
             <Link
                 href="https://twitter.com"
