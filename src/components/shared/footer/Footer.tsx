@@ -6,8 +6,8 @@ export default function Footer() {
     return (
         <footer className="relative ">
             {/* Overlay */}
-            {/* <div className="absolute inset-0 bg-[url('/footer.jpg')] bg-cover bg-center z-[1]"></div> */}
-            <div className="absolute inset-0 bg-[#1C1C1C36] z-[2]"></div>
+            <div className="absolute inset-0 bg-[url('/footer.jpg')] bg-cover bg-[center_30%]  z-[1] filter grayscale brightness-50 contrast-100 opacity-60"></div>
+            {/* <div className="absolute inset-0 bg-[rgba(138,138,138,0.21)] z-[2]"></div> */}
 
             <div className="container relative z-[3] py-18 mt-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-start mx-2">
@@ -27,10 +27,10 @@ export default function Footer() {
 
                     {/* About Us */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
+                        <h2 className="mb-6 text-secondary font-bold text-xl sm:text-2xl">
                             معلومات عنا
                         </h2>
-                        <ul className="flex flex-col gap-4">
+                        <ul className="flex flex-col gap-4 ">
                             <li><Link href="/#home" className="text-base text-dark">القائمة</Link></li>
                             <li><Link href="/#home" className="text-base text-dark">السمات</Link></li>
                             <li><Link href="/#home" className="text-base text-dark">المدونات</Link></li>
@@ -40,10 +40,10 @@ export default function Footer() {
 
                     {/* Company */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
+                        <h2 className="mb-6 text-secondary font-bold text-xl sm:text-2xl">
                             الشركة
                         </h2>
-                        <ul className="flex flex-col gap-4">
+                        <ul className="flex flex-col gap-4 ">
                             <li><Link href="/#home" className="text-base text-dark">كيف نعمل</Link></li>
                             <li><Link href="/#home" className="text-base text-dark">شروط الخدمة</Link></li>
                             <li><Link href="/#home" className="text-base text-dark">التسعير</Link></li>
