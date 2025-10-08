@@ -47,6 +47,11 @@ body {
     box-shadow: 0px 4px 32px 0px #00000026;
   }
 
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 }
 
