@@ -39,6 +39,10 @@
             },
             "search": "Search",
             "adjustments": "Filters"
+        },
+        "RecentProperties": {
+            "title": "Recent Properties",
+            "description": "We have completed many housing, villa, and property requests with our specialized team, at costs that suit you."
         }
     }
 }
