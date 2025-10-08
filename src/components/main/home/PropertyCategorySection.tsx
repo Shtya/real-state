@@ -96,6 +96,7 @@ export default function PropertyCategorySection() {
 
     };
 
+
     return (
         <section className="mt-10 ">
             <div className="p-[30px] sm:p-[40px] md:p-[50px] lg:p-[60px] bg-white container">

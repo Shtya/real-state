@@ -3,6 +3,7 @@ import React from "react";
 type StarsProps = {
     rating: number; // e.g., 4.5
     size?: number;  // defaults to 21
+    reverse?: boolean;
 };
 
 const StarSVG: React.FC<{ fill: string; size: number; style?: React.CSSProperties }> = ({ fill, size, style }) => (
@@ -22,7 +23,7 @@ const StarSVG: React.FC<{ fill: string; size: number; style?: React.CSSPropertie
 
 );
 
-const RatingStars: React.FC<StarsProps> = ({ rating, size = 21 }) => {
+const RatingStars: React.FC<StarsProps> = ({ rating, size = 21, reverse = false }) => {
     const clamped = Math.max(0, Math.min(5, rating));
     const full = Math.floor(clamped);
     const frac = clamped - full;
@@ -30,7 +31,7 @@ const RatingStars: React.FC<StarsProps> = ({ rating, size = 21 }) => {
     const starGap = 6; // px spacing between stars
 
     return (
-        <div style={{ display: "flex", alignItems: "center", gap: starGap }}>
+        <div style={{ display: "flex", alignItems: "center", gap: starGap }} className={reverse ? "flex-row-reverse" : ""}>
             {Array.from({ length: 5 }).map((_, i) => {
                 const isFull = i < full;
                 const isPartial = i === full && frac > 0;

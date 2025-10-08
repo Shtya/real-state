@@ -52,6 +52,16 @@
                 "realEstate": "العقارات",
                 "apartment": "شقة"
             }
+        },
+        "BasedOnLocationSection": {
+            "title": "بناء على موقعك",
+            "description": "ابدأ باكتشاف منزلك المستقبلي الذي يعجبك",
+            "yearly": "سنوى",
+            "monthly": "شهرى",
+            "rent": "الايجار",
+            "bathrooms": "حمام",
+            "guests": "اشخاص",
+            "bedrooms": "غرف نوم"
         }
     }
 }

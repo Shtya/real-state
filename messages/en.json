@@ -52,6 +52,16 @@
                 "realEstate": "Real Estate",
                 "apartment": "Apartment"
             }
+        },
+        "BasedOnLocationSection": {
+            "title": "Based on your location",
+            "description": "Start discover your liking future home",
+            "yearly": "Yearly",
+            "monthly": "Monthly",
+            "rent": "Rent",
+            "bathrooms": "Bathrooms",
+            "guests": "Guests",
+            "bedrooms": "Bedrooms"
         }
     }
 }
