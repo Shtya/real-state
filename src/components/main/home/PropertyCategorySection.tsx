@@ -24,7 +24,7 @@ const properties = [
         imageUrl: "/properties/property-4.jpg",
     },
     {
-        id: "property-1",
+        id: "property-2",
         title: {
             ar: "منزل سيكاروانجي",
             en: "Sekarwangi Village",
@@ -37,7 +37,7 @@ const properties = [
         imageUrl: "/properties/property-5.jpg",
     },
     {
-        id: "property-2",
+        id: "property-3",
         title: {
             ar: "منزل سيكاروانجي",
             en: "Sekarwangi Village",
@@ -51,7 +51,7 @@ const properties = [
     },
 
     {
-        id: "property-2",
+        id: "property-4",
         title: {
             ar: "منزل سيكاروانجي",
             en: "Sekarwangi Village",
