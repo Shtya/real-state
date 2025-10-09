@@ -1,4 +1,8 @@
 {
+    "Root": {
+        "siteName": "Real State",
+        "description": "Discover, list, and manage properties with Real State."
+    },
     "Header": {
         "logo": "QUNUF",
         "nav": {
