@@ -1,47 +1,42 @@
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import Link from "next/link";
 import { AiFillInstagram } from "react-icons/ai";
+import Link from "next/link";
 
-export default function SocialIcons() {
+type SocialIconsProps = {
+    primary?: boolean;
+    size?: number; // 👈 control icon size
+    itemClassName?: string; // 👈 extra classes for each social item
+};
+
+const socials = [
+    { href: "https://twitter.com", Icon: FaTwitter, label: "Twitter" },
+    { href: "https://youtube.com", Icon: FaYoutube, label: "YouTube" },
+    { href: "https://instagram.com", Icon: AiFillInstagram, label: "Instagram" },
+    { href: "https://facebook.com", Icon: FaFacebook, label: "Facebook" },
+];
+
+export default function SocialIcons({
+    primary = true,
+    size = 24,
+    itemClassName = "",
+}: SocialIconsProps) {
     return (
-        <div className="flex gap-2 sm:self-end ">
-            {/* Twitter */}
-            <Link
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full text-white  hover:bg-primary hover:text-white transition"
-            >
-                <FaTwitter size={24} />
-            </Link>
-            {/*youtube  */}
-            <Link
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full text-white  hover:bg-primary hover:text-white transition"
-            >
-                <FaYoutube size={24} />
-            </Link>
-            {/* Instagram */}
-            <Link
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full text-white  hover:bg-primary hover:text-white transition"
-            >
-                <AiFillInstagram size={24} />
-            </Link>
-            {/* Facebook */}
-            <Link
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full text-white  hover:bg-primary hover:text-white transition"
-            >
-                <FaFacebook size={24} />
-
-            </Link>
+        <div className="flex gap-2 sm:self-end">
+            {socials.map(({ href, Icon, label }) => (
+                <Link
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={`w-8 h-8  flex items-center justify-center rounded-full text-white transition  ${primary
+                        ? "hover:bg-primary hover:text-white"
+                        : "bg-primary hover:bg-white hover:text-primary"
+                        } ${itemClassName}`}
+                >
+                    <Icon size={size} />
+                </Link>
+            ))}
         </div>
     );
 }

@@ -110,6 +110,34 @@
             "header": "Our Team"
         }
     },
+    "Contact": {
+        "Hero": {
+            "title": "Contatc Us",
+            "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
+            "seeMore": "See More"
+        },
+        "information": {
+            "header": "Contact Information",
+            "subtitle": "Say something to start a live chat!",
+            "location": "132 Dartmouth Street Boston, Massachusetts 02156 United States"
+        },
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Phone Number",
+            "subjectTitle": "Select Subject?",
+            "subjects": {
+                "general": "General Inquiry",
+                "support": "Support",
+                "sales": "Sales",
+                "partnership": "Partnership"
+            },
+            "message": "Message",
+            "messagePlaceholder": "Write your message..",
+            "send": "Send Message"
+        }
+    },
     "Footer": {
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "about": {

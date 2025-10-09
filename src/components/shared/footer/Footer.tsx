@@ -11,7 +11,7 @@ export default function Footer() {
             {/* Background Image + Filter */}
             <div className="absolute inset-0 bg-[url('/footer.jpg')] bg-cover bg-[center_30%] z-[1] filter grayscale brightness-50 contrast-100 opacity-60"></div>
 
-            <div className="container relative z-[3] py-18 mt-2">
+            <div className="container relative z-[3] py-18 ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-start mx-2">
                     {/* Logo + Description */}
                     <div className="space-y-3 flex flex-col items-center sm:items-start">

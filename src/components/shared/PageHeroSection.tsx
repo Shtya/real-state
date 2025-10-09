@@ -5,7 +5,7 @@ interface PageHeroSectionProps {
     title: string;
     description: string;
     buttonText?: string;
-    imageSrc: string;
+    imageSrc?: string;
     gradient?: string;
 }
 
@@ -13,7 +13,7 @@ export default function PageHeroSection({
     title,
     description,
     buttonText = 'See More',
-    imageSrc,
+    imageSrc = '/main.jpg',
     gradient = 'linear-gradient(180deg, var(--secondary) 22.12%, var(--highlight) 85.1%)',
 }: PageHeroSectionProps) {
     return (

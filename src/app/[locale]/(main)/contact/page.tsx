@@ -1,10 +1,10 @@
-''
-
+import ContactSection from "@/components/main/contact/ContactSection";
 import PageHeroSection from "@/components/shared/PageHeroSection";
 import { getTranslations } from "next-intl/server";
 
-export default async function MainAboutSection() {
-    const t = await getTranslations('About.Hero');
+
+export default async function ContactUsPage() {
+    const t = await getTranslations('Contact.Hero');
 
     return (
         <section
@@ -15,7 +15,7 @@ export default async function MainAboutSection() {
                 description={t('description')}
                 buttonText={t('seeMore')}
             />
-
+            <ContactSection />
         </section>
     );
 }

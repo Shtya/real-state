@@ -12,9 +12,11 @@ type Property = {
 export default function PropertyCategoryCard({
     property,
     locale,
+    className,
 }: {
     property: Property;
     locale: 'ar' | 'en';
+    className?: string
 }) {
     const period = locale === 'ar' ? '/ سنوى' : '/ Yearly';
 
