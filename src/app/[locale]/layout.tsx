@@ -39,13 +39,20 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} className={`${plexMomo.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
-      <body
-      >
-        <Providers>
-          {children}
-        </Providers>
-      </body>
-    </html>
+    <>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=Mooli&display=swap" rel="stylesheet"></link>
+      </head>
+      <html lang={locale} className={`${plexMomo.variable} ${openSans.variable}`} dir={locale == 'en' ? 'ltr' : 'rtl'}>
+
+        <body className={`${plexMomo.variable}`}>
+          <Providers>
+            {children}
+          </Providers>
+        </body>
+      </html>
+    </>
   );
 }

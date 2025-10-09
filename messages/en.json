@@ -84,6 +84,32 @@
             "button": "Get a Quote"
         }
     },
+    "About": {
+        "Hero": {
+            "title": "About Us",
+            "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
+            "seeMore": "See More"
+        },
+        "header": "About us",
+        "mission": {
+            "title": "Our Mission",
+            "description": "Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. ",
+            "button": "View More"
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. ",
+            "button": "Discover"
+        },
+        "goals": {
+            "title": "Our Goals",
+            "description": "Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. ",
+            "button": "Learn More"
+        },
+        "Team": {
+            "header": "Our Team"
+        }
+    },
     "Footer": {
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "about": {

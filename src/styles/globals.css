@@ -6,7 +6,9 @@
   --accent: #C0B283;
   --dark: #2A2A2A;
   --gray: #D9D9D9;
+  --highlight: #F0E68C;
   --light: #F1E3D3;
+  --lighter: #FFFFE9;
   --input: #635959;
 
   --primary-80: rgba(138, 110, 78, 0.8);
@@ -20,7 +22,9 @@
   --color-accent: var(--accent);
   --color-dark: var(--dark);
   --color-gray: var(--gray);
+  --color-highlight: var(--highlight);
   --color-light: var(--light);
+  --color-lighter: var(--lighter);
   --color-input: var(--input);
 }
 
@@ -61,7 +65,19 @@ body {
   }
 
 
+  .hero-height {
+    min-height: 932px;
+  }
 
+  @media (width >=96rem) {
+    .float-image {
+      inset-inline-start: 6%;
+    }
+
+    .float-image-reversed {
+      inset-inline-end: 6%;
+    }
+  }
 }
 
 #hero {

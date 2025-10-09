@@ -11,7 +11,7 @@ export default function HeroSection() {
             id="hero"
             className="relative overflow-hidden"
         >
-            <div className="relative pt-[100px] px-4 sm:px-6 lg:px-12 container min-h-[931px] ">
+            <div className="relative pt-[100px] px-4 sm:px-6 lg:px-12 container hero-height">
                 <Image
                     src="/financial-center.png"
                     alt="financial center"
