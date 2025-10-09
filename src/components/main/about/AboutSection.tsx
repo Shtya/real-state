@@ -18,7 +18,7 @@ export default function AboutSection({
 }: AboutSectionProps) {
     return (
         <div className="bg-lighter mx-2">
-            <div className={`container flex flex-col 2xl:flex-row items-center ${reversed ? "2xl:justify-start" : "2xl:justify-end"} gap-8 min-h-[400px] pb-[50px] 2xl:py-[130px]`}>
+            <div className={`relative container flex flex-col 2xl:flex-row items-center ${reversed ? "2xl:justify-start" : "2xl:justify-end"} gap-8 min-h-[400px] pb-[50px] 2xl:py-[130px]`}>
 
                 {/* Image block */}
                 <div

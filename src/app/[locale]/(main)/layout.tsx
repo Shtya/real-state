@@ -11,7 +11,7 @@ export default function MainLayout({
     return (
         <>
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 overflow-y-hidden">{children}</main>
             <Footer />
         </>
     );

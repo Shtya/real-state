@@ -71,11 +71,11 @@ body {
 
   @media (width >=96rem) {
     .float-image {
-      inset-inline-start: 6%;
+      inset-inline-start: -0%;
     }
 
     .float-image-reversed {
-      inset-inline-end: 6%;
+      inset-inline-end: -0%;
     }
   }
 }
