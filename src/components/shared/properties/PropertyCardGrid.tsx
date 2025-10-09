@@ -39,7 +39,7 @@ export default function PropertyCardGrid({
                 alt={property.title}
                 width={411}
                 height={269}
-                className="max-w-[411px] h-[269px] w-full rounded-[5px]"
+                className="max-w-[411px] h-[269px] w-full rounded-[5px] object-cover"
             />
             <div className="flex-1 flex flex-col gap-5 z-[1] ms-2 me-4 mt-7 mb-4 p-2">
                 <div className="text-black">

@@ -1,21 +1,22 @@
-import ContactSection from "@/components/main/contact/ContactSection";
+import RecentBlogs from "@/components/main/blogs/RecentBlogs";
 import PageHeroSection from "@/components/shared/PageHeroSection";
 import { getTranslations } from "next-intl/server";
 
 
-export default async function ContactUsPage() {
-    const t = await getTranslations('Contact.Hero');
+export default async function BlogsPage() {
+    const t = await getTranslations('Blogs.Hero');
+
 
     return (
         <section
-            id="contact-us"
+            id="blogs-us"
             className="relative overflow-hidden">
             <PageHeroSection
                 title={t('title')}
                 description={t('description')}
                 buttonText={t('seeMore')}
             />
-            <ContactSection />
+            <RecentBlogs />
         </section>
     );
 }

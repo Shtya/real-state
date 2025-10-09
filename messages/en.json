@@ -117,6 +117,7 @@
             "seeMore": "See More"
         },
         "information": {
+            "title": "Contatc Us",
             "header": "Contact Information",
             "subtitle": "Say something to start a live chat!",
             "location": "132 Dartmouth Street Boston, Massachusetts 02156 United States"
@@ -136,6 +137,17 @@
             "message": "Message",
             "messagePlaceholder": "Write your message..",
             "send": "Send Message"
+        }
+    },
+    "Blogs": {
+        "Hero": {
+            "title": "Blogs",
+            "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
+            "seeMore": "See More"
+        },
+        "Recent": {
+            "title": "Our Recent Blogs",
+            "readMore": "Read More"
         }
     },
     "Footer": {

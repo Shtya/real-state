@@ -12,7 +12,7 @@ export default async function ContactSection() {
     return (
         <div className="bg-lighter pb-32 px-2">
             <div className="container">
-                <PageHeader title="Contact Us" className="bg-lighter" />
+                <PageHeader title={t("title")} className="bg-lighter" />
 
                 <div className="mt-20 bg-white rounded-[10px] p-2 grid grid-cols-1 lg:grid-cols-12">
                     {/* Info side */}
