@@ -41,7 +41,7 @@ export default function Header() {
     const navLinks = [
         { label: t("nav.home"), href: "/" },
         { label: t("nav.about"), href: "/about" },
-        { label: t("nav.realEstate"), href: "/real-estate" },
+        { label: t("nav.realEstate"), href: "/property" },
         { label: t("nav.blog"), href: "/blog" },
         { label: t("nav.contact"), href: "/contact" },
         { label: t("nav.dashboard"), href: "/dashboard" }
@@ -51,9 +51,7 @@ export default function Header() {
         <header
             id="main-header"
             ref={headerRef}
-            className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition ${isSticky ? "!fixed !top-0 left-0 w-full bg-white shadow-md z-50" : ""
-                }`}
-        >
+            className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition ${isSticky ? "!fixed !top-0 left-0 w-full bg-white shadow-md z-50" : ""}`}>
             <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 ${isSticky ? 'bg-white ' : 'bg-[#FAFAFA]'} xl:rounded-full px-3 sm:px-5 md:px-8 py-3 sm:py-3 md:py-5`}>
                 {/* Logo */}
                 <Logo />

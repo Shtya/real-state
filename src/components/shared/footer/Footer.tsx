@@ -31,9 +31,9 @@ export default function Footer() {
                         </h2>
                         <ul className="flex flex-col gap-4">
                             <li><Link href="/#home" className="text-base text-dark">{t("about.menu")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("about.features")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("about.blogs")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("about.support")}</Link></li>
+                            <li><Link href="/#features" className="text-base text-dark">{t("about.features")}</Link></li>
+                            <li><Link href="/blog" className="text-base text-dark">{t("about.blogs")}</Link></li>
+                            <li><Link href="/contact" className="text-base text-dark">{t("about.support")}</Link></li>
                         </ul>
                     </div>
 

@@ -6,7 +6,7 @@ export default function Features() {
     const t = useTranslations("HomePage.Features");
 
     return (
-        <section className="my-8 mx-2">
+        <section className="my-8 mx-2" id="features">
             <div className="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-8 items-center">
                 {/* Text Section */}
                 <div className="space-y-4">

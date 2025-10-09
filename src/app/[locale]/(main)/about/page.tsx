@@ -4,6 +4,15 @@ import TeamSection from "@/components/main/about/TeamSection";
 import PageHeader from "@/components/shared/PageHeader";
 import { getTranslations } from "next-intl/server";
 
+
+export async function generateMetadata() {
+    const t = await getTranslations("About");
+
+    return {
+        title: t("header"), // 👈 localized title
+    };
+}
+
 export default async function AboutPage() {
     const t = await getTranslations("About");
 
