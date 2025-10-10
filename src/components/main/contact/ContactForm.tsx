@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ContactInput from "./ContactInput";
 import ContactCheckbox from "./ContactCheckbox";
-import SecondaryButton from "@/components/shared/SecondaryButton";
+import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { useTranslations } from "next-intl";
 import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
 

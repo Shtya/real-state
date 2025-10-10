@@ -1,5 +1,5 @@
 'use client'
-import PrimaryButton from "@/components/shared/PrimaryButton";
+import PrimaryButton from "@/components/shared/buttons/PrimaryButton";
 import PropertyCategoryCard from "@/components/shared/properties/PropertyCategoryCard";
 import SwiperNav from "@/components/shared/SwiperNav";
 import { useState } from "react";

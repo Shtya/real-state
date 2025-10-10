@@ -1,5 +1,5 @@
 import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
-import SecondaryButton from "@/components/shared/SecondaryButton";
+import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";

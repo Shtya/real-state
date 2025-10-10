@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import SecondaryButton from './SecondaryButton';
+import SecondaryButton from './buttons/SecondaryButton';
 
 interface PageHeroSectionProps {
     title: string;

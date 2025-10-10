@@ -1,4 +1,4 @@
-import PrimaryButton from "@/components/shared/PrimaryButton";
+import PrimaryButton from "@/components/shared/buttons/PrimaryButton";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
