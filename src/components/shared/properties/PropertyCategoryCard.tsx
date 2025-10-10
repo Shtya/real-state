@@ -53,7 +53,7 @@ export default function PropertyCategoryCard({
             <div className="absolute top-[2px] rtl:start-[2px] ltr:end-[2px] bg-white p-4 rounded-full z-[2]">
                 <Link
                     href={`/properties/${property.id}`}
-                    className="bg-primary flex-center text-white w-[60px] h-[60px] rounded-full">
+                    className="bg-secondary flex-center text-white w-[60px] h-[60px] rounded-full">
                     <GoArrowUpRight size={28} />
                 </Link>
             </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function PaymentsRow() {
     return (
-        <div className="bg-primary">
+        <div className="bg-secondary">
             <div className="p-5 container overflow-x-auto">
                 <div className="flex items-center gap-8 min-w-max justify-center">
                     <Image

@@ -26,7 +26,7 @@ export default function Footer() {
 
                     {/* About Us */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h2 className="mb-6 text-secondary font-bold text-xl sm:text-2xl">
+                        <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
                             {t("about.title")}
                         </h2>
                         <ul className="flex flex-col gap-4">
@@ -39,7 +39,7 @@ export default function Footer() {
 
                     {/* Company */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h2 className="mb-6 text-secondary font-bold text-xl sm:text-2xl">
+                        <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
                             {t("company.title")}
                         </h2>
                         <ul className="flex flex-col gap-4">
@@ -52,14 +52,14 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div className="flex flex-col items-center sm:items-start">
-                        <h2 className="mb-6 text-secondary font-bold text-xl sm:text-2xl">
+                        <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
                             {t("contact.title")}
                         </h2>
                         <ul className="flex flex-col gap-4">
                             <li><p className="text-base md:text-lg">{t("contact.address")}</p></li>
                             <li><a
                                 href="tel:+972029182132"
-                                className="text-base md:text-lg font-light hover:underline"
+                                className="text-base md:text-lg font-lighter hover:underline"
                                 dir="ltr"
                             >
                                 +97&nbsp;202-918-2132

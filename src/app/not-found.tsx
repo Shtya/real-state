@@ -17,12 +17,12 @@ export default function NotFound() {
                             </p>
 
                             <div className="flex justify-center gap-4 flex-wrap">
-                                <Link href="/" className="btn-primary font-semibold">
+                                <Link href="/" className="btn-secondary font-semibold">
                                     العودة إلى الصفحة الرئيسية
                                 </Link>
                                 <button
                                     onClick={() => router.back()}
-                                    className="btn-secondary font-semibold"
+                                    className="btn-primary font-semibold"
                                 >
                                     العودة للخلف
                                 </button>

@@ -65,10 +65,10 @@ export default function TeamSection() {
                 </Swiper>
 
                 {/* Navigation buttons */}
-                <button className="team-prev flex-center w-[45px] h-[45px] bg-secondary rounded-full absolute top-1/2 -translate-y-1/2 left-2 z-10">
+                <button className="team-prev flex-center w-[45px] h-[45px] bg-primary rounded-full absolute top-1/2 -translate-y-1/2 left-2 z-10">
                     <BiSolidLeftArrow size={24} className="text-white" />
                 </button>
-                <button className="team-next flex-center w-[45px] h-[45px] bg-secondary rounded-full absolute top-1/2 -translate-y-1/2 right-2 z-10">
+                <button className="team-next flex-center w-[45px] h-[45px] bg-primary rounded-full absolute top-1/2 -translate-y-1/2 right-2 z-10">
                     <BiSolidRightArrow size={24} className="text-white" />
                 </button>
             </div>

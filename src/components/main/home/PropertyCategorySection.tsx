@@ -8,9 +8,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import PropertyCategorySkeleton from "@/components/shared/properties/PropertyCategorySkeleton";
 import { useNormalizedPath } from "@/hooks/useNormalizedPath";
+import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
 
 const properties = [
     {
@@ -72,7 +73,6 @@ const properties = [
 type category = 'house' | 'realEstate' | 'apartment'
 
 export default function PropertyCategorySection() {
-    const router = useRouter();
     const searchParams = useSearchParams();
     const locale = useLocale();
     const { pathname } = useNormalizedPath();
@@ -81,6 +81,9 @@ export default function PropertyCategorySection() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [activeCategory, setActiveCategory] = useState<category>(searchParams.get("category") as category || 'house');
+    const activeSelector = `[data-category="${activeCategory}"]`;
+    const indicatorRef = useIndicatorPosition(activeSelector);
+
     const [loading, setLoading] = useState(false);
     const isRTL = locale === 'ar';
 
@@ -108,23 +111,30 @@ export default function PropertyCategorySection() {
                         <p className="text-sm sm:text-base text-dark leading-[26px] max-w-[700px]">
                             {t('description')}
                         </p>
-                        <div className="border border-primary p-2 rounded-full flex flx gap-2">
+                        <div className="relative border border-secondary p-2 rounded-full flex flx gap-2">
+                            <div
+                                ref={indicatorRef}
+                                className="absolute bg-secondary transition-all duration-300 ease-in-out rounded-full z-0 will-change-transform"
+                            />
                             <PrimaryButton
-                                className={`text-nowrap ${activeCategory === 'house' ? 'bg-primary text-white' : 'text-black'}`}
+                                data-category="house"
+                                className={`text-nowrap z-[1] ${activeCategory === 'house' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('house')}
                             >
                                 {t('filters.house')}
                             </PrimaryButton>
 
                             <PrimaryButton
-                                className={`text-nowrap ${activeCategory === 'realEstate' ? 'bg-primary text-white' : 'text-black'}`}
+                                data-category="realEstate"
+                                className={`text-nowrap z-[1] ${activeCategory === 'realEstate' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('realEstate')}
                             >
                                 {t('filters.realEstate')}
                             </PrimaryButton>
 
                             <PrimaryButton
-                                className={`text-nowrap ${activeCategory === 'apartment' ? 'bg-primary text-white' : 'text-black'}`}
+                                data-category="apartment"
+                                className={`text-nowrap z-[1] ${activeCategory === 'apartment' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('apartment')}
                             >
                                 {t('filters.apartment')}

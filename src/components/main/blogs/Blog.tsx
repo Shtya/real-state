@@ -43,8 +43,8 @@ export default function Blog({ blog, list = false }: BlogProps) {
                     {blog.description}
                 </p>
 
-                <SecondaryButton className="me-auto relative mt-6 bg-primary text-white w-[140px] lg:w-[160px] h-[45px] lg:h-[53px] overflow-hidden">
-                    <span className="text-light text-sm lg:text-base">{t("readMore")}</span>
+                <SecondaryButton className="me-auto relative mt-6 bg-secondary text-white w-[140px] lg:w-[160px] h-[45px] lg:h-[53px] overflow-hidden">
+                    <span className="text-lighter text-sm lg:text-base">{t("readMore")}</span>
                     <div className="bg-white w-[70px] 2xl:w-[75px] h-[70px] 2xl:h-[75px] absolute end-[-35px] bottom-[-40px] rounded-full"></div>
                 </SecondaryButton>
             </div>

@@ -29,7 +29,7 @@ export default function Features() {
                 </div>
 
                 {/* أعلن عن إيجارك */}
-                <div className="bg-primary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
+                <div className="bg-secondary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
                     <h1 className="text-lg md:text-2xl lg:text-[35px] text-white font-bold w-fit">
                         {t("card1.title")}
                     </h1>
@@ -42,7 +42,7 @@ export default function Features() {
                 </div>
 
                 {/* إيجار 100% عبر الإنترنت */}
-                <div className="bg-secondary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
+                <div className="bg-primary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
                     <h1 className="text-lg md:text-2xl lg:text-[35px] text-white font-bold w-fit">
                         {t("card2.title")}
                     </h1>

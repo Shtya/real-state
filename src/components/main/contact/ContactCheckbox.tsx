@@ -22,7 +22,7 @@ export default function ContactCheckbox({
             onClick={() => onChange(!checked)}
         >
             <div
-                className={`flex-center rounded-full w-[18px] h-[18px]  transition-colors ${checked ? "border border-secondary bg-secondary" : "bg-light"}`}
+                className={`flex-center rounded-full w-[18px] h-[18px]  transition-colors ${checked ? "border border-primary bg-primary" : "bg-lighter"}`}
             >
                 {checked && <IoMdCheckmark size={12} className="text-white" />}
             </div>

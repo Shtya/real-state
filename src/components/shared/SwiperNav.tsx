@@ -22,7 +22,7 @@ export default function SwiperNav({
         <div className="flex gap-4 items-center" dir={dir}>
             {/* Prev button */}
             <button
-                className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} ${prevClass} !block text-secondary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-secondary rounded-[70px] flex-center`}
+                className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} ${prevClass} !block text-primary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-primary rounded-[70px] flex-center`}
             >
                 <GoArrowRight size={24} />
             </button>
@@ -38,7 +38,7 @@ export default function SwiperNav({
 
             {/* Next button */}
             <button
-                className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} ${nextClass} !block text-secondary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-secondary rounded-[70px] flex-center`}
+                className={`${totalPages === 1 ? 'opacity-30 pointer-events-none' : ''} ${nextClass} !block text-primary w-[60px] sm:w-[80px] lg:w-[100px] py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 border border-primary rounded-[70px] flex-center`}
             >
                 <GoArrowLeft size={24} />
             </button>

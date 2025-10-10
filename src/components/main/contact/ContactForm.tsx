@@ -98,10 +98,10 @@ export default function ContactForm() {
             </div>
 
             {/* Submit */}
-            <SecondaryButton className="ms-auto relative mt-20 bg-secondary text-white w-[180px] sm:w-[200px] 2xl:w-[242px] h-[45px] sm:h-[50px] 2xl:h-[53px] overflow-hidden">
+            <SecondaryButton className="ms-auto relative mt-20 bg-primary text-white w-[180px] sm:w-[200px] 2xl:w-[242px] h-[45px] sm:h-[50px] 2xl:h-[53px] overflow-hidden">
                 <span>{t("send")}</span>
                 <div className="bg-white w-[60px] sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px] absolute end-[-20px] bottom-[-40px] rounded-full"></div>
-                <div className="bg-lighter w-[60px] sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px] absolute end-[-25px] bottom-[-45px] rounded-full"></div>
+                <div className="bg-highlight w-[60px] sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px] absolute end-[-25px] bottom-[-45px] rounded-full"></div>
             </SecondaryButton>
         </form>
     );

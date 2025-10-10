@@ -14,7 +14,7 @@ export default function PageHeroSection({
     description,
     buttonText = 'See More',
     imageSrc = '/main.jpg',
-    gradient = 'linear-gradient(180deg, var(--secondary) 22.12%, var(--highlight) 85.1%)',
+    gradient = 'linear-gradient(180deg, var(--primary) 22.12%, var(--lightGold) 85.1%)',
 }: PageHeroSectionProps) {
     return (
         <div className="relative px-2">
@@ -28,7 +28,7 @@ export default function PageHeroSection({
                     <p className="text-base sm:text-xl lg:text-2xl text-white max-w-[90%] sm:max-w-[600px] lg:max-w-[663px] mb-4 sm:mb-6 lg:mb-[35px] mt-2 sm:mt-4 lg:mt-[10px]">
                         {description}
                     </p>
-                    <SecondaryButton className="bg-primary text-white text-base sm:text-lg">
+                    <SecondaryButton className="bg-secondary text-white text-base sm:text-lg">
                         {buttonText}
                     </SecondaryButton>
                 </div>

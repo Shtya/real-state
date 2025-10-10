@@ -19,8 +19,8 @@ export default async function AboutPage() {
     return (
         <div>
             <MainAboutSection />
-            <div className="bg-lighter 2xl:pb-[150px]">
-                <PageHeader title={t("header")} className="bg-lighter" />
+            <div className="bg-highlight 2xl:pb-[150px]">
+                <PageHeader title={t("header")} className="bg-highlight" />
 
                 <AboutSection
                     title={t("mission.title")}

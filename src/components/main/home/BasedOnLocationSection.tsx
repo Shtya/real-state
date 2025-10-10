@@ -1,8 +1,9 @@
 'use client'
 
-import PropertyCardGrid, { PropertyGrid } from "@/components/shared/properties/PropertyCardGrid";
+import PropertyCardGrid from "@/components/shared/properties/PropertyCardGrid";
+import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const properties = [
@@ -205,13 +206,14 @@ type RentType = 'yearly' | 'monthly';
 export default function BasedOnLocationSection() {
     const locale = useLocale();
     const t = useTranslations('HomePage.BasedOnLocationSection');
-    const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
     const [activeRentalType, setActiveRentalType] = useState<RentType>(
         (searchParams.get("rentalType") as RentType) || "monthly"
     );
+    const activeSelector = `[data-rent-type="${activeRentalType}"]`;
+    const indicatorRef = useIndicatorPosition(activeSelector);
 
     const handleFilterClick = (value: RentType) => {
         const params = new URLSearchParams(searchParams.toString());
@@ -220,7 +222,6 @@ export default function BasedOnLocationSection() {
         const newUrl = `${pathname}?${params.toString()}`;
         window.history.replaceState(null, '', newUrl);
     };
-
 
     // Filter properties based on rental type
     const filteredProperties = properties.filter((p) => {
@@ -241,23 +242,33 @@ export default function BasedOnLocationSection() {
                 </div>
 
                 {/* Rental type toggle */}
-                <div className="flex gap-4 items-center mt-4">
-                    <div className="bg-light p-1 flex rounded-[2px]">
+                <div className="relative flex gap-4 items-center mt-4">
+                    {/* Animated indicator */}
+                    <div className=" bg-lighter p-1 flex rounded-[2px]">
+                        <div
+                            ref={indicatorRef}
+                            className="absolute bg-secondary transition-all duration-300 ease-in-out rounded-[2px] z-0 will-change-transform"
+                        />
+
+                        {/* Buttons */}
                         <button
+                            data-rent-type="yearly"
                             onClick={() => handleFilterClick("yearly")}
-                            className={`flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "yearly" ? "bg-primary text-accent" : ""
+                            className={`relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "yearly" ? "text-light" : "text-dark"
                                 }`}
                         >
-                            {t('yearly')}
+                            {t("yearly")}
                         </button>
                         <button
+                            data-rent-type="monthly"
                             onClick={() => handleFilterClick("monthly")}
-                            className={`flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "monthly" ? "bg-primary text-accent" : ""
+                            className={` relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "monthly" ? "text-light" : "text-dark"
                                 }`}
                         >
-                            {t('monthly')}
+                            {t("monthly")}
                         </button>
                     </div>
+
                     {t('rent')}
                 </div>
 

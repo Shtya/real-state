@@ -30,8 +30,8 @@ export default function SocialIcons({
                     rel="noopener noreferrer"
                     aria-label={label}
                     className={`w-8 h-8  flex items-center justify-center rounded-full text-white transition  ${primary
-                        ? "hover:bg-primary hover:text-white"
-                        : "bg-primary hover:bg-white hover:text-primary"
+                        ? "hover:bg-secondary hover:text-white"
+                        : "bg-secondary hover:bg-white hover:text-secondary"
                         } ${itemClassName}`}
                 >
                     <Icon size={size} />

@@ -76,9 +76,9 @@ export default function RecentBlogs() {
     const t = useTranslations("Blogs.Recent");
 
     return (
-        <div className="bg-lighter pb-20 sm:pb-26 lg:pb-32 px-2">
+        <div className="bg-highlight pb-20 sm:pb-26 lg:pb-32 px-2">
             <div className="container">
-                <PageHeader title="Blogs" className="bg-lighter" />
+                <PageHeader title="Blogs" className="bg-highlight" />
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] text-dark font-bold  mt-6 sm:mt-8 md:mt-10 mb-10 sm:mb-14 md:mb-16">{t('title')}</p>
                 <Blog
                     blog={{

@@ -62,8 +62,8 @@ export default function Header() {
                         <Link
                             key={href}
                             href={href}
-                            className={`nav-item hover:text-primary text-[16px] pb-1 xl:text-lg ${normalizedPath === href
-                                ? "text-primary border-b-[3px] border-b-primary"
+                            className={`nav-item hover:text-secondary text-[16px] pb-1 xl:text-lg ${normalizedPath === href
+                                ? "text-secondary border-b-[3px] border-b-secondary"
                                 : ""
                                 }`}
                         >
@@ -134,7 +134,7 @@ export default function Header() {
                             key={href}
                             href={href}
                             onClick={() => setMenuOpen(false)}
-                            className="mobile-navitem block py-3 px-3 text-[#212529] font-medium hover:text-primary transition-colors"
+                            className="mobile-navitem block py-3 px-3 text-[#212529] font-medium hover:text-secondary transition-colors"
                         >
                             {label}
                         </Link>

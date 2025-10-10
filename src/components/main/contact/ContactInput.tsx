@@ -21,7 +21,7 @@ export default function ContactInput({
 }: TextInputProps) {
     return (
         <div
-            className={`flex gap-2 flex-col border-b border-secondary pb-3 ${wrapperClassName}`}
+            className={`flex gap-2 flex-col border-b border-primary pb-3 ${wrapperClassName}`}
         >
             <label
                 htmlFor={id}
@@ -35,7 +35,7 @@ export default function ContactInput({
                 value={value}
                 placeholder={placeholder}
                 onChange={onChange}
-                className="focus:outline-0 text-sm font-medium text-secondary caret-secondary"
+                className="focus:outline-0 text-sm font-medium text-primary caret-primary"
                 {...props}
             />
         </div>

@@ -69,7 +69,7 @@ export default function HeroFilter() {
                     </Link>
                     <Link
                         href={search}
-                        className="flex justify-center gap-2 bg-primary basic-shadow text-white py-2 px-8 rounded-md w-full"
+                        className="flex justify-center gap-2 bg-secondary basic-shadow text-white py-2 px-8 rounded-md w-full"
                     >
                         <span>{t("search")}</span>
                         <CiSearch size={24} />

@@ -9,7 +9,7 @@ export default function ContactUsSection() {
         <section
             className="my-8 "
             style={{
-                background: "linear-gradient(90deg, var(--light) 0%, var(--accent) 100%)",
+                background: "linear-gradient(90deg, var(--lighter) 0%, var(--light) 100%)",
             }}
         >
             <div className="container flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-10 ">
@@ -29,7 +29,7 @@ export default function ContactUsSection() {
                             className="bg-white w-full rounded-full px-4 py-2 sm:py-3 placeholder:text-input placeholder:opacity-50 text-sm sm:text-base"
                             placeholder={t("placeholder")}
                         />
-                        <PrimaryButton className="bg-secondary text-white text-nowrap px-4 sm:px-6">
+                        <PrimaryButton className="bg-primary text-white text-nowrap px-4 sm:px-6">
                             {t("button")}
                         </PrimaryButton>
                     </div>
