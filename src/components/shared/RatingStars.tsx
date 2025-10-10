@@ -16,7 +16,7 @@ const StarSVG: React.FC<{ fill: string; size: number; style?: React.CSSPropertie
     >
         <path
             d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 
-       9.19 8.62 2 9.24l5.46 4.73L5.82 21 12 17.27z"
+    9.19 8.62 2 9.24l5.46 4.73L5.82 21 12 17.27z"
             fill={fill}
         />
     </svg>
@@ -38,7 +38,7 @@ const RatingStars: React.FC<StarsProps> = ({ rating, size = 21, reverse = false 
 
                 // Base (empty) star
                 const emptyColor = "#E5E7EB"; // muted gray
-                const fullColor = "#D9FF01";
+                const fullColor = "#F4C430";
 
                 return (
                     <div key={i} style={{ position: "relative", width: size, height: size }}>

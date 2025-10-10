@@ -30,23 +30,22 @@ export default function Footer() {
                             {t("about.title")}
                         </h2>
                         <ul className="flex flex-col gap-4">
-                            <li><Link href="/#home" className="text-base text-dark">{t("about.menu")}</Link></li>
-                            <li><Link href="/#features" className="text-base text-dark">{t("about.features")}</Link></li>
-                            <li><Link href="/blog" className="text-base text-dark">{t("about.blogs")}</Link></li>
-                            <li><Link href="/contact" className="text-base text-dark">{t("about.support")}</Link></li>
+                            <FooterLink href="/#home" label={t("about.menu")} />
+                            <FooterLink href="/#features" label={t("about.features")} />
+                            <FooterLink href="/blog" label={t("about.blogs")} />
+                            <FooterLink href="/contact" label={t("about.support")} />
                         </ul>
                     </div>
 
-                    {/* Company */}
                     <div className="flex flex-col items-center sm:items-start">
                         <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
                             {t("company.title")}
                         </h2>
                         <ul className="flex flex-col gap-4">
-                            <li><Link href="/#home" className="text-base text-dark">{t("company.how")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("company.terms")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("company.pricing")}</Link></li>
-                            <li><Link href="/#home" className="text-base text-dark">{t("company.faq")}</Link></li>
+                            <FooterLink href="/#home" label={t("company.how")} />
+                            <FooterLink href="/#home" label={t("company.terms")} />
+                            <FooterLink href="/#home" label={t("company.pricing")} />
+                            <FooterLink href="/#home" label={t("company.faq")} />
                         </ul>
                     </div>
 
@@ -75,5 +74,23 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+    );
+}
+
+
+type FooterLinkProps = {
+    href: string;
+    label: string;
+};
+function FooterLink({ href, label }: FooterLinkProps) {
+    return (
+        <li>
+            <Link
+                href={href}
+                className="text-base text-dark hover:text-primary transition-colors duration-200"
+            >
+                {label}
+            </Link>
+        </li>
     );
 }

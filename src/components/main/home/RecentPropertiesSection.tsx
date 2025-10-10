@@ -89,11 +89,11 @@ export default function RecentPropertiesSection() {
 
 
     return (
-        <section className='rounded-[24px] sm:rounded-[40px] md:rounded-[60px] lg:rounded-[83px]'
+        <section className='rounded-[14px] sm:rounded-[40px] md:rounded-[60px] lg:rounded-[83px]'
             style={{
                 background: 'linear-gradient(180deg, var(--light) 0%, var(--lighter) 100%)',
             }}>
-            <div className=' mt-10 p-[30px] sm:p-[40px] md:p-[50px] lg:p-[60px] container'
+            <div className=' mt-10 py-[20px] px-2 sm:p-[40px] md:p-[50px] lg:p-[60px] container'
             >
 
 

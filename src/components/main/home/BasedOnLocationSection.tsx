@@ -4,7 +4,7 @@ import PropertyCardGrid from "@/components/shared/properties/PropertyCardGrid";
 import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const properties = [
     {
@@ -62,7 +62,7 @@ const properties = [
         bathrooms: 2,
         guests: 5,
         bedrooms: 3,
-        isMonthly: true,
+        isMonthly: false,
     },
     {
         id: "property-4",
@@ -119,7 +119,7 @@ const properties = [
         bathrooms: 4,
         guests: 8,
         bedrooms: 4,
-        isMonthly: true,
+        isMonthly: false,
     },
     {
         id: "property-7",
@@ -176,7 +176,7 @@ const properties = [
         bathrooms: 4,
         guests: 8,
         bedrooms: 4,
-        isMonthly: false,
+        isMonthly: true,
     },
     {
         id: "property-10",
@@ -195,7 +195,7 @@ const properties = [
         bathrooms: 4,
         guests: 8,
         bedrooms: 4,
-        isMonthly: false,
+        isMonthly: true,
     },
 ];
 
@@ -224,9 +224,9 @@ export default function BasedOnLocationSection() {
     };
 
     // Filter properties based on rental type
-    const filteredProperties = properties.filter((p) => {
+    const filteredProperties = useMemo(() => properties.filter((p) => {
         return activeRentalType === "monthly" ? p.isMonthly : !p.isMonthly
-    });
+    }), [activeRentalType, properties])
 
     return (
         <section className="mt-[40px] mx-2">
@@ -273,8 +273,9 @@ export default function BasedOnLocationSection() {
                 </div>
 
                 {/* Properties grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4 my-6 justify-center">
-                    {filteredProperties.map((property) => (
+                <div key={activeRentalType} className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4 my-6 justify-center">
+                    {filteredProperties.map((property, index) => (
+
                         <PropertyCardGrid
                             key={property.id}
                             property={{
@@ -284,9 +285,10 @@ export default function BasedOnLocationSection() {
                             }}
                             locale={locale as 'ar' | 'en'}
                         />
+
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

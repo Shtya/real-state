@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
+import FloatingActionButton from "../buttons/FloatingActionButton";
 
 type Property = {
     id: string;
@@ -47,20 +48,22 @@ export default function PropertyCard({
                     <rect x="0" y="0" width="40" height="40" fill="var(--light)" mask="url(#notch-bl)" />
                 </svg>
             </div>
-            {/* Floating action button */}
-            <div className="absolute top-[2px] rtl:start-[2px] ltr:end-[2px] bg-light p-4 rounded-full z-[2]">
-                <Link
-                    href={`/properties/${property.id}`}
-                    className="bg-secondary flex-center  text-light w-[60px] h-[60px] rounded-full">
-                    <GoArrowUpRight size={28} />
-                </Link>
-            </div>
+            <FloatingActionButton
+                href={`/properties/${property.id}`}
+                size={60}
+            />
 
 
             {/* Property details */}
-            <div className="    max-w-[384px] h-[484px]">
-                <Image src={property.imageUrl} fill alt={property.title} className=" w-[384px] h-[484px] rounded-[24px] object-cover filter brightness-[0.9]" />
+            <div className="max-w-[384px] h-[484px] overflow-hidden">
+                <Image
+                    src={property.imageUrl}
+                    fill
+                    alt={property.title}
+                    className="w-[384px] h-[484px] rounded-[24px] object-cover filter brightness-[0.9] image-scale"
+                />
             </div>
+
             <div className="space-y-4 z-[1] ms-2 me-6 mb-4">
                 <Link href={`/properties/${property.id}`} className="block font-bold text-lg text-white ">{property.title}</Link>
                 <p className="text-[#D4E1FF] text-xs">{property.address}</p>

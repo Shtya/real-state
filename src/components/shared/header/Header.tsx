@@ -51,21 +51,19 @@ export default function Header() {
         <header
             id="main-header"
             ref={headerRef}
-            className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition ${isSticky ? "!fixed !top-0 left-0 w-full bg-white shadow-md z-50" : ""}`}>
-            <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 ${isSticky ? 'bg-white ' : 'bg-[#FAFAFA]'} xl:rounded-full px-3 sm:px-5 md:px-8 py-3 sm:py-3 md:py-5`}>
+            className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition-colors ${isSticky ? "!fixed !top-0 left-0 w-full md:backdrop-blur-md md:bg-white/60 md:shadow-md z-50" : ""}`}>
+            <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 transition-colors ${isSticky ? 'max-md:bg-white' : 'bg-[#FAFAFA]'} xl:rounded-full px-5 lg:px-8  py-3 md:py-5`}>
                 {/* Logo */}
                 <Logo />
 
                 {/* Desktop nav */}
-                <nav className="navbar hidden lg:flex items-center gap-4 sm:gap-5 md:gap-7 text-base sm:text-lg md:text-xl text-dark font-bold">
+                <nav className="navbar hidden md:flex items-center gap-4 sm:gap-5 lg:gap-7 text-base sm:text-lg md:text-xl text-dark font-bold">
                     {navLinks.map(({ label, href }) => (
                         <Link
                             key={href}
                             href={href}
-                            className={`nav-item hover:text-secondary text-[16px] pb-1 xl:text-lg ${normalizedPath === href
-                                ? "text-secondary border-b-[3px] border-b-secondary"
-                                : ""
-                                }`}
+                            className={`nav-item hover:text-secondary text-[15px] lg:text-[16px] pb-1 xl:text-lg 
+                                ${normalizedPath === href ? "text-secondary border-b-[3px] border-b-secondary" : ""}`}
                         >
                             {label}
                         </Link>
@@ -82,42 +80,34 @@ export default function Header() {
                         id="menu-toggle"
                         aria-controls="mobile-menu"
                         onClick={() => setMenuOpen((prev) => !prev)}
-                        className="lg:hidden rounded-md border border-transparent"
+                        className="md:hidden rounded-md border border-transparent transition-transform duration-300 ease-in-out"
                     >
-                        {menuOpen ? (
-                            <svg
-                                id="menu-close-icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`h-6 w-6 transform transition-transform duration-300 ease-in-out ${menuOpen ? "rotate-90" : "rotate-0"
+                                }`}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            {menuOpen ? (
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
                                     d="M6 18L18 6M6 6l12 12"
                                 />
-                            </svg>
-                        ) : (
-                            <svg
-                                id="menu-open-icon"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
+                            ) : (
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
                                     d="M4 6h16M4 12h16M4 18h16"
                                 />
-                            </svg>
-                        )}
+                            )}
+                        </svg>
                     </button>
+
                 </div>
             </div>
 
@@ -125,23 +115,27 @@ export default function Header() {
             <div
                 id="mobile-menu"
                 ref={menuRef}
-                className={`${menuOpen ? "block" : "hidden"
-                    } lg:hidden bg-[#FAFAFA]  p-4 shadow-lg`}
+                className={`md:hidden p-4 absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out ${menuOpen
+                        ? "opacity-100 translate-y-0 pointer-events-auto bg-[#FAFAFA] shadow-lg"
+                        : "opacity-0 -translate-y-4 pointer-events-none bg-[#FAFAFA] shadow-lg"
+                    }`}
             >
-                <nav className="flex flex-col divide-y divide-gray-200">
-                    {navLinks.map(({ label, href }) => (
+
+                <nav className={`flex flex-col transition-all duration-500 text-[#212529] divide-y divide-gray-200`}>
+                    {navLinks.map(({ label, href }, i) => (
                         <Link
                             key={href}
                             href={href}
                             onClick={() => setMenuOpen(false)}
-                            className="mobile-navitem block py-3 px-3 text-[#212529] font-medium hover:text-secondary transition-colors"
+                            className={`mobile-navitem block py-3 px-3  font-medium hover:text-secondary transition-colors `}
+                        // style={{ animationDelay: `${0.07 * i + 0.2}s` }}
                         >
                             {label}
                         </Link>
                     ))}
                 </nav>
-
             </div>
+
         </header>
     );
 }

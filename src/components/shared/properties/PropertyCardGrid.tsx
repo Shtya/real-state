@@ -4,6 +4,7 @@ import { FaBed } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 import RatingStars from "../RatingStars";
+import { InfoWithTooltip } from "../InfoWithTooltip";
 
 export type PropertyGrid = {
     id: string;
@@ -30,21 +31,24 @@ export default function PropertyCardGrid({
     const period = property.isMonthly ? t("monthly") : t("yearly");
 
     return (
-        <div className="relative max-w-[411px] border border-[#ECF1F8] rounded-[5px] w-fit mx-auto flex flex-col">
-            <div className="absolute top-[22px] end-[7px] z-[1] flex flex-row-reverse">
+        <div className="relative max-w-[411px] border border-[#ECF1F8] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1 hover:border-primary/30 overflow-hidden">
+            {/* <div className="absolute top-[7px] end-[7px] z-[1] flex flex-row-reverse">
                 <RatingStars rating={property.rate} reverse />
-            </div>
+            </div> */}
             <Image
                 src={property.imageUrl}
                 alt={property.title}
                 width={411}
                 height={269}
-                className="max-w-[411px] h-[269px] w-full rounded-[5px] object-cover"
+                className=" h-[250px] lg:h-[269px] w-[411px] rounded-[5px] object-cover image-scale"
             />
-            <div className="flex-1 flex flex-col gap-5 z-[1] ms-2 me-4 mt-7 mb-4 p-2">
-                <div className="text-black">
-                    <span className="font-bold text-2xl">${property.price}</span>{" "}
-                    <span className="text-dark opacity-50">/ {period}</span>
+            <div className="flex-1 flex flex-col gap-3 lg:gap-5 z-[1] ms-2 me-4 mt-4 lg:mt-7 mb-3 lg:mb-4 p-2">
+                <div className="text-black flex items-center justify-between gap-2">
+                    <div className="space-x-2">
+                        <span className="font-bold text-xl lg:text-2xl">${property.price}</span>
+                        <span className="text-dark opacity-50">/ {period}</span>
+                    </div>
+                    <RatingStars rating={property.rate} size={16} reverse />
                 </div>
 
                 <Link
@@ -61,7 +65,10 @@ export default function PropertyCardGrid({
 
                 <div className="flex-1 grid grid-cols-3 gap-4 pt-4 items-end">
                     {/* Bathrooms */}
-                    <div className="flex items-center justify-between gap-2">
+                    <InfoWithTooltip
+                        label={t("bathrooms")}
+                        value={property.bathrooms}
+                    >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_283_1115)">
                                 <path d="M4 12H20C20.35 12 20.68 12.14 20.93 12.39C21.18 12.64 21.33 12.98 21.33 13.33V16C21.33 17.1 20.9 18.15 20.12 18.93C19.34 19.71 18.29 20.13 17.19 20.13H6.81C5.71 20.13 4.66 19.71 3.88 18.93C3.1 18.15 2.67 17.1 2.67 16V13.33C2.67 12.98 2.82 12.64 3.07 12.39C3.32 12.14 3.65 12 4 12Z" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -75,30 +82,23 @@ export default function PropertyCardGrid({
                                 </clipPath>
                             </defs>
                         </svg>
-
-                        <span className="text-input text-sm truncate"
-                            title={`${property.bathrooms} ${t("bathrooms")}`}>
-                            {property.bathrooms} {t("bathrooms")}
-                        </span>
-                    </div>
+                    </InfoWithTooltip>
 
                     {/* Guests */}
-                    <div className="flex items-center justify-between gap-2">
+                    <InfoWithTooltip
+                        label={t("guests")}
+                        value={property.guests}
+                    >
                         <FiUsers className="text-primary shrink-0" size={20} />
-                        <span className="text-input text-sm truncate"
-                            title={`${property.guests} ${t("guests")}`}>
-                            {property.guests} {t("guests")}
-                        </span>
-                    </div>
-
+                    </InfoWithTooltip>
                     {/* Bedrooms */}
-                    <div className="flex items-center justify-between gap-2">
-                        <FaBed className="text-primary shrink-0" size={20} />
-                        <span className="text-input text-sm truncate"
-                            title={`${property.bedrooms} ${t("bedrooms")}`}>
-                            {property.bedrooms} {t("bedrooms")}
-                        </span>
-                    </div>
+                    <InfoWithTooltip
+                        label={t("bedrooms")}
+                        value={property.bedrooms}
+                    >
+                        <FaBed className="text-primary" size={20} />
+                    </InfoWithTooltip>
+
                 </div>
             </div>
         </div>

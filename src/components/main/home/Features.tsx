@@ -19,37 +19,37 @@ export default function Features() {
                 </div>
 
                 {/* Image Section */}
-                <div className="relative w-full h-[280px] rounded-[20px] overflow-hidden">
+                <div className="relative w-full h-[250px] md:h-[280px] rounded-[20px] overflow-hidden ">
                     <Image
                         src="/home.png"
                         alt="home"
                         fill
-                        className="object-cover rounded-[20px]"
+                        className="object-cover rounded-[20px] image-scale"
                     />
                 </div>
 
                 {/* أعلن عن إيجارك */}
-                <div className="bg-secondary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
+                <div className="bg-secondary flex-center flex-col h-[250px] md:h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
                     <h1 className="text-lg md:text-2xl lg:text-[35px] text-white font-bold w-fit">
                         {t("card1.title")}
                     </h1>
                     <p className="text-sm sm:text-base leading-[26px] max-w-[700px] text-white opacity-80 w-fit text-center">
                         {t("card1.description")}
                     </p>
-                    <PrimaryButton className="text-black bg-white " >
+                    <PrimaryButton className="text-black transition-colors bg-white  hover:bg-gray-300 text-sm md:text-base" >
                         {t("card1.button")}
                     </PrimaryButton>
                 </div>
 
                 {/* إيجار 100% عبر الإنترنت */}
-                <div className="bg-primary flex-center flex-col h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
+                <div className="bg-primary flex-center flex-col h-[250px] md:h-[280px] w-full gap-5 p-4 lg:p-6 rounded-[20px]">
                     <h1 className="text-lg md:text-2xl lg:text-[35px] text-white font-bold w-fit">
                         {t("card2.title")}
                     </h1>
                     <p className="text-sm sm:text-base leading-[26px] max-w-[700px] text-white opacity-80 w-fit text-center">
                         {t("card2.description")}
                     </p>
-                    <PrimaryButton className="text-black bg-white" href="/dashboard">
+                    <PrimaryButton className="text-black transition-colors bg-white  hover:bg-gray-300 text-sm md:text-base" href="/dashboard ">
                         {t("card2.button")}
                     </PrimaryButton>
                 </div>

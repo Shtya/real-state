@@ -26,10 +26,10 @@ export default function ContactUsSection() {
                     <div className="bg-white rounded-full flex w-full md:w-[500px] overflow-hidden">
                         <input
                             type="email"
-                            className="bg-white w-full rounded-full px-4 py-2 sm:py-3 placeholder:text-input placeholder:opacity-50 text-sm sm:text-base"
+                            className="bg-white w-full rounded-full px-4 py-2 sm:py-3 placeholder:text-input placeholder:opacity-50 text-sm sm:text-base focus:outline-0"
                             placeholder={t("placeholder")}
                         />
-                        <PrimaryButton className="bg-primary text-white text-nowrap px-4 sm:px-6">
+                        <PrimaryButton className="bg-primary transition-colors hover:bg-primary-hover text-white text-nowrap px-4 sm:px-6">
                             {t("button")}
                         </PrimaryButton>
                     </div>

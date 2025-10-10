@@ -27,7 +27,7 @@ export default function HeroFilter() {
 
     return (
         <div className="absolute top-1/2 md:top-3/5 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full px-3">
-            <div className="p-9 bg-white rounded-[12px] basic-shadow max-md:w-full grid grid-cols-1 md:grid-cols-2 xl:flex flex-row justify-center items-center gap-3 w-fit mx-auto">
+            <div className="p-5 sm:p-7 lg:p-9 bg-white rounded-[12px] basic-shadow max-md:w-full grid grid-cols-1 md:grid-cols-2 xl:flex flex-row justify-center items-center gap-3 w-fit mx-auto">
 
                 <SelectInput
                     options={[
@@ -69,7 +69,7 @@ export default function HeroFilter() {
                     </Link>
                     <Link
                         href={search}
-                        className="flex justify-center gap-2 bg-secondary basic-shadow text-white py-2 px-8 rounded-md w-full"
+                        className="flex justify-center gap-2 bg-secondary basic-shadow text-white py-2 px-8 rounded-md w-full transition-colors hover:bg-secondary-hover"
                     >
                         <span>{t("search")}</span>
                         <CiSearch size={24} />

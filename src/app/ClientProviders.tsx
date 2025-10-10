@@ -1,5 +1,6 @@
 "use client";
 
+import AOSInitializer from "@/hooks/AOSInitializer";
 import { ProgressProvider } from "@bprogress/next/app";
 
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
@@ -10,6 +11,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
             options={{ showSpinner: false }}
             shallowRouting
         >
+            <AOSInitializer />
             {children}
         </ProgressProvider>
     );

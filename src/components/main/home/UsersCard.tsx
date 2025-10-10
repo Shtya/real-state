@@ -27,7 +27,7 @@ export default function UsersCard() {
                     {users.map((src, i) => (
                         <div
                             key={i}
-                            className="w-12 h-12 sm:w-[60px] sm:h-[58px] md:w-[72px] md:h-[70px] rounded-full overflow-hidden border-2 border-white"
+                            className="w-12 h-12 sm:w-[60px] sm:h-[58px] md:w-[72px] md:h-[70px] rounded-full overflow-hidden border-2 border-white transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
                             style={{ marginInlineEnd: i === 0 ? 0 : -25, zIndex: i + 1 }}
                         >
                             <Image
@@ -38,6 +38,7 @@ export default function UsersCard() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
+
                     ))}
                 </div>
 

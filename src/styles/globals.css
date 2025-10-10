@@ -14,6 +14,10 @@
 
   --secondary-80: rgba(138, 110, 78, 0.8);
   --light-80: rgba(240, 230, 140, 0.8);
+
+  --secondary-hover: #73583C;
+  --primary-hover: #5C472C;
+
 }
 
 
@@ -28,6 +32,24 @@
   --color-input: var(--input);
   --color-placeholder: var(--placeholder);
   --color-dark: var(--dark);
+
+  --color-secondary-hover: var(--secondary-hover);
+  --color-primary-hover: var(--primary-hover);
+
+
+  --animate-fadeInUp: fadeInUp 1s ease-in-out forwards;
+
+  @keyframes fadeInUp {
+    0% {
+      transform: scale(1.15) translateY(-30px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
 
@@ -80,6 +102,21 @@ body {
       inset-inline-end: -0%;
     }
   }
+
+
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .image-scale {
+    @apply transition-transform duration-300 ease-in-out
+  }
+
+  .image-scale:hover {
+    @apply scale-103
+  }
+
 }
 
 #hero {
