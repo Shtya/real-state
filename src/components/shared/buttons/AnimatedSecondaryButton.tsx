@@ -26,8 +26,8 @@ export const AnimatedSecondaryButton = ({
 
             {showBall && (
                 <>
-                    <AnimatedBall position={position} large={large} variant="white" offset={0} />
-                    <AnimatedBall position={position} large={large} variant="highlight" offset={5} />
+                    <AnimatedBall position={position} large={large} variant="white" offset={5} />
+                    <AnimatedBall position={position} large={large} variant="highlight" offset={0} />
                 </>
             )}
         </button>
@@ -39,7 +39,7 @@ type AnimatedBallProps = {
     position: 'start' | 'end';
     large?: boolean;
     variant?: 'white' | 'highlight';
-    offset?: number; // for stacking multiple balls
+    offset?: number;
 };
 
 export const AnimatedBall = ({
@@ -54,8 +54,11 @@ export const AnimatedBall = ({
 
     const color = variant === 'white' ? 'bg-white' : 'bg-highlight';
 
-    const horizontal = position === 'start' ? `start-[-${20 + offset}px]` : `end-[-${20 + offset}px]`;
-    const vertical = `bottom-[-${40 + offset}px]`;
+    const style: React.CSSProperties = {
+        position: 'absolute',
+        bottom: `${-40 + offset}px`,
+        [position === 'start' ? 'insetInlineStart' : 'insetInlineEnd']: `${-20 + offset}px`
+    };
 
     const hoverTranslate =
         position === 'start'
@@ -64,8 +67,8 @@ export const AnimatedBall = ({
 
     return (
         <div
-            className={`${color} ${baseSize} absolute ${horizontal} ${vertical} rounded-full
-                  transition-all duration-300 ease-out ${hoverTranslate} group-hover:scale-105`}
+            className={`${color} ${baseSize} rounded-full transition-all duration-300 ease-out ${hoverTranslate} group-hover:scale-105`}
+            style={style}
         />
     );
 };

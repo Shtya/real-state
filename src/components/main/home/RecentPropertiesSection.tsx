@@ -22,7 +22,7 @@ const properties = [
             en: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
         },
         price: 943.65,
-        imageUrl: "/properties/property-1.jpg",
+        imageUrl: "/properties/property-7.jpg",
     },
     {
         id: "property-2",

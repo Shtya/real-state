@@ -116,8 +116,8 @@ export default function Header() {
                 id="mobile-menu"
                 ref={menuRef}
                 className={`md:hidden p-4 absolute top-full left-0 w-full overflow-hidden transition-all duration-500 ease-in-out ${menuOpen
-                        ? "opacity-100 translate-y-0 pointer-events-auto bg-[#FAFAFA] shadow-lg"
-                        : "opacity-0 -translate-y-4 pointer-events-none bg-[#FAFAFA] shadow-lg"
+                    ? "opacity-100 translate-y-0 pointer-events-auto bg-[#FAFAFA] shadow-lg"
+                    : "opacity-0 -translate-y-4 pointer-events-none bg-[#FAFAFA] shadow-lg"
                     }`}
             >
 
@@ -127,8 +127,8 @@ export default function Header() {
                             key={href}
                             href={href}
                             onClick={() => setMenuOpen(false)}
-                            className={`mobile-navitem block py-3 px-3  font-medium hover:text-secondary transition-colors `}
-                        // style={{ animationDelay: `${0.07 * i + 0.2}s` }}
+                            className={`mobile-navitem block py-3 px-3  font-medium hover:text-secondary transition-colors 
+                                ${normalizedPath === href ? "text-secondary" : ""}`}
                         >
                             {label}
                         </Link>
