@@ -1,0 +1,71 @@
+type AnimatedSecondaryButtonProps = {
+    children: React.ReactNode;
+    className?: string;
+    position?: 'start' | 'end'
+    primary?: boolean;
+    large?: boolean;
+    showBall?: boolean;
+};
+
+export const AnimatedSecondaryButton = ({
+    children,
+    className = '',
+    position = 'start',
+    primary = false,
+    large = true,
+    showBall = true
+}: AnimatedSecondaryButtonProps) => {
+    return (
+        <button
+            className={`group relative transition ${primary ? "bg-primary hover:bg-primary-hover" : "bg-secondary hover:bg-secondary-hover"} text-white
+                  ${large ? "w-[180px] sm:w-[200px] 2xl:w-[242px]" : " w-[140px] lg:w-[160px]"} h-[45px] sm:h-[50px] 2xl:h-[53px] overflow-hidden
+                  rounded-md font-medium ${className}`}
+            style={{ boxShadow: "0px 4px 12px 0px #0000001F" }}
+        >
+            <span>{children}</span>
+
+            {showBall && (
+                <>
+                    <AnimatedBall position={position} large={large} variant="white" offset={0} />
+                    <AnimatedBall position={position} large={large} variant="highlight" offset={5} />
+                </>
+            )}
+        </button>
+    );
+};
+
+
+type AnimatedBallProps = {
+    position: 'start' | 'end';
+    large?: boolean;
+    variant?: 'white' | 'highlight';
+    offset?: number; // for stacking multiple balls
+};
+
+export const AnimatedBall = ({
+    position,
+    large = true,
+    variant = 'white',
+    offset = 0
+}: AnimatedBallProps) => {
+    const baseSize = large
+        ? 'sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px]'
+        : 'w-[60px] xl:w-[65px] h-[60px] xl:h-[65px]';
+
+    const color = variant === 'white' ? 'bg-white' : 'bg-highlight';
+
+    const horizontal = position === 'start' ? `start-[-${20 + offset}px]` : `end-[-${20 + offset}px]`;
+    const vertical = `bottom-[-${40 + offset}px]`;
+
+    const hoverTranslate =
+        position === 'start'
+            ? 'ltr:group-hover:translate-y-[-5px] ltr:group-hover:translate-x-[5px] rtl:group-hover:translate-[-5px]'
+            : 'ltr:group-hover:translate-[-5px] rtl:group-hover:translate-x-[5px] rtl:group-hover:translate-y-[-5px]';
+
+    return (
+        <div
+            className={`${color} ${baseSize} absolute ${horizontal} ${vertical} rounded-full
+                  transition-all duration-300 ease-out ${hoverTranslate} group-hover:scale-105`}
+        />
+    );
+};

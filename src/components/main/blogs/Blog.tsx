@@ -1,3 +1,4 @@
+import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
 import SecondaryButton from "@/components/shared/SecondaryButton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -19,14 +20,15 @@ export default function Blog({ blog, list = false }: BlogProps) {
     const t = useTranslations("Blogs.Recent");
 
     return (
-        <div className={`relative ${!list && "max-w-[400px]"} rounded-[16px] flex ${list ? "flex-col md:flex-row w-full md:space-x-10 space-y-7 md:space-y-0" : "flex-col w-fit mx-auto space-y-7"}`}>
+        <div className={`overflow-hidden relative ${!list && "max-w-[400px]"} rounded-[16px] flex ${list ? "flex-col md:flex-row w-full md:space-x-10 space-y-7 md:space-y-0" : "flex-col w-fit mx-auto space-y-7"}`}>
+
             <Image
                 src={blog.imageUrl}
                 alt={blog.title}
                 width={400}
                 height={360}
                 className={`w-full ${list ? "md:max-w-[400px] lg:max-w-[600px] xl:max-w-[712px]" : "max-w-[400px]"
-                    } h-[200px] sm:h-[250px] md:h-[300px] lg:h-[360px] rounded-[16px] object-cover`}
+                    } h-[200px] sm:h-[250px] md:h-[300px] lg:h-[360px] rounded-[16px] object-cover image-scale`}
             />
 
             <div className={`flex-1 text-start flex flex-col gap-2 lg:gap-4 z-[1] mb-4 ${list ? "mt-5 md:mt-3" : ""}`}>
@@ -43,10 +45,9 @@ export default function Blog({ blog, list = false }: BlogProps) {
                     {blog.description}
                 </p>
 
-                <SecondaryButton className="me-auto relative mt-6 bg-secondary text-white w-[140px] lg:w-[160px] h-[45px] lg:h-[53px] overflow-hidden">
-                    <span className="text-lighter text-sm lg:text-base">{t("readMore")}</span>
-                    <div className="bg-white w-[70px] 2xl:w-[75px] h-[70px] 2xl:h-[75px] absolute end-[-35px] bottom-[-40px] rounded-full"></div>
-                </SecondaryButton>
+                <AnimatedSecondaryButton large={false} position="end">
+                    {t("readMore")}
+                </AnimatedSecondaryButton>
             </div>
         </div>
     );

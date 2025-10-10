@@ -5,6 +5,7 @@ import ContactInput from "./ContactInput";
 import ContactCheckbox from "./ContactCheckbox";
 import SecondaryButton from "@/components/shared/SecondaryButton";
 import { useTranslations } from "next-intl";
+import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
 
 export default function ContactForm() {
     const t = useTranslations("Contact.form");
@@ -98,11 +99,12 @@ export default function ContactForm() {
             </div>
 
             {/* Submit */}
-            <SecondaryButton className="ms-auto relative mt-20 bg-primary text-white w-[180px] sm:w-[200px] 2xl:w-[242px] h-[45px] sm:h-[50px] 2xl:h-[53px] overflow-hidden">
-                <span>{t("send")}</span>
-                <div className="bg-white w-[60px] sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px] absolute end-[-20px] bottom-[-40px] rounded-full"></div>
-                <div className="bg-highlight w-[60px] sm:w-[70px] 2xl:w-[75px] h-[60px] sm:h-[70px] 2xl:h-[75px] absolute end-[-25px] bottom-[-45px] rounded-full"></div>
-            </SecondaryButton>
+            <div className="flex items-center justify-center lg:justify-end mt-20 ">
+
+                <AnimatedSecondaryButton primary >
+                    {t("send")}
+                </AnimatedSecondaryButton>
+            </div>
         </form>
     );
 }

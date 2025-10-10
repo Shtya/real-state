@@ -28,7 +28,7 @@ export default function PageHeroSection({
                     <p className="text-base sm:text-xl lg:text-2xl text-white max-w-[90%] sm:max-w-[600px] lg:max-w-[663px] mb-4 sm:mb-6 lg:mb-[35px] mt-2 sm:mt-4 lg:mt-[10px]">
                         {description}
                     </p>
-                    <SecondaryButton className="bg-secondary text-white text-base sm:text-lg">
+                    <SecondaryButton className="bg-secondary transition-colors hover:bg-secondary-hover text-white text-base sm:text-lg">
                         {buttonText}
                     </SecondaryButton>
                 </div>
