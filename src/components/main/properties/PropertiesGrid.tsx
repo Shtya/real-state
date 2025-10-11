@@ -1,10 +1,6 @@
-'use client'
-
-import PropertyCardPreview from "@/components/shared/properties/PropertyCardPreview";
-import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import PropertyCardGrid from "@/components/shared/properties/PropertyCardGrid";
+import { getLocale } from "next-intl/server";
+import FilterProperties from "./FilterProperties";
 
 const properties = [
     {
@@ -12,7 +8,7 @@ const properties = [
         rate: 3,
         title: {
             ar: "شقة كبيرة مكونة من 4 غرف مع تراس جميل",
-            en: "Spacious 4-Bedroom Apartment with Beautiful Terrace",
+            en: "Spacious 4-Bedroom Apartment ",
         },
         address: {
             ar: "2972 طريق ويستهايمر. سانتا آنا، إلينوي 85486",
@@ -22,9 +18,9 @@ const properties = [
         imageUrl: "/properties/location/property-1.jpg",
         location: "Santa Ana, Illinois",
         bathrooms: 2,
-        guests: 6,
         bedrooms: 4,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-2",
@@ -41,9 +37,9 @@ const properties = [
         imageUrl: "/properties/location/property-2.jpg",
         location: "Cairo, Egypt",
         bathrooms: 3,
-        guests: 10,
         bedrooms: 5,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-3",
@@ -60,9 +56,9 @@ const properties = [
         imageUrl: "/properties/location/property-3.jpg",
         location: "Giza, Egypt",
         bathrooms: 2,
-        guests: 5,
         bedrooms: 3,
-        isMonthly: false,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-4",
@@ -79,9 +75,9 @@ const properties = [
         imageUrl: "/properties/location/property-4.jpg",
         location: "Dubai, UAE",
         bathrooms: 2,
-        guests: 4,
         bedrooms: 2,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-5",
@@ -98,9 +94,9 @@ const properties = [
         imageUrl: "/properties/location/property-5.jpg",
         location: "Tuscany, Italy",
         bathrooms: 1,
-        guests: 3,
         bedrooms: 2,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-6",
@@ -117,9 +113,9 @@ const properties = [
         imageUrl: "/properties/location/property-6.jpg",
         location: "Riyadh, Saudi Arabia",
         bathrooms: 4,
-        guests: 8,
         bedrooms: 4,
-        isMonthly: false,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-7",
@@ -136,9 +132,9 @@ const properties = [
         imageUrl: "/properties/location/property-2.jpg",
         location: "Tuscany, Italy",
         bathrooms: 1,
-        guests: 3,
         bedrooms: 2,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-8",
@@ -155,9 +151,9 @@ const properties = [
         imageUrl: "/properties/location/property-5.jpg",
         location: "Riyadh, Saudi Arabia",
         bathrooms: 4,
-        guests: 8,
         bedrooms: 4,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-9",
@@ -174,9 +170,9 @@ const properties = [
         imageUrl: "/properties/location/property-1.jpg",
         location: "Riyadh, Saudi Arabia",
         bathrooms: 4,
-        guests: 8,
         bedrooms: 4,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
     {
         id: "property-10",
@@ -193,101 +189,44 @@ const properties = [
         imageUrl: "/properties/location/property-2.jpg",
         location: "Riyadh, Saudi Arabia",
         bathrooms: 4,
-        guests: 8,
         bedrooms: 4,
-        isMonthly: true,
+        garages: 4,
+        totalArea: 1200
     },
 ];
 
-
-type RentType = 'yearly' | 'monthly';
-
-export default function BasedOnLocationSection() {
-    const locale = useLocale();
-    const t = useTranslations('HomePage.BasedOnLocationSection');
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-
-    const [activeRentalType, setActiveRentalType] = useState<RentType>(
-        (searchParams.get("rentalType") as RentType) || "monthly"
-    );
-    const activeSelector = `[data-rent-type="${activeRentalType}"]`;
-    const indicatorRef = useIndicatorPosition(activeSelector);
-
-    const handleFilterClick = (value: RentType) => {
-        const params = new URLSearchParams(searchParams.toString());
-        params.set("rentalType", value);
-        setActiveRentalType(value);
-        const newUrl = `${pathname}?${params.toString()}`;
-        window.history.replaceState(null, '', newUrl);
-    };
-
-    // Filter properties based on rental type
-    const filteredProperties = useMemo(() => properties.filter((p) => {
-        return activeRentalType === "monthly" ? p.isMonthly : !p.isMonthly
-    }), [activeRentalType, properties])
+export default async function PropertiesGrid() {
+    const locale = await getLocale();
 
     return (
-        <section className="mt-[40px] mx-2">
+        <div className="mt-28 mx-2">
             <div className="container ">
-                {/* Header */}
-                <div className="flex flex-col gap-5 items-center">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] text-dark font-bold">
-                        {t('title')}
-                    </h1>
-                    <p className="text-sm sm:text-base text-dark leading-[26px] max-w-[700px]">
-                        {t('description')}
-                    </p>
-                </div>
-
-                {/* Rental type toggle */}
-                <div className="relative flex gap-4 items-center mt-4">
-                    {/* Animated indicator */}
-                    <div className=" bg-lighter p-1 flex rounded-[2px]">
-                        <div
-                            ref={indicatorRef}
-                            className="absolute bg-secondary transition-all duration-300 ease-in-out rounded-[2px] z-0 will-change-transform"
-                        />
-
-                        {/* Buttons */}
-                        <button
-                            data-rent-type="yearly"
-                            onClick={() => handleFilterClick("yearly")}
-                            className={`relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "yearly" ? "text-light" : "text-dark"
-                                }`}
-                        >
-                            {t("yearly")}
-                        </button>
-                        <button
-                            data-rent-type="monthly"
-                            onClick={() => handleFilterClick("monthly")}
-                            className={` relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "monthly" ? "text-light" : "text-dark"
-                                }`}
-                        >
-                            {t("monthly")}
-                        </button>
+                <h1 className="text-3xl md:text-4xl lg:text-[55px] text-dark font-bold mb-8 text-center">Filtered properties </h1>
+                <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-10">
+                    <div className="flex-1 block">
+                        <FilterProperties />
                     </div>
+                    <div className="flex-2">
+                        <div className="grid grid-cols-12 gap-4 xl:gap-5">
+                            {properties.map((property, index) => (
+                                <div key={property.id} className="h-full  col-span-12 sm:col-span-6 xl:col-span-4">
 
-                    {t('rent')}
-                </div>
+                                    <PropertyCardGrid
+                                        key={property.id}
+                                        property={{
+                                            ...property,
+                                            title: property.title[locale as 'ar' | 'en'],
+                                            address: property.address[locale as 'ar' | 'en'],
+                                        }}
+                                        locale={locale as 'ar' | 'en'}
+                                    />
 
-                {/* Properties grid */}
-                <div key={activeRentalType} className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4 my-6 justify-center">
-                    {filteredProperties.map((property, index) => (
-
-                        <PropertyCardPreview
-                            key={property.id}
-                            property={{
-                                ...property,
-                                title: property.title[locale as 'ar' | 'en'],
-                                address: property.address[locale as 'ar' | 'en'],
-                            }}
-                            locale={locale as 'ar' | 'en'}
-                        />
-
-                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section >
+        </div>
     );
 }

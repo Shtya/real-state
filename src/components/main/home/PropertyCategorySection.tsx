@@ -118,7 +118,7 @@ export default function PropertyCategorySection() {
                             />
                             <PrimaryButton
                                 data-category="house"
-                                className={`text-nowrap z-[1] ${activeCategory === 'house' ? 'text-white' : 'text-black'}`}
+                                className={`text-nowrap transition-colors z-[1] ${activeCategory === 'house' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('house')}
                             >
                                 {t('filters.house')}
@@ -126,7 +126,7 @@ export default function PropertyCategorySection() {
 
                             <PrimaryButton
                                 data-category="realEstate"
-                                className={`text-nowrap z-[1] ${activeCategory === 'realEstate' ? 'text-white' : 'text-black'}`}
+                                className={`text-nowrap transition-colors z-[1] ${activeCategory === 'realEstate' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('realEstate')}
                             >
                                 {t('filters.realEstate')}
@@ -134,7 +134,7 @@ export default function PropertyCategorySection() {
 
                             <PrimaryButton
                                 data-category="apartment"
-                                className={`text-nowrap z-[1] ${activeCategory === 'apartment' ? 'text-white' : 'text-black'}`}
+                                className={`text-nowrap transition-colors z-[1] ${activeCategory === 'apartment' ? 'text-white' : 'text-black'}`}
                                 onClick={() => handleFilterClick('apartment')}
                             >
                                 {t('filters.apartment')}

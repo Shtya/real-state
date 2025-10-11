@@ -1,3 +1,4 @@
+import PropertiesGrid from "@/components/main/properties/PropertiesGrid";
 import PageHeroSection from "@/components/shared/PageHeroSection";
 import { getTranslations } from "next-intl/server";
 
@@ -21,7 +22,7 @@ export default async function PropertyPage() {
                 description={t('description')}
                 buttonText={t('seeMore')}
             />
-
+            <PropertiesGrid />
         </section>
     );
 }

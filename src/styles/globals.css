@@ -8,6 +8,7 @@
   --lighter: #F1E3D3;
   --highlight: #FFFFE9;
   --gray: #D9D9D9;
+  --grey-dark: #343A40;
   --input: #635959;
   --placeholder: #948888;
   --dark: #2A2A2A;
@@ -29,6 +30,7 @@
   --color-lighter: var(--lighter);
   --color-highlight: var(--highlight);
   --color-gray: var(--gray);
+  --color-gray-dark: var(--gray-dark);
   --color-input: var(--input);
   --color-placeholder: var(--placeholder);
   --color-dark: var(--dark);
