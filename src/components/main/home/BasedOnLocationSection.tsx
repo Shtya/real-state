@@ -241,9 +241,9 @@ export default function BasedOnLocationSection() {
                 </div>
 
                 {/* Rental type toggle */}
-                <div className="relative flex gap-4 items-center mt-4">
+                <div className="relative flex gap-4 items-center justify-center sm:justify-start mt-4">
                     {/* Animated indicator */}
-                    <div className=" bg-lighter p-1 flex rounded-[2px]">
+                    <div className="relative bg-lighter p-1 flex rounded-[2px]">
                         <div
                             ref={indicatorRef}
                             className="absolute bg-secondary transition-all duration-300 ease-in-out rounded-[2px] z-0 will-change-transform"
@@ -253,7 +253,7 @@ export default function BasedOnLocationSection() {
                         <button
                             data-rent-type="yearly"
                             onClick={() => handleFilterClick("yearly")}
-                            className={`relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "yearly" ? "text-light" : "text-dark"
+                            className={`relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "yearly" ? "text-white" : "text-dark"
                                 }`}
                         >
                             {t("yearly")}
@@ -261,7 +261,7 @@ export default function BasedOnLocationSection() {
                         <button
                             data-rent-type="monthly"
                             onClick={() => handleFilterClick("monthly")}
-                            className={` relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "monthly" ? "text-light" : "text-dark"
+                            className={` relative z-[1] flex-center py-1 px-6 rounded-[2px] ${activeRentalType === "monthly" ? "text-white" : "text-dark"
                                 }`}
                         >
                             {t("monthly")}

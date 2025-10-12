@@ -29,15 +29,9 @@ export function useIndicatorPosition(activeSelector: string) {
 
                 const top = targetRect.top - parentRect.top + parent.scrollTop;
 
-                if (isRTL) {
-                    const offset = parentRect.right - targetRect.right + parent.scrollLeft;
-                    indicator.style.right = `${offset}px`;
-                    indicator.style.left = "auto";
-                } else {
-                    const offset = targetRect.left - parentRect.left + parent.scrollLeft;
-                    indicator.style.left = `${offset}px`;
-                    indicator.style.right = "auto";
-                }
+                const offset = targetRect.left - parentRect.left + parent.scrollLeft;
+                indicator.style.left = `${offset}px`;
+                indicator.style.right = "auto";
 
                 indicator.style.top = `${top}px`;
                 indicator.style.width = `${targetRect.width}px`;

@@ -11,12 +11,17 @@ export default async function PropertyExplorer() {
     return (
         <div className="mt-28 mx-2">
             <div className="container ">
-                <h1 className="text-3xl md:text-4xl lg:text-[55px] text-dark font-bold mb-8 text-center">{t('header')}</h1>
                 <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-10">
-                    <div className="flex-1 block">
+                    <div className="max-sm:w-full max-sm:max-w-[416px] max-sm:mx-auto flex justify-between lg:block">
                         <FilterProperties />
+                        <h1 className="block lg:hidden text-2xl md:text-4xl text-dark font-bold">
+                            {t("header")}
+                        </h1>
                     </div>
                     <div className="flex-2">
+                        <h1 className="hidden lg:block pb-4 text-3xl md:text-4xl text-dark font-bold">
+                            {t("header")}
+                        </h1>
                         <PropertiesList locale={locale as Locale} />
                     </div>
                 </div>

@@ -18,7 +18,7 @@ export default function SecondaryButton({
     ...props
 }: SecondaryButtonProps) {
     const baseClasses =
-        "px-6 sm:px-8 py-2 sm:py-[6px] rounded-[10px] flex items-center justify-center";
+        "px-5 sm:px-8 py-2 sm:py-[6px] rounded-[10px] flex items-center justify-center";
     if (href) {
         return (
             <Link

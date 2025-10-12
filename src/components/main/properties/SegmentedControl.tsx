@@ -27,6 +27,7 @@ export default function SegmentedControl({
         <div className="bg-lighter relative rounded-full flex gap-2">
             <div
                 ref={indicatorRef}
+                id={dataAttrKey}
                 className="absolute bg-primary transition-all duration-300 ease-in-out rounded-full z-0 will-change-transform"
             />
             {options.map(({ value, label }) => (

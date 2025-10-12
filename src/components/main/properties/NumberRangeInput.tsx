@@ -35,6 +35,7 @@ export default function NumberRangeInput({ min, max, range, onChange, showProgre
     };
 
     const handleSliderChange = (val: { min: number; max: number }) => {
+        console.log(val)
         setLocalMin(val.min);
         setLocalMax(val.max);
         onChange({ min: val.min, max: val.max });

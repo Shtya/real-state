@@ -26,7 +26,7 @@ export default function PriceRangeSlider({ range, value, onChange, showCurrencyS
     useEffect(() => {
         if (value.min != debouncedValue[0] || value.max != debouncedValue[1])
             onChange({ min: debouncedValue[0], max: debouncedValue[1] });
-    }, [debouncedValue, value.min, value.max]);
+    }, [debouncedValue]);
 
     useEffect(() => {
         if (
@@ -36,7 +36,7 @@ export default function PriceRangeSlider({ range, value, onChange, showCurrencyS
         ) {
             setInternalValue([value.min, value.max]);
         }
-    }, [value, internalValue]);
+    }, [value]);
     return (
         <div className="pb-2 ">
             <div className="range-slider relative px-2">

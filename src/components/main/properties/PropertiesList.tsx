@@ -204,7 +204,7 @@ export default function PropertiesList({ locale }: PropertiesListProps) {
     return (
         <div className="grid grid-cols-12 gap-4 xl:gap-5">
             {properties.map((property) => (
-                <div key={property.id} className="h-full col-span-12 sm:col-span-6 xl:col-span-4">
+                <div key={property.id} className="h-full col-span-12 sm:col-span-6 xl:col-span-4 2xl:col-span-3">
                     <PropertyCardGrid
                         property={{
                             ...property,
