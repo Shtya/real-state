@@ -1,5 +1,4 @@
 import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +16,7 @@ interface BlogProps {
 
 
 export default function Blog({ blog, list = false }: BlogProps) {
-    const t = useTranslations("Blogs.Recent");
+    const t = useTranslations("blogs.recent");
 
     return (
         <div className={`overflow-hidden relative ${!list && "max-w-[400px]"} rounded-[16px] flex ${list ? "flex-col md:flex-row w-full md:space-x-10 space-y-7 md:space-y-0" : "flex-col w-fit mx-auto space-y-7"}`}>

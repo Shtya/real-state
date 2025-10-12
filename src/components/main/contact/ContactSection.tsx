@@ -7,7 +7,7 @@ import ContactForm from "./ContactForm";
 import { getTranslations } from "next-intl/server";
 
 export default async function ContactSection() {
-    const t = await getTranslations("Contact.information");
+    const t = await getTranslations("contact.information");
 
     return (
         <div className="bg-highlight pb-32 px-2">

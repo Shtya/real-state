@@ -1,9 +1,9 @@
-import PropertiesGrid from "@/components/main/properties/PropertiesGrid";
+import PropertyExplorer from "@/components/main/properties/PropertyExplorer";
 import PageHeroSection from "@/components/shared/PageHeroSection";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
-    const t = await getTranslations("Property.Hero");
+    const t = await getTranslations("property.hero");
 
     return {
         title: t("title"), // 👈 localized title
@@ -11,7 +11,7 @@ export async function generateMetadata() {
 }
 
 export default async function PropertyPage() {
-    const t = await getTranslations('Property.Hero');
+    const t = await getTranslations('property.hero');
 
     return (
         <section
@@ -22,7 +22,7 @@ export default async function PropertyPage() {
                 description={t('description')}
                 buttonText={t('seeMore')}
             />
-            <PropertiesGrid />
+            <PropertyExplorer />
         </section>
     );
 }

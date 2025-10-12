@@ -4,7 +4,7 @@ import SocialIcons from "./SocialIcons";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
-    const t = useTranslations("Footer");
+    const t = useTranslations("footer");
 
     return (
         <footer className="relative">

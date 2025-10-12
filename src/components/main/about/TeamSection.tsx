@@ -22,7 +22,7 @@ export default function TeamSection() {
     const [perView, setPerView] = useState(1);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const t = useTranslations("About.Team");
+    const t = useTranslations("about.team");
 
     if (!members || members.length === 0) return null;
 

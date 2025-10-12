@@ -1,6 +1,6 @@
 import PropertyCardGrid from "@/components/shared/properties/PropertyCardGrid";
-import { getLocale } from "next-intl/server";
-import FilterProperties from "./FilterProperties";
+import { Locale } from "@/types/global";
+
 
 const properties = [
     {
@@ -195,38 +195,26 @@ const properties = [
     },
 ];
 
-export default async function PropertiesGrid() {
-    const locale = await getLocale();
 
+type PropertiesListProps = {
+    locale: Locale;
+};
+
+export default function PropertiesList({ locale }: PropertiesListProps) {
     return (
-        <div className="mt-28 mx-2">
-            <div className="container ">
-                <h1 className="text-3xl md:text-4xl lg:text-[55px] text-dark font-bold mb-8 text-center">Filtered properties </h1>
-                <div className="flex flex-col lg:flex-row gap-4 md:gap-6 mb-10">
-                    <div className="flex-1 block">
-                        <FilterProperties />
-                    </div>
-                    <div className="flex-2">
-                        <div className="grid grid-cols-12 gap-4 xl:gap-5">
-                            {properties.map((property, index) => (
-                                <div key={property.id} className="h-full  col-span-12 sm:col-span-6 xl:col-span-4">
-
-                                    <PropertyCardGrid
-                                        key={property.id}
-                                        property={{
-                                            ...property,
-                                            title: property.title[locale as 'ar' | 'en'],
-                                            address: property.address[locale as 'ar' | 'en'],
-                                        }}
-                                        locale={locale as 'ar' | 'en'}
-                                    />
-
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+        <div className="grid grid-cols-12 gap-4 xl:gap-5">
+            {properties.map((property) => (
+                <div key={property.id} className="h-full col-span-12 sm:col-span-6 xl:col-span-4">
+                    <PropertyCardGrid
+                        property={{
+                            ...property,
+                            title: property.title[locale],
+                            address: property.address[locale],
+                        }}
+                        locale={locale}
+                    />
                 </div>
-            </div>
+            ))}
         </div>
     );
 }

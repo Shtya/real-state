@@ -73,7 +73,7 @@ const blogs = [{
 
 export default function RecentBlogs() {
     const locale = useLocale();
-    const t = useTranslations("Blogs.Recent");
+    const t = useTranslations("blogs.recent");
 
     return (
         <div className="bg-highlight pb-20 sm:pb-26 lg:pb-32 px-2">

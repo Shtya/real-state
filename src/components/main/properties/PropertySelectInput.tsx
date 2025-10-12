@@ -7,7 +7,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 export type Option = {
     label: string;
-    value: string;
+    value: string | number;
 };
 
 type SelectProps = {
@@ -16,6 +16,7 @@ type SelectProps = {
     className?: string;
     dir?: "ltr" | "rtl";
     value?: Option | null;
+    fallbackValue?: Option | null;
     onChange?: (opt: Option) => void;
 };
 
@@ -24,6 +25,7 @@ export default function PropertySelectInput({
     className,
     placeholder = "اختر",
     dir = "ltr",
+    fallbackValue,
     value,
     onChange,
 }: SelectProps) {
@@ -45,7 +47,7 @@ export default function PropertySelectInput({
             >
                 {/* Text */}
                 <span className="font-normal text-[16px] leading-[20px] text-placeholder">
-                    {value ? value.label : placeholder}
+                    {value?.label ?? fallbackValue?.label ?? placeholder}
                 </span>
 
                 {/* Icon */}

@@ -3,12 +3,11 @@
 import { useState } from "react";
 import ContactInput from "./ContactInput";
 import ContactCheckbox from "./ContactCheckbox";
-import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { useTranslations } from "next-intl";
 import { AnimatedSecondaryButton } from "@/components/shared/buttons/AnimatedSecondaryButton";
 
 export default function ContactForm() {
-    const t = useTranslations("Contact.form");
+    const t = useTranslations("contact.form");
 
     const [form, setForm] = useState({
         firstName: "",

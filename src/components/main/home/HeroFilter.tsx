@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 
 
 export default function HeroFilter() {
-    const t = useTranslations("HomePage.Filters");
+    const t = useTranslations("homePage.filters");
     const [location, setLocation] = useState<Option | null>(null);
     const [propertyType, setPropertyType] = useState<Option | null>(null);
     const [category, setCategory] = useState<Option | null>(null);

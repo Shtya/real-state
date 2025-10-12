@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+
 import { Open_Sans, Cairo } from "next/font/google";
 import "../../styles/globals.css";
 import Providers from "../ServerProviders";
@@ -24,7 +24,7 @@ const openSans = Open_Sans({
 
 
 export async function generateMetadata() {
-  const t = await getTranslations("Root");
+  const t = await getTranslations("root");
 
   return {
     title: {

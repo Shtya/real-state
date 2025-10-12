@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import RatingStars from "../RatingStars";
 import Tooltip from "../Tooltip";
 
-export type PropertyGrid = {
+export type PropertyGridPreview = {
     id: string;
     title: string;
     address: string;
@@ -23,10 +23,10 @@ export type PropertyGrid = {
 export default function PropertyCardPreview({
     property,
 }: {
-    property: PropertyGrid;
+    property: PropertyGridPreview;
     locale: "ar" | "en";
 }) {
-    const t = useTranslations("HomePage.BasedOnLocationSection"); // 👈 namespace for translations
+    const t = useTranslations("homePage.basedOnLocationSection"); // 👈 namespace for translations
 
     const period = property.isMonthly ? t("monthly") : t("yearly");
 

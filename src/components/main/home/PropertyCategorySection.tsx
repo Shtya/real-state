@@ -76,7 +76,7 @@ export default function PropertyCategorySection() {
     const searchParams = useSearchParams();
     const locale = useLocale();
     const { pathname } = useNormalizedPath();
-    const t = useTranslations('HomePage.PropertyCategory');
+    const t = useTranslations('homePage.propertyCategory');
 
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -84,7 +84,7 @@ export default function PropertyCategorySection() {
     const activeSelector = `[data-category="${activeCategory}"]`;
     const indicatorRef = useIndicatorPosition(activeSelector);
 
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
     const isRTL = locale === 'ar';
 
 

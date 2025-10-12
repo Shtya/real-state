@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 
 
 export async function generateMetadata() {
-    const t = await getTranslations("About");
+    const t = await getTranslations("about");
 
     return {
         title: t("header"), // 👈 localized title
@@ -14,7 +14,7 @@ export async function generateMetadata() {
 }
 
 export default async function AboutPage() {
-    const t = await getTranslations("About");
+    const t = await getTranslations("about");
 
     return (
         <div>

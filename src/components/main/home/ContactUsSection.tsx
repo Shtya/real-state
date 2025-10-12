@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function ContactUsSection() {
-    const t = useTranslations("HomePage.ContactUs");
+    const t = useTranslations("homePage.contactUs");
 
     return (
         <section

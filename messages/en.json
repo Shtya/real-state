@@ -1,9 +1,9 @@
 {
-    "Root": {
+    "root": {
         "siteName": "Real State",
         "description": "Discover, list, and manage properties with Real State."
     },
-    "Header": {
+    "header": {
         "logo": "QUNUF",
         "nav": {
             "home": "Home",
@@ -14,12 +14,12 @@
             "dashboard": "Dashboard"
         }
     },
-    "HomePage": {
-        "Hero": {
+    "homePage": {
+        "hero": {
             "heading": "Designing Your\nNext Chapter",
             "clients": "{count}+ Happy Clients"
         },
-        "Filters": {
+        "filters": {
             "labels": {
                 "location": "Location",
                 "propertyType": "Property Type",
@@ -44,11 +44,11 @@
             "search": "Search",
             "adjustments": "Filters"
         },
-        "RecentProperties": {
+        "recentProperties": {
             "title": "Lates property",
             "description": "We have completed several housing, villa and property orders with our professional team, at costs that suit you"
         },
-        "PropertyCategory": {
+        "propertyCategory": {
             "title": "Property Category",
             "description": "Lörem ipsum päde hypertropi eller mitin antir evis ofäns i jonin som pseudonäning. Manat preber. Pös vil gigana: nisöbel på igt. ",
             "filters": {
@@ -57,7 +57,7 @@
                 "apartment": "Apartment"
             }
         },
-        "BasedOnLocationSection": {
+        "basedOnLocationSection": {
             "title": "Based on your location",
             "description": "Start discover your liking future home",
             "yearly": "Yearly",
@@ -67,7 +67,7 @@
             "guests": "Guests",
             "bedrooms": "Bedrooms"
         },
-        "Features": {
+        "features": {
             "mainTitle": "The Perfect Place to Manage Your Property",
             "mainDescription": "Work with the best suite of property management tools on the market.",
             "card1": {
@@ -81,15 +81,15 @@
                 "button": "Find Out More"
             }
         },
-        "ContactUs": {
+        "contactUs": {
             "title": "Subscribe Our Newsletter",
             "description": "Lorem ipsum dolor sit amet consectetur. Feugiat ut aliquet sit pellentesque sollicitudin. Egestas faucibus lacus diam in senectus consectetur. Mattis elit adipiscing quisque tellus scelerisque vehicula ante nunc.",
             "placeholder": "Enter your email",
             "button": "Get a Quote"
         }
     },
-    "About": {
-        "Hero": {
+    "about": {
+        "hero": {
             "title": "About Us",
             "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
             "seeMore": "See More"
@@ -110,12 +110,12 @@
             "description": "Lorem ipsum was conceived as filler text, formatted in a certain way to enable the presentation of graphic elements in documents, without the need for formal copy. ",
             "button": "Learn More"
         },
-        "Team": {
+        "team": {
             "header": "Our Team"
         }
     },
-    "Contact": {
-        "Hero": {
+    "contact": {
+        "hero": {
             "title": "Contatc Us",
             "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
             "seeMore": "See More"
@@ -143,25 +143,71 @@
             "send": "Send Message"
         }
     },
-    "Blogs": {
-        "Hero": {
+    "blogs": {
+        "hero": {
             "title": "Blogs",
             "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
             "seeMore": "See More"
         },
-        "Recent": {
+        "recent": {
             "title": "Our Recent Blogs",
             "readMore": "Read More"
         }
     },
-    "Property": {
-        "Hero": {
+    "property": {
+        "hero": {
             "title": "Property",
             "description": "From preschool to pre-tertiary, our students enjoy fun, interactive and relevant lessons and are empowered to think beyond the confines of the classroom.",
             "seeMore": "See More"
+        },
+        "filter": {
+            "header": "Filtered properties",
+            "title": "Filters",
+            "subtitle": "Property Filter",
+            "reset": "Reset all",
+            "location": {
+                "title": "Location",
+                "options": "{option, select, all {Any area} cairo {Cairo} alexandria {Alexandria} giza {Giza} other {Unknown}}"
+            },
+            "subtype": {
+                "title": "Subtype",
+                "residential": {
+                    "options": "{option, select, condo {Condo} multiFamily {Multi-family} townhomes {Townhomes} singleFamily {Single-Family} other {Unknown}}"
+                },
+                "commercial": {
+                    "options": "{option, select, office {Office} retail {Retail} warehouse {Warehouse} industrial {Industrial} other {Unknown}}"
+                }
+            },
+            "bedrooms": {
+                "title": "Bedrooms",
+                "options": "{option, select, any {Any} 1 {1} 2 {2} 3 {3} 4 {4} fiveAndMore {5+} other {Unknown}}"
+            },
+            "bathrooms": {
+                "title": "Bathrooms",
+                "options": "{option, select, any {Any} 1_0 {1.0} 1_5 {1.5} 2_0 {2.0} 2_5 {2.5} threeAndMore {3+} other {Unknown}}"
+            },
+            "rentalPeriod": {
+                "title": "Rental Period",
+                "options": "{option, select, yearly {Yearly} monthly {Monthly} other {Unknown}}"
+            },
+            "propertyType": {
+                "title": "Property Type",
+                "options": "{option, select, residential {Residential} commercial {Commercial} other {Unknown}}"
+            },
+            "furnishedType": {
+                "title": "Furnished Type",
+                "options": "{option, select, furnished {Furnished} unfurnished {Unfurnished} other {Unknown}}"
+            },
+            "features": {
+                "title": "Features",
+                "options": "{option, select, airConditioning {Air conditioning} assistedLiving {Assisted living} disabilityAccess {Disability Access} controlledAccess {Controlled access} cableReady {Cable Ready} availableNow {Available now} college {College} corporate {Corporate} elevator {Elevator} extraStorage {Extra Storage} highSpeedInternet {High speed internet} garage {Garage} petAllowed {Pet allowed} other {Unknown}}"
+            },
+            "priceRange": "Price range",
+            "squareFeet": "Square feet",
+            "yearBuilt": "Year Built"
         }
     },
-    "Footer": {
+    "footer": {
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "about": {
             "title": "About",

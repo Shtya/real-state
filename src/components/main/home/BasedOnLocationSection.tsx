@@ -204,7 +204,7 @@ type RentType = 'yearly' | 'monthly';
 
 export default function BasedOnLocationSection() {
     const locale = useLocale();
-    const t = useTranslations('HomePage.BasedOnLocationSection');
+    const t = useTranslations('homePage.basedOnLocationSection');
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -225,7 +225,7 @@ export default function BasedOnLocationSection() {
     // Filter properties based on rental type
     const filteredProperties = useMemo(() => properties.filter((p) => {
         return activeRentalType === "monthly" ? p.isMonthly : !p.isMonthly
-    }), [activeRentalType, properties])
+    }), [activeRentalType])
 
     return (
         <section className="mt-[40px] mx-2">
@@ -273,7 +273,7 @@ export default function BasedOnLocationSection() {
 
                 {/* Properties grid */}
                 <div key={activeRentalType} className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-4 my-6 justify-center">
-                    {filteredProperties.map((property, index) => (
+                    {filteredProperties.map((property) => (
 
                         <PropertyCardPreview
                             key={property.id}

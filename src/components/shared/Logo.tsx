@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 export default function Logo() {
-    const t = useTranslations("Header");
+    const t = useTranslations("header");
 
     return (
         <div>

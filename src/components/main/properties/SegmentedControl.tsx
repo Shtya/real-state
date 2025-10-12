@@ -1,24 +1,26 @@
 'use client';
 import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
-import { ReactNode } from "react";
 
-type SegmentedControlProps<T extends string> = {
-    options: { value: T; content: ReactNode }[];
-    activeValue: T;
-    onChange: (value: T) => void;
-    dataAttrKey?: string; //optional custom attribute name
-    children?: ReactNode; //optional custom attribute name
+type SegmentedControlProps = {
+    options: { value: string; label: string }[];
+    activeValue: string;
+    fallbackValue?: string | null;
+    onChange: (value: string) => void;
+    dataAttrKey?: string; // optional custom attribute name
+    children?: string;
 };
 
-export default function SegmentedControl<T extends string>({
+export default function SegmentedControl({
     options,
     activeValue,
+    fallbackValue,
     onChange,
-    dataAttrKey = "data-segment", //default fallback
+    dataAttrKey = "data-segment",
     children
-}: SegmentedControlProps<T>) {
-    const activeSelector = `[${dataAttrKey}="${activeValue}"]`;
+}: SegmentedControlProps) {
+    const effectiveValue = activeValue ?? fallbackValue ?? options[0]?.value;
+    const activeSelector = `[${dataAttrKey}="${effectiveValue}"]`;
     const indicatorRef = useIndicatorPosition(activeSelector);
 
     return (
@@ -27,15 +29,15 @@ export default function SegmentedControl<T extends string>({
                 ref={indicatorRef}
                 className="absolute bg-primary transition-all duration-300 ease-in-out rounded-full z-0 will-change-transform"
             />
-            {options.map(({ value, content }) => (
+            {options.map(({ value, label }) => (
                 <SecondaryButton
                     key={value}
                     {...{ [dataAttrKey]: value }} // dynamic attribute assignment
-                    className={`w-full transition-colors text-nowrap z-[1] ${activeValue === value ? 'text-white' : 'text-black'
+                    className={`w-full transition-colors text-nowrap z-[1] ${effectiveValue === value ? 'text-white' : 'text-black'
                         }`}
                     onClick={() => onChange(value)}
                 >
-                    {content}
+                    {label}
                 </SecondaryButton>
             ))}
             {children}

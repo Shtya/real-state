@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function Features() {
-    const t = useTranslations("HomePage.Features");
+    const t = useTranslations("homePage.features");
 
     return (
         <section className="my-8 mx-2" id="features">

@@ -11,7 +11,7 @@ import Logo from "../Logo";
 
 export default function Header() {
     const { normalizedPath } = useNormalizedPath();
-    const t = useTranslations("Header");
+    const t = useTranslations("header");
     const [isSticky, setIsSticky] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -122,7 +122,7 @@ export default function Header() {
             >
 
                 <nav className={`flex flex-col transition-all duration-500 text-[#212529] divide-y divide-gray-200`}>
-                    {navLinks.map(({ label, href }, i) => (
+                    {navLinks.map(({ label, href }) => (
                         <Link
                             key={href}
                             href={href}

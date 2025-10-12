@@ -4,7 +4,7 @@ import HeroFilter from "./HeroFilter";
 import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
-    const t = useTranslations("HomePage.Hero");
+    const t = useTranslations("homePage.hero");
 
     return (
         <section

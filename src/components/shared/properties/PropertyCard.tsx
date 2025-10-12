@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GoArrowUpRight } from "react-icons/go";
 import FloatingActionButton from "../buttons/FloatingActionButton";
 
 type Property = {

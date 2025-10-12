@@ -1,9 +1,9 @@
 {
-    "Root": {
+    "root": {
         "siteName": "قنوف",
         "description": "اكتشف وأدر العقارات مع قنوف."
     },
-    "Header": {
+    "header": {
         "logo": "قنوف",
         "nav": {
             "home": "الرئيسية",
@@ -14,12 +14,12 @@
             "dashboard": "لوحة القيادة"
         }
     },
-    "HomePage": {
-        "Hero": {
+    "homePage": {
+        "hero": {
             "heading": "اختار العقار\nالمناسب لك للايجار",
             "clients": "عملاء +{count}"
         },
-        "Filters": {
+        "filters": {
             "labels": {
                 "location": "الموقع",
                 "propertyType": "نوع العقار",
@@ -44,11 +44,11 @@
             "search": "بحث",
             "adjustments": "تصفية"
         },
-        "RecentProperties": {
+        "recentProperties": {
             "title": "احدث العقارات",
             "description": "لقد قمنا بإنجاز العديد من طلبات السكن والفلل والعقارات مع فريقنا المتخصص، بتكاليف تناسبك"
         },
-        "PropertyCategory": {
+        "propertyCategory": {
             "title": "فئة العقار",
             "description": "يمكن أن يؤدي هذا إلى تضخم أو تثبيط ما هو موجود في الجسم ويرتبط ببعضه البعض بشكل زائف. مانات بريبر.",
             "filters": {
@@ -57,7 +57,7 @@
                 "apartment": "شقة"
             }
         },
-        "BasedOnLocationSection": {
+        "basedOnLocationSection": {
             "title": "بناء على موقعك",
             "description": "ابدأ باكتشاف منزلك المستقبلي الذي يعجبك",
             "yearly": "سنوى",
@@ -67,7 +67,7 @@
             "guests": "اشخاص",
             "bedrooms": "غرف نوم"
         },
-        "Features": {
+        "features": {
             "mainTitle": "المكان المثالي لإدارة ممتلكاتك",
             "mainDescription": "تواصل مع أكثر من 75 مليون مستأجر يبحثون عن منازل جديدة باستخدام منصة التسويق الشاملة لدينا.",
             "card1": {
@@ -81,15 +81,15 @@
                 "button": "اكتشف المزيد"
             }
         },
-        "ContactUs": {
+        "contactUs": {
             "title": "اشترك في النشرة الإخبارية لدينا",
             "description": "لوريم إيبسوم دولور الجلوس أميت كونسيكتور. لوريم إيبسوم دولور الجلوس أميت كونسيكتور.لوريم إيبسوم دولور الجلوس أميت كونسيكتور.لوريم إيبسوم دولور الجلوس أميت كونسيكتور.",
             "placeholder": "أدخل بريدك الإلكتروني",
             "button": "اشترك معنا"
         }
     },
-    "About": {
-        "Hero": {
+    "about": {
+        "hero": {
             "title": "معلومات عنا",
             "description": "من مرحلة ما قبل المدرسة إلى ما قبل الجامعة، يستمتع طلابنا بدروس ممتعة وتفاعلية وذات صلة، ويُمنحون القدرة على التفكير خارج حدود الفصل الدراسي.",
             "seeMore": "رؤية المزيد"
@@ -110,12 +110,12 @@
             "description": "لوريم إيبسوم دولور الجلوس أميت كونسيكتور. لوريم إيبسوم دولور الجلوس أميت كونسيكتور.لوريم إيبسوم دولور الجلوس أميت كونسيكتور.لوريم إيبسوم دولور الجلوس أميت كونسيكتور.",
             "button": "اعرف المزيد"
         },
-        "Team": {
+        "team": {
             "header": "فريقنا"
         }
     },
-    "Contact": {
-        "Hero": {
+    "contact": {
+        "hero": {
             "title": "اتصل بنا",
             "description": "من مرحلة ما قبل المدرسة إلى مرحلة ما قبل التعليم العالي، يستمتع طلابنا بالدروس الممتعة والتفاعلية والمهمة ويتم تمكينهم من التفكير خارج حدود الفصل الدراسي",
             "seeMore": "رؤية المزيد"
@@ -143,25 +143,71 @@
             "send": "إرسال الرسالة"
         }
     },
-    "Blogs": {
-        "Hero": {
+    "blogs": {
+        "hero": {
             "title": "المدونات",
             "description": "من مرحلة ما قبل المدرسة إلى مرحلة ما قبل التعليم العالي، يستمتع طلابنا بالدروس الممتعة والتفاعلية والمهمة ويتم تمكينهم من التفكير خارج حدود الفصل الدراسي",
             "seeMore": "رؤية المزيد"
         },
-        "Recent": {
+        "recent": {
             "title": "أحدث المقالات",
             "readMore": "اقرأ المزيد"
         }
     },
-    "Property": {
-        "Hero": {
+    "property": {
+        "hero": {
             "title": "العقار",
             "description": "من مرحلة ما قبل المدرسة إلى مرحلة ما قبل التعليم العالي، يستمتع طلابنا بالدروس الممتعة والتفاعلية والمهمة ويتم تمكينهم من التفكير خارج حدود الفصل الدراسي",
             "seeMore": "رؤية المزيد"
+        },
+        "filter": {
+            "header": "ابعث عن عقارك",
+            "title": "الفلاتر",
+            "subtitle": "تصفية العقارات",
+            "reset": "إعادة التعيين",
+            "location": {
+                "title": "الموقع",
+                "options": "{option, select, all {أي منطقة} cairo {القاهرة} alexandria {الإسكندرية} giza {الجيزة} other {غير معروف}}"
+            },
+            "subtype": {
+                "title": "النوع الفرعي",
+                "residential": {
+                    "options": "{option, select, condo {شقة} multiFamily {متعدد العائلات} townhomes {تاون هاوس} singleFamily {منزل عائلي} other {غير معروف}}"
+                },
+                "commercial": {
+                    "options": "{option, select, office {مكتب} retail {تجزئة} warehouse {مستودع} industrial {صناعي} other {غير معروف}}"
+                }
+            },
+            "bedrooms": {
+                "title": "غرف النوم",
+                "options": "{option, select, any {أي} 1 {1} 2 {2} 3 {3} 4 {4} fiveAndMore {5+} other {غير معروف}}"
+            },
+            "bathrooms": {
+                "title": "الحمامات",
+                "options": "{option, select, any {أي} 1_0 {1.0} 1_5 {1.5} 2_0 {2.0} 2_5 {2.5} threeAndMore {3+} other {غير معروف}}"
+            },
+            "rentalPeriod": {
+                "title": "مدة الإيجار",
+                "options": "{option, select, yearly {سنوي} monthly {شهري} other {غير معروف}}"
+            },
+            "propertyType": {
+                "title": "نوع العقار",
+                "options": "{option, select, residential {سكني} commercial {تجاري} other {غير معروف}}"
+            },
+            "furnishedType": {
+                "title": "نوع التأثيث",
+                "options": "{option, select, furnished {مفروش} unfurnished {غير مفروش} other {غير معروف}}"
+            },
+            "features": {
+                "title": "المميزات",
+                "options": "{option, select, airConditioning {تكييف هواء} assistedLiving {سكن مدعوم} disabilityAccess {إمكانية وصول لذوي الإعاقة} controlledAccess {دخول مُتحكم به} cableReady {جاهز للكابل} availableNow {متاح الآن} college {جامعة} corporate {شركات} elevator {مصعد} extraStorage {مساحة تخزين إضافية} highSpeedInternet {إنترنت عالي السرعة} garage {كراج} petAllowed {مسموح بالحيوانات} other {غير معروف}}"
+            },
+            "priceRange": "نطاق السعر",
+            "squareFeet": "المساحة (قدم²)",
+            "yearBuilt": "سنة البناء"
         }
     },
-    "Footer": {
+    "footer": {
         "description": "لوريم إيبسوم هو ببساطة نص شكلي (أي غير واضح) يُستخدم في صناعة الطباعة والتنضيد. ظل لوريم إيبسوم النص الشكلي القياسي لهذه الصناعة منذ القرن السادس عشر، عندما قام طابع مجهول بنسخ نسخة من الطباعة وخلطها لإنشاء كتاب نماذج طباعة.",
         "about": {
             "title": "معلومات عنا",

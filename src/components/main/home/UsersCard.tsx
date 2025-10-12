@@ -10,7 +10,7 @@ const users = [
 
 export default function UsersCard() {
     const rate = 4.5;
-    const t = useTranslations('HomePage.Hero');
+    const t = useTranslations('homePage.hero');
 
     return (
         <div className="absolute  w-full sm:w-fit  end-0 bottom-0">

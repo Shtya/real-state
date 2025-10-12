@@ -81,7 +81,7 @@ const properties = [
 
 
 export default function RecentPropertiesSection() {
-    const t = useTranslations('HomePage.RecentProperties');
+    const t = useTranslations('homePage.recentProperties');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const locale = useLocale();

@@ -8,9 +8,9 @@ import { formatLargeNumber } from '@/utils/helpers';
 
 
 interface PriceRangeSliderProps {
-    value: { min: number | undefined, max: number | undefined }
+    value: { min: number, max: number }
     range?: { min: number, max: number }
-    onChange: (range: { min: number | null; max: number | null }) => void;
+    onChange: (range: { min: number; max: number }) => void;
     showCurrencySymbol?: boolean;
 }
 
@@ -26,7 +26,7 @@ export default function PriceRangeSlider({ range, value, onChange, showCurrencyS
     useEffect(() => {
         if (value.min != debouncedValue[0] || value.max != debouncedValue[1])
             onChange({ min: debouncedValue[0], max: debouncedValue[1] });
-    }, [debouncedValue]);
+    }, [debouncedValue, value.min, value.max]);
 
     useEffect(() => {
         if (
@@ -36,7 +36,7 @@ export default function PriceRangeSlider({ range, value, onChange, showCurrencyS
         ) {
             setInternalValue([value.min, value.max]);
         }
-    }, [value]);
+    }, [value, internalValue]);
     return (
         <div className="pb-2 ">
             <div className="range-slider relative px-2">

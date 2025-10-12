@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GoArrowUpRight } from "react-icons/go";
 import FloatingActionButton from "../buttons/FloatingActionButton";
 
 type Property = {
@@ -14,11 +13,9 @@ type Property = {
 export default function PropertyCategoryCard({
     property,
     locale,
-    className,
 }: {
     property: Property;
     locale: 'ar' | 'en';
-    className?: string
 }) {
     const period = locale === 'ar' ? '/ سنوى' : '/ Yearly';
 
