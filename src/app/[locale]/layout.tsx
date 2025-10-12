@@ -1,5 +1,5 @@
 
-import { Open_Sans, Cairo } from "next/font/google";
+import { Open_Sans, Tajawal } from "next/font/google";
 import "../../styles/globals.css";
 import Providers from "../ServerProviders";
 import { routing } from "@/i18n/routing";
@@ -8,11 +8,11 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 
-const plexMomo = Cairo({
+const plexMomo = Tajawal({
   variable: "--font-app",
   display: "swap",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["200", "300", "400", "500", "700"],
 });
 
 const openSans = Open_Sans({

@@ -9,7 +9,7 @@ export default function Footer() {
     return (
         <footer className="relative">
             {/* Background Image + Filter */}
-            <div className="absolute inset-0 bg-[url('/footer.jpg')] bg-cover bg-[center_30%] z-[1] filter grayscale brightness-50 contrast-100 opacity-60"></div>
+            <div className="absolute inset-0 bg-[url('/footer.jpg')] bg-cover bg-[center_30%] z-[1] filter grayscale brightness-[35%] contrast-[120%] opacity-[0.65]"></div>
 
             <div className="container relative z-[3] py-18 ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-start mx-2">
@@ -18,7 +18,7 @@ export default function Footer() {
                         <div className="sm:ms-4">
                             <Logo />
                         </div>
-                        <p className="text-sm sm:text-base text-dark max-w-[370px] leading-relaxed">
+                        <p className="text-sm sm:text-base text-white max-w-[370px] leading-relaxed">
                             {t("description")}
                         </p>
                         <SocialIcons />
@@ -54,7 +54,7 @@ export default function Footer() {
                         <h2 className="mb-6 text-primary font-bold text-xl sm:text-2xl">
                             {t("contact.title")}
                         </h2>
-                        <ul className="flex flex-col gap-4">
+                        <ul className="flex flex-col gap-4 text-white">
                             <li><p className="text-base md:text-lg">{t("contact.address")}</p></li>
                             <li><a
                                 href="tel:+972029182132"
@@ -87,7 +87,7 @@ function FooterLink({ href, label }: FooterLinkProps) {
         <li>
             <Link
                 href={href}
-                className="text-base text-dark hover:text-primary transition-colors duration-200"
+                className="text-base text-white hover:text-primary transition-colors duration-200"
             >
                 {label}
             </Link>
