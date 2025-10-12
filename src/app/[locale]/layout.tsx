@@ -12,7 +12,7 @@ const plexMomo = Tajawal({
   variable: "--font-app",
   display: "swap",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
+  weight: ["200", "300", "400", "500", "700", "800", "900"],
 });
 
 const openSans = Open_Sans({
