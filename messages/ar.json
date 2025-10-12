@@ -205,6 +205,12 @@
             "priceRange": "نطاق السعر",
             "squareFeet": "المساحة (قدم²)",
             "yearBuilt": "سنة البناء"
+        },
+        "grid": {
+            "bedrooms": "غرف النوم",
+            "bathrooms": "الحمامات",
+            "totalArea": "المساحة",
+            "garages": "الكراجات"
         }
     },
     "footer": {

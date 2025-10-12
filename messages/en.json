@@ -205,6 +205,12 @@
             "priceRange": "Price range",
             "squareFeet": "Square feet",
             "yearBuilt": "Year Built"
+        },
+        "grid": {
+            "bedrooms": "Bedrooms",
+            "bathrooms": "Bathrooms",
+            "totalArea": "Total area",
+            "garages": "Garages"
         }
     },
     "footer": {

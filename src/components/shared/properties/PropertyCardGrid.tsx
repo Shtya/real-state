@@ -4,6 +4,7 @@ import { IoBedOutline } from "react-icons/io5";
 import Tooltip from "../Tooltip";
 import { ReactNode } from "react";
 import { LuBath } from "react-icons/lu";
+import { getTranslations } from "next-intl/server";
 
 
 export type PropertyGrid = {
@@ -19,13 +20,14 @@ export type PropertyGrid = {
     totalArea: number;
 };
 
-export default function PropertyCardGrid({
+export default async function PropertyCardGrid({
     property,
 }: {
     property: PropertyGrid;
     locale: "ar" | "en";
 }) {
 
+    const t = await getTranslations('property.grid')
     return (
         <div className="h-full relative max-w-[416px] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1  overflow-hidden"
             style={{ boxShadow: "0px 4px 10px 0px #00000012" }}>
@@ -59,12 +61,12 @@ export default function PropertyCardGrid({
                 <div className="grid grid-cols-4 gap-3 justify-between items-end border-t border-[#7A74741A] pt-[10px]">
                     <InfoWithTooltip
                         icon={<IoBedOutline size={21} />}
-                        label="Bedrooms"
+                        label={t('bedrooms')}
                         value={property.bedrooms}
                     />
                     <InfoWithTooltip
                         icon={<LuBath size={21} />}
-                        label="Bathrooms"
+                        label={t('bathrooms')}
                         value={property.bathrooms}
                     />
 
@@ -75,7 +77,7 @@ export default function PropertyCardGrid({
                                 <path d="M16.9328 11.8492C16.7384 11.8492 16.5518 11.9264 16.4143 12.064C16.2768 12.2015 16.1995 12.388 16.1995 12.5825V15.3325L5.50018 4.63317H8.25018C8.44467 4.63317 8.6312 4.55591 8.76872 4.41838C8.90625 4.28086 8.98351 4.09433 8.98351 3.89984C8.98351 3.70535 8.90625 3.51882 8.76872 3.38129C8.6312 3.24377 8.44467 3.1665 8.25018 3.1665H3.50551C3.37131 3.1665 3.24261 3.21981 3.14772 3.31471C3.05282 3.4096 2.99951 3.5383 2.99951 3.6725V8.41717C2.99951 8.61166 3.07677 8.79819 3.2143 8.93572C3.35183 9.07324 3.53835 9.1505 3.73285 9.1505C3.92734 9.1505 4.11386 9.07324 4.25139 8.93572C4.38892 8.79819 4.46618 8.61166 4.46618 8.41717V5.66717L15.1655 16.3665H12.4155C12.221 16.3665 12.0345 16.4438 11.897 16.5813C11.7594 16.7188 11.6822 16.9053 11.6822 17.0998C11.6822 17.2943 11.7594 17.4809 11.897 17.6184C12.0345 17.7559 12.221 17.8332 12.4155 17.8332H17.1602C17.2944 17.8332 17.4231 17.7799 17.518 17.685C17.6129 17.5901 17.6662 17.4614 17.6662 17.3272V12.5825C17.6662 12.388 17.5889 12.2015 17.4514 12.064C17.3139 11.9264 17.1273 11.8492 16.9328 11.8492Z" fill="var(--primary)" />
                             </svg>
                         }
-                        label="Total area"
+                        label={t('totalArea')}
                         value={property.totalArea}
                     />
 
@@ -86,7 +88,7 @@ export default function PropertyCardGrid({
                             </svg>
 
                         }
-                        label="Garages"
+                        label={t('garages')}
                         value={property.garages}
                     />
 
