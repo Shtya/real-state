@@ -161,7 +161,7 @@
             "seeMore": "See More"
         },
         "filter": {
-            "header": "Filtered properties",
+            "header": "Filtered Properties",
             "title": "Filters",
             "subtitle": "Property Filter",
             "reset": "Reset all",
