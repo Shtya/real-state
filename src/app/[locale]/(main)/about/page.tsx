@@ -17,7 +17,7 @@ export default async function AboutPage() {
     const t = await getTranslations("about");
 
     return (
-        <div>
+        <section className="lg:overflow-x-hidden">
             <MainAboutSection />
             <div className="bg-highlight 2xl:pb-[150px]">
                 <PageHeader title={t("header")} className="bg-highlight" />
@@ -46,6 +46,6 @@ export default async function AboutPage() {
             </div>
 
             <TeamSection />
-        </div>
+        </section>
     );
 }
