@@ -29,7 +29,7 @@ export default async function PropertyCardGrid({
 
     const t = await getTranslations('property.grid')
     return (
-        <div className="h-full relative max-w-[416px] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1  overflow-hidden"
+        <div className="h-full relative max-w-[416px] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1"
             style={{ boxShadow: "0px 4px 10px 0px #00000012" }}>
             <div className="max-w-[416px] overflow-hidden">
 

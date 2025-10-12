@@ -40,7 +40,7 @@ export default function FilterProperties() {
 
 
     return (
-        <div className="sticky top-24  bg-white rounded-[12px] lg:border lg:border-gray lg:shadow max-w-[335px]">
+        <div className="sticky top-24 bg-white rounded-[12px] lg:border lg:border-gray lg:shadow max-w-[335px]">
 
             <Sidebar
                 title={t("title")}

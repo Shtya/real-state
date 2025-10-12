@@ -16,7 +16,7 @@ export default async function PropertyPage() {
     return (
         <section
             id="property"
-            className="relative overflow-hidden">
+            className="relative">
             <PageHeroSection
                 title={t('title')}
                 description={t('description')}

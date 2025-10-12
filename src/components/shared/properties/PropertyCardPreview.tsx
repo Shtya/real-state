@@ -31,7 +31,7 @@ export default function PropertyCardPreview({
     const period = property.isMonthly ? t("monthly") : t("yearly");
 
     return (
-        <div className="relative max-w-[411px] border border-[#ECF1F8] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1 hover:border-primary/30 overflow-hidden">
+        <div className="relative max-w-[411px] border border-[#ECF1F8] rounded-[5px] w-fit mx-auto flex flex-col transition hover:shadow-2xl hover:-translate-y-1 hover:border-primary/30">
             {/* <div className="absolute top-[7px] end-[7px] z-[1] flex flex-row-reverse">
                 <RatingStars rating={property.rate} reverse />
             </div> */}
