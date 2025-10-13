@@ -49,7 +49,7 @@ export function useIndicatorPosition(activeSelector: string) {
             }
             window.removeEventListener("resize", updatePosition);
         };
-    }, [activeSelector, isRTL]);
+    }, [activeSelector ?? "", isRTL ?? false]);
 
     return indicatorRef;
 }
