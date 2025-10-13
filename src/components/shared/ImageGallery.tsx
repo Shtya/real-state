@@ -48,7 +48,7 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                             priority
                         />
                         {/* Overlay Content */}
-                        <div className="absolute bottom-4 left-4 flex items-center gap-4 p-3 rounded-xl">
+                        <div className="absolute bottom-4 start-4 flex items-center gap-4 p-3 rounded-xl">
                             <Image
                                 src={userImage}
                                 alt="User"
@@ -56,7 +56,7 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                                 height={80}
                                 className="rounded-full w-[64px] sm:w-[72px] md:w-[80px] lg:w-[80px] h-[64px] sm:h-[72px] md:h-[80px] lg:h-[80px]"
                             />
-                            <div className="text-white">
+                            <div className="text-white text-start">
                                 <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
                                     ${price.amount} / {periodLabel}
                                 </p>
