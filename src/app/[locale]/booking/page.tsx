@@ -28,13 +28,13 @@ export default function BootingPage() {
     };
 
     return (
-        <div className="mx-2">
+        <div className="mx-2  flex flex-col hero-height">
             <div className="border-b border-b-gray py-3 flex items-center justify-center gap-5">
                 <Logo className="justify-center" />
                 <LocaleSwitcher />
             </div>
 
-            <div className="container py-12">
+            <div className="flex-1 flex flex-col container pt-12 pb-6">
                 {!completed ? (
                     <>
                         {/* Stepper */}
@@ -63,7 +63,7 @@ export default function BootingPage() {
                         </div>
 
                         {/* Current Step */}
-                        <div>{stepComponents[activeStep]({ nextStep })}</div>
+                        <div className="flex-1 flex flex-col ">{stepComponents[activeStep]({ nextStep })}</div>
                     </>
                 ) : (
                     <Step4 /> // success screen, no stepper
