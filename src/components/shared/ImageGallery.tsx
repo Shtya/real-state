@@ -69,7 +69,7 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                     {/* Thumbnails */}
                     <div className="flex items-center gap-2 md:gap-3 lg:gap-4 md:justify-end">
                         <button className="image-next me-auto text-xl md:text-2xl lg:text-3xl">
-                            <IoIosArrowForward />
+                            <IoIosArrowBack />
                         </button>
 
                         <Swiper
@@ -121,7 +121,8 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                             ))}
                         </Swiper>
                         <button className='image-prev  me-auto text-xl md:text-2xl lg:text-3xl'>
-                            <IoIosArrowBack />
+                            <IoIosArrowForward />
+
                         </button>
                     </div>
                 </div>
