@@ -37,6 +37,8 @@ export default function DateRangePicker() {
         )
     );
 
+    CustomDateInput.displayName = 'CustomDateInput';
+
     return (
         <DatePicker
 
