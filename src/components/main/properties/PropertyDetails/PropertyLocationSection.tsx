@@ -9,12 +9,15 @@ const LocationMap = dynamic(() => import('../../../shared/LocationMap'), {
 
 
 
-export default function PropertyLocationSection({ lat, lng }: {
+export default function PropertyLocationSection({ lat, lng, title = "Location" }: {
     lat: number;
     lng: number;
+    title?: string
 }) {
-    return <div>
-        <PropertySectionHeader title="Location" align="end" />
-        <LocationMap lat={lat} lng={lng} />
-    </div>
+    return (
+        <div className='px-4'>
+            <PropertySectionHeader title={title} align="end" />
+            <LocationMap lat={lat} lng={lng} />
+        </div>
+    )
 }

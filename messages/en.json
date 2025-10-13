@@ -211,6 +211,17 @@
             "bathrooms": "Bathrooms",
             "totalArea": "Total area",
             "garages": "Garages"
+        },
+        "details": {
+            "bookingNow": "Booking Now",
+            "description": "Description",
+            "additionalDetails": "Additional Details",
+            "location": "Location",
+            "education": "Education",
+            "healthAndMedical": "Health & Medical",
+            "propertyDetails": "Property Details",
+            "propertyFeatures": "Property Features",
+            "seeMore": "See More"
         }
     },
     "footer": {

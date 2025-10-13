@@ -7,16 +7,21 @@ import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useLocale } from 'next-intl';
 
 
 type Props = {
     images: { imagePath: string; isPrimary?: boolean }[];
     userImage: string;
-    price: string;
+    price: {
+        amount: number;
+        isMonthly: boolean;
+    },
     title: string;
 };
 
 const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
+    const locale = useLocale();
     const sortedImages = [...images].sort((a, b) => (b.isPrimary ? 1 : 0) - (a.isPrimary ? 1 : 0));
     const [activeIndex, setActiveIndex] = useState(0);
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -25,7 +30,9 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
         setActiveIndex(index);
         setLightboxOpen(true);
     };
-
+    const periodLabel = price.isMonthly
+        ? locale === 'ar' ? 'شهرياً' : 'mo'
+        : locale === 'ar' ? 'سنويًا' : 'yr';
     return (
         <section className="py-12 relative">
             <div className="mx-auto">
@@ -42,10 +49,6 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                         />
                         {/* Overlay Content */}
                         <div className="absolute bottom-4 left-4 flex items-center gap-4 p-3 rounded-xl">
-                            <div className="text-white text-end">
-                                <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-semibold">{price}</p>
-                                <h2 className="text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] font-bold">{title}</h2>
-                            </div>
                             <Image
                                 src={userImage}
                                 alt="User"
@@ -53,6 +56,12 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                                 height={80}
                                 className="rounded-full w-[64px] sm:w-[72px] md:w-[80px] lg:w-[80px] h-[64px] sm:h-[72px] md:h-[80px] lg:h-[80px]"
                             />
+                            <div className="text-white">
+                                <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-semibold">
+                                    ${price.amount} / {periodLabel}
+                                </p>
+                                <h2 className="text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] font-bold">{title}</h2>
+                            </div>
                         </div>
 
                     </div>
@@ -91,7 +100,7 @@ const ImageGallery: React.FC<Props> = ({ images, userImage, price, title }) => {
                             }}
                             loop
                             className="w-full"
-                            wrapperClass='image-wrapper justify-end'
+                            wrapperClass='image-wrapper justify-start'
                         >
                             {sortedImages.map((img, idx) => (
                                 <SwiperSlide key={idx} className='md:!w-fit'>

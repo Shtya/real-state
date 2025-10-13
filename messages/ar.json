@@ -211,6 +211,17 @@
             "bathrooms": "الحمامات",
             "totalArea": "المساحة",
             "garages": "الكراجات"
+        },
+        "details": {
+            "bookingNow": "احجز الآن",
+            "description": "الوصف",
+            "additionalDetails": "تفاصيل إضافية",
+            "location": "الموقع",
+            "education": "التعليم",
+            "healthAndMedical": "الصحة والخدمات الطبية",
+            "propertyDetails": "تفاصيل العقار",
+            "propertyFeatures": "مميزات العقار",
+            "seeMore": "رؤية المزيد"
         }
     },
     "footer": {

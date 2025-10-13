@@ -20,16 +20,16 @@ export default function PropertyNearbySection({ title, icon, items, align = 'end
             <PropertySectionHeader title={title} align={align} icon={icon} />
             <div className="space-y-3">
                 {items.map(({ name, distance }, idx) => (
-                    <div key={idx} className="flex justify-between items-center text-end">
+                    <div key={idx} className="flex justify-between items-center text-end gap-2">
+                        <span className="text-[18px] md:text-[20px] font-medium text-dark text-start">{name}</span>
                         {distance ? (
                             <span className="flex items-center gap-1 text-[18px] md:text-[20px] ">
-                                {distance}
-                                <IoIosPin className="text-[28px] sm:text-[32px] text-secondary" />
+                                <IoIosPin className="text-[28px] sm:text-[32px] text-secondary shrink-0" />
+                                <span>{distance}</span>
                             </span>
                         ) : (
                             <div />
                         )}
-                        <span className="text-[18px] md:text-[20px] font-medium text-dark">{name}</span>
                     </div>
                 ))}
             </div>
