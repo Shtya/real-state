@@ -38,7 +38,7 @@
   --color-secondary-hover: var(--secondary-hover);
   --color-primary-hover: var(--primary-hover);
 
-
+  --breakpoint-xs: 480px;
   --animate-fadeInUp: fadeInUp 1s ease-in-out forwards;
 
   @keyframes fadeInUp {
@@ -119,19 +119,24 @@ body {
     @apply scale-103
   }
 
-}
 
-#hero {
-  background: linear-gradient(180deg, var(--secondary-80) 21.27%, var(--light-80) 85.1%);
-}
-
-.hero-title {
-  margin-inline-start: 0;
-}
-
-@media (min-width: 96rem) {
-  .hero-title {
-    margin-inline-start: 30%;
+  .image-wrapper>*:last-child {
+    margin-left: 0 !important;
   }
 
+
+  #hero {
+    background: linear-gradient(180deg, var(--secondary-80) 21.27%, var(--light-80) 85.1%);
+  }
+
+  .hero-title {
+    margin-inline-start: 0;
+  }
+
+  @media (min-width: 96rem) {
+    .hero-title {
+      margin-inline-start: 30%;
+    }
+
+  }
 }
