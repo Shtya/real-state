@@ -56,7 +56,8 @@ export default async function PropertyDetails({ property }: { property: Property
                 {/* Booking + Address */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mt-6 text-center sm:text-left">
                     <p className="text-lg sm:text-xl text-dark">{property.address}</p>
-                    <PrimaryButton className="bg-secondary hover:bg-secondary-hover text-white !rounded-[12px] shadow-[0px_4px_12px_0px_#0000001F] lg:!py-3 w-full sm:w-auto">
+                    <PrimaryButton className="bg-secondary hover:bg-secondary-hover text-white !rounded-[12px] shadow-[0px_4px_12px_0px_#0000001F] lg:!py-3 w-full sm:w-auto"
+                        href="/booking">
                         {t('bookingNow')}
                     </PrimaryButton>
                 </div>

@@ -2,13 +2,13 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 
-export default function Logo() {
+export default function Logo({ className }: { className?: string }) {
     const t = useTranslations("header");
 
     return (
         <div>
             {/* Logo */}
-            <Link href="/" className="flex items-center flex-shrink-0 lg:ms-[50px]">
+            <Link href="/" className={`flex items-center flex-shrink-0 lg:ms-[50px] ${className}`}>
                 <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-primary">
                     {t("logo")}
                 </h1>

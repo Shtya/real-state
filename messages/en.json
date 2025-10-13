@@ -3,6 +3,10 @@
         "siteName": "Real State",
         "description": "Discover, list, and manage properties with Real State."
     },
+    "comman": {
+        "datePlaceholder": "Select Date Range",
+        "cancel": "إلغاء"
+    },
     "header": {
         "logo": "QUNUF",
         "nav": {
@@ -222,6 +226,106 @@
             "propertyDetails": "Property Details",
             "propertyFeatures": "Property Features",
             "seeMore": "See More"
+        }
+    },
+    "bookings": {
+        "step1": {
+            "title": "Booking Information",
+            "subtitle": "Please fill up the blank fields below",
+            "plans": {
+                "business": {
+                    "title": "Business",
+                    "price": "$40.00",
+                    "description": "Electricity, water, gas, and internet bills are included in this plan and are prepaid, ensuring that all essential utilities are covered.",
+                    "button": "Choose Plan"
+                },
+                "professional": {
+                    "title": "Professional",
+                    "price": "$30.00",
+                    "description": "Electricity, water, gas, and internet bills are included in this plan and are prepaid, ensuring that all essential utilities are covered.",
+                    "button": "Choose Plan"
+                }
+            },
+            "pickDate": "Pick a Date",
+            "payment": {
+                "prefix": "You will pay "
+            },
+            "confirm": "Book Now",
+            "cancel": "Cancel"
+        },
+        "step2": {
+            "title": "Booking Contract",
+            "subtitle": "Please fill up the Info For Contract",
+            "sectionTitle": "Tenant Information",
+            "fields": {
+                "fullName": {
+                    "label": "Tenant Full Name",
+                    "placeholder": "Enter full name"
+                },
+                "phone": {
+                    "label": "Tenant Phone Number",
+                    "placeholder": "Enter phone number"
+                },
+                "nationalId": {
+                    "label": "National ID",
+                    "placeholder": "Enter national ID"
+                },
+                "billingAddress": {
+                    "label": "Billing Address",
+                    "placeholder": "Enter billing address"
+                },
+                "address": {
+                    "label": "Address",
+                    "placeholder": "Enter address"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "Enter email"
+                }
+            },
+            "confirm": "Generate Contract",
+            "cancel": "Cancel"
+        },
+        "step3": {
+            "title": "Payment",
+            "subtitle": "Kindly follow the instructions below",
+            "summary": {
+                "realEstate": "Booking Real Estate:",
+                "reservation": "Reservation for 1 month on Business Plan",
+                "total": {
+                    "prefix": "Total: ",
+                    "amount": "$400 USD"
+                }
+            },
+            "fields": {
+                "cardNumber": {
+                    "label": "Card Number",
+                    "placeholder": "Payment card number"
+                },
+                "bank": {
+                    "label": "Bank",
+                    "placeholder": "Select Bank"
+                },
+                "expDate": {
+                    "label": "Exp Date",
+                    "placeholder": "Validation date"
+                },
+                "cvv": {
+                    "label": "CVV",
+                    "placeholder": "Beside the card"
+                }
+            },
+            "confirm": "Pay Now",
+            "cancel": "Cancel"
+        },
+        "step4": {
+            "title": "Yay! Payment Completed",
+            "imageAlt": "Payment Completed",
+            "message": {
+                "line1": "Please check your email & phone message.",
+                "line2": "We have sent all the information."
+            },
+            "homeLink": "Go to Home Page"
         }
     },
     "footer": {

@@ -7,7 +7,8 @@ type SecondaryButtonProps = {
     onClick?: () => void;
     href?: string; // 👈 optional link
     type?: "button" | "submit" | "reset";
-};
+    disabled?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
 
 export default function SecondaryButton({
     children,
@@ -15,6 +16,7 @@ export default function SecondaryButton({
     onClick,
     href,
     type = "button",
+    disabled,
     ...props
 }: SecondaryButtonProps) {
     const baseClasses =
