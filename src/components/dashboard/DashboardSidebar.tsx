@@ -4,10 +4,12 @@ import { useRoleFromPath } from '@/hooks/dashboard/useRoleFromPath';
 import PrimaryButton from '../shared/buttons/PrimaryButton';
 import { useNormalizedPath } from '@/hooks/useNormalizedPath';
 import { dashboardItems, SidebarLink } from '@/constants/dashboardItems';
+import { useTranslations } from 'next-intl';
 
 
 
 export default function DashboardSidebar() {
+    const t = useTranslations('dashboard.sidebar');
     const { normalizedPath } = useNormalizedPath();
 
     const role = useRoleFromPath();
@@ -19,7 +21,7 @@ export default function DashboardSidebar() {
 
     return (
         <div className="sticky top-0 flex flex-col gap-4 p-4 lg:p-6 md:w-[312px]">
-            {items.map(({ href, label, icon, variant }) => {
+            {items.map(({ href, key, icon, variant }) => {
                 const isActive = normalizedPath === href;
 
                 const baseClass = 'flex gap-2 items-center justify-start w-full px-4 py-2 rounded';
@@ -35,7 +37,7 @@ export default function DashboardSidebar() {
                         href={href}
                         className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}
                     >
-                        {icon} {label}
+                        {icon} {t(key)}
                     </PrimaryButton>
                 );
             })}

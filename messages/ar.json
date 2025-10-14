@@ -408,5 +408,18 @@
             "title": "اتصل بنا",
             "address": "أكشيا ناجار 1st Block 1st Cross، رامورثي ناجار، بنغالور 560016"
         }
+    },
+    "dashboard": {
+        "sidebar": {
+            "dashboard": "لوحة التحكم",
+            "contracts": "العقود",
+            "renewRequests": "طلبات التجديد",
+            "accountSetting": "إعدادات الحساب",
+            "paymentHistory": "سجل المدفوعات",
+            "customerSupport": "الدعم الفني",
+            "rentalsContracts": "الإيجارات والعقود",
+            "properties": "العقارات",
+            "revenueSummary": "ملخص الإيرادات"
+        }
     }
 }

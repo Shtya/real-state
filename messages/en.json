@@ -408,5 +408,18 @@
             "title": "Contact Us",
             "address": "Akshaya Nagar 1st Block 1st Cross, Ramurthy Nagar, Bangalore 560016"
         }
+    },
+    "dashboard": {
+        "sidebar": {
+            "dashboard": "Dashboard",
+            "contracts": "Contracts",
+            "renewRequests": "Renew Requests",
+            "accountSetting": "Account Setting",
+            "paymentHistory": "Payment History",
+            "customerSupport": "Customer Support",
+            "rentalsContracts": "Rentals & Contracts",
+            "properties": "Properties",
+            "revenueSummary": "Revenue Summary"
+        }
     }
 }
