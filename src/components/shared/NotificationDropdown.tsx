@@ -1,0 +1,92 @@
+import { BsBell } from "react-icons/bs";
+import Dropdown, { MenuProps, TriggerProps } from "./Dropdown";
+import { FaRegNewspaper } from "react-icons/fa";
+
+
+export default function NotificationDropdown() {
+    return (
+        <Dropdown Trigger={NotificationTrigger} Menu={NotificationMenu} position="bottom-right" />
+    );
+}
+
+function NotificationTrigger({ isOpen, onToggle }: TriggerProps) {
+    return (
+        <div className="relative inline-flex mt-2">
+            {/* Notification Dot */}
+            <span className="absolute top-[-4px] right-0 flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#EB5757] opacity-75"></span>
+                <span className="absolute inline-flex size-2 rounded-full bg-[#EB5757]"></span>
+            </span>
+
+            {/* Bell Button */}
+            <button
+                type="button"
+                aria-label="فتح الإشعارات"
+                onClick={onToggle}
+                className="text-secondary inline-flex justify-center rounded-3xl text-sm hover:bg-opacity-30"
+            >
+                <BsBell className="w-5 h-5" />
+            </button>
+        </div>
+    );
+}
+
+
+type Notification = {
+    id: string;
+    title: string;
+    message: string;
+    isRead: boolean;
+};
+
+const notifications: Notification[] = [
+    {
+        id: '1',
+        title: 'You have a new message from Yin',
+        message: 'Hello there, check these new items you may be interested in from Motion School.',
+        isRead: false,
+    },
+    {
+        id: '2',
+        title: 'Weekly digest is ready',
+        message: 'Your weekly summary is now available. Click to view insights and updates.',
+        isRead: true,
+    },
+];
+
+
+function NotificationMenu({ isOpen, onClose }: MenuProps) {
+    return (
+        <div>
+            <div className="">
+                <header className="p-2 text-white"
+                    style={{
+                        background: 'linear-gradient(90deg, var(--secondary) 0%, var(--lightGold) 100%)',
+                    }}>
+                    Last Notifications
+                </header>
+                <div className="p-6 bg-white">
+                    {notifications.map((item) => (
+                        <button
+                            key={item.id}
+                            className="flex items-start gap-4 text-start w-full"
+                            onClick={onClose}
+                        >
+                            <FaRegNewspaper size={20} className="text-secondary mt-1" />
+                            <div className="max-w-[300px]">
+                                <div className="flex items-center justify-between">
+                                    <h2 className="text-dark text-sm font-semibold">{item.title}</h2>
+                                    {!item.isRead && (
+                                        <div className="rounded-full w-2 h-2 border-2 border-secondary" />
+                                    )}
+                                </div>
+                                <p className="text-xs text-dark">{item.message}</p>
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+

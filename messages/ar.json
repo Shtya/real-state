@@ -26,7 +26,8 @@
             "realEstate": "العقارات",
             "blog": "المدونات",
             "contact": "تواصل معنا",
-            "dashboard": "لوحة القيادة"
+            "dashboard": "لوحة القيادة",
+            "login": "تسجيل الدخول"
         }
     },
     "homePage": {

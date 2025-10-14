@@ -13,6 +13,7 @@ import {
 } from "@/constants/properties/constant";
 import { useTranslations } from "next-intl";
 import Sidebar from "@/components/shared/Sidebar";
+import { useState } from "react";
 
 
 export default function FilterProperties() {
@@ -35,21 +36,21 @@ export default function FilterProperties() {
         updateType,
         resetFilters
     } = useFilterProperties();
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const t = useTranslations('property.filter');
 
 
     return (
         <div className="sticky top-24 bg-white rounded-[12px] lg:border lg:border-gray lg:shadow max-w-[335px]">
-
+            <button onClick={() => setSidebarOpen(true)} className="flex text-base items-center gap-2 py-1 px-2 md:py-[6px] border rounded-md">
+                <HiOutlineAdjustmentsHorizontal className="w-5 md:w-6  h-5 md:h-6" />
+                <span>{t("title")}</span>
+            </button>
             <Sidebar
-                title={t("title")}
-                trigger={
-                    <button className="flex text-base items-center gap-2 py-1 px-2 md:py-[6px] border rounded-md">
-                        <HiOutlineAdjustmentsHorizontal className="w-5 md:w-6  h-5 md:h-6" />
-                        <span>{t("title")}</span>
-                    </button>
-                }>
+                open={sidebarOpen}
+                onClose={() => setSidebarOpen(false)}
+                title={t("title")}>
 
                 <div className="flex flex-col gap-8 p-4 lg:p-6 ">
                     <div className="flex items-center justify-between gap-4">

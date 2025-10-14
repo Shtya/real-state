@@ -26,7 +26,8 @@
             "realEstate": "Property",
             "blog": "Blogs",
             "contact": "Contact Us",
-            "dashboard": "Dashboard"
+            "dashboard": "Dashboard",
+            "login": "Sign in"
         }
     },
     "homePage": {
