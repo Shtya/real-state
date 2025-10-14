@@ -33,7 +33,7 @@ export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () =
                                     className="w-full h-full rounded-full object-cover"
                                 />
                             </button>
-                            <p className="text-primary font-semibold">Mosa Ali</p>
+                            <p className="text-primary font-semibold">Bassem Ali</p>
                         </div>
                     </div>
                     <button

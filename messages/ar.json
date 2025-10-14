@@ -1,6 +1,7 @@
 {
     "root": {
         "siteName": "قنوف",
+        "logo": "قنوف",
         "description": "اكتشف وأدر العقارات مع قنوف."
     },
     "comman": {
@@ -410,6 +411,7 @@
         }
     },
     "dashboard": {
+        "greeting": "مرحبًا بك في لوحة التحكم الخاصة بك، {name}!",
         "sidebar": {
             "dashboard": "لوحة التحكم",
             "contracts": "العقود",
