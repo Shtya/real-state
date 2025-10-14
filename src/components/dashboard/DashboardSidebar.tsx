@@ -1,32 +1,25 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import { LuLayoutDashboard } from 'react-icons/lu';
-import { FaFileContract, FaRedo, FaUserCog, FaMoneyCheckAlt, FaHeadset } from 'react-icons/fa';
+import { useRoleFromPath } from '@/hooks/dashboard/useRoleFromPath';
 import PrimaryButton from '../shared/buttons/PrimaryButton';
 import { useNormalizedPath } from '@/hooks/useNormalizedPath';
+import { dashboardItems, SidebarLink } from '@/constants/dashboardItems';
 
-const links = [
-    { href: '/dashboard', label: 'Dashboard', icon: <LuLayoutDashboard /> },
-    { href: '/dashboard/contracts', label: 'Contracts', icon: <FaFileContract /> },
-    { href: '/dashboard/renewals', label: 'Renew Requests', icon: <FaRedo /> },
-    { href: '/dashboard/settings', label: 'Account Setting', icon: <FaUserCog /> },
-    { href: '/dashboard/payments', label: 'Payment History', icon: <FaMoneyCheckAlt /> },
-    {
-        href: '/dashboard/support',
-        label: 'Customer Support',
-        icon: <FaHeadset />,
-        variant: 'white-border',
-    },
-];
 
 
 export default function DashboardSidebar() {
     const { normalizedPath } = useNormalizedPath();
 
+    const role = useRoleFromPath();
+    let items: SidebarLink[] = [];
+
+    if (role) {
+        items = dashboardItems[role];
+    }
+
     return (
-        <div className="flex flex-col gap-4 p-4 lg:p-6 md:w-[312px]">
-            {links.map(({ href, label, icon, variant }) => {
+        <div className="sticky top-0 flex flex-col gap-4 p-4 lg:p-6 md:w-[312px]">
+            {items.map(({ href, label, icon, variant }) => {
                 const isActive = normalizedPath === href;
 
                 const baseClass = 'flex gap-2 items-center justify-start w-full px-4 py-2 rounded';
