@@ -15,6 +15,7 @@ export default function middleware(request: NextRequest) {
     const { pathname, locale } = request.nextUrl;
 
     // Redirect /<locale>/dashboard → /<locale>/dashboard/tenant
+    console.log(pathname, `/${locale}/dashboard`)
     if (pathname === `/${locale}/dashboard`) {
         return NextResponse.redirect(new URL(`/${locale}/dashboard/tenant`, request.url));
     }
