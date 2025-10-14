@@ -44,7 +44,7 @@ export default function Header() {
         { label: t("nav.realEstate"), href: "/properties" },
         { label: t("nav.blog"), href: "/blog" },
         { label: t("nav.contact"), href: "/contact" },
-        { label: t("nav.dashboard"), href: "/dashboard/tenant" },
+        { label: t("nav.dashboard"), href: "/dashboard" },
         { label: t("nav.login"), href: "/sign-in" }
     ];
 
