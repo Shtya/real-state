@@ -5,7 +5,18 @@
     },
     "comman": {
         "datePlaceholder": "Select Date Range",
-        "cancel": "إلغاء"
+        "cancel": "إلغاء",
+        "form": {
+            "email": {
+                "label": "Email Address",
+                "placeholder": "Enter your email address"
+            },
+            "password": {
+                "label": "Password",
+                "placeholder": "Enter your password"
+            },
+            "send": "Send"
+        }
     },
     "header": {
         "logo": "QUNUF",
@@ -229,6 +240,7 @@
         }
     },
     "bookings": {
+        "title": "Getting Started",
         "step1": {
             "title": "Booking Information",
             "subtitle": "Please fill up the blank fields below",
@@ -326,6 +338,53 @@
                 "line2": "We have sent all the information."
             },
             "homeLink": "Go to Home Page"
+        }
+    },
+    "auth": {
+        "roleSelector": {
+            "tenant": {
+                "title": "Tenant",
+                "description": "Find a place & pay rent online."
+            },
+            "landlord": {
+                "title": "Landlord",
+                "description": "Accept rent online & manage rental."
+            }
+        },
+        "signIn": {
+            "title": "Welcome back!",
+            "subtitle": "Login to access all your data",
+            "email": {
+                "label": "Email Address",
+                "placeholder": "Enter your email address"
+            },
+            "password": {
+                "label": "Password",
+                "placeholder": "Enter your password"
+            },
+            "forgotPassword": "Forgot your password?",
+            "login": "Login",
+            "noAccount": "Don’t have an account?",
+            "register": "Register"
+        },
+        "signUp": {
+            "title": "Welcome to QUNUF",
+            "subtitle": "Kindly fill in your details below to create an account",
+            "email": {
+                "label": "Email Address",
+                "placeholder": "Enter your email address"
+            },
+            "password": {
+                "label": "Password",
+                "placeholder": "Enter your password"
+            },
+            "register": "Register with us",
+            "haveAccount": "Already have an account?",
+            "login": "Login"
+        },
+        "forgotPassword": {
+            "title": "Reset your password",
+            "backToLogin": "Back to login page"
         }
     },
     "footer": {
