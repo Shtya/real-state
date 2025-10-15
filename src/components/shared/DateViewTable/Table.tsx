@@ -35,9 +35,9 @@ export default function Table<T = Record<string, any>>({
     }, [columns, showActions]);
 
     return (
-        <div className="overflow-x-auto">
-            <table className="min-w-full bg-white table-fixed whitespace-nowrap  overflow-hidden">
-                <TableHeader columns={allColumns} showActions={showActions} />
+        <div className="">
+            <table className="min-w-full bg-white table-fixed whitespace-nowrap overflow-hidden">
+                <TableHeader<T> columns={allColumns} showActions={showActions} />
                 <tbody>
                     {rows.length === 0 ? (
                         <tr>
@@ -47,7 +47,7 @@ export default function Table<T = Record<string, any>>({
                         </tr>
                     ) : (
                         rows.map((row, idx) => (
-                            <TableRow
+                            <TableRow<T>
                                 key={idx}
                                 row={row}
                                 idx={idx}

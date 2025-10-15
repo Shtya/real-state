@@ -20,7 +20,7 @@ export default function CircularRating({
     // radius controls how far the stars sit from the center
     const radius = size * 0.68;
 
-    let stars = 5;
+    const stars = 5;
     // arc angles (degrees) so the middle star sits at 270deg (bottom)
     const startDeg = 210;
     const endDeg = 330;
@@ -29,7 +29,7 @@ export default function CircularRating({
     const frac = clamped - full;
 
     const starsPos = Array.from({ length: stars }).map((_, i) => {
-        const t = stars === 1 ? 0.5 : i / (stars - 1);
+        const t = i / (stars - 1);
         const angleDeg = startDeg + t * (endDeg - startDeg);
         const angleRad = (angleDeg * Math.PI) / 180;
         const x = center + radius * Math.cos(angleRad);

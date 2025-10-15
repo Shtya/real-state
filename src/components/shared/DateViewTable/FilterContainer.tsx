@@ -74,8 +74,8 @@ export default function FilterContainer({
                     }>
 
                     <div className="flex-1 flex flex-col max-lg:m-4 max-lg:mt-6 lg:flex-row flex-wrap items-center justify-between gap-3 ">
-                        <div className=" order-first w-full md:w-auto flex items-center gap-3 " >
-                            <div className="flex-1 md:flex-none">
+                        <div className=" order-first w-full  flex items-center gap-3 " >
+                            <div className="w-full md:flex-none">
                                 {showSearch && <SearchField
                                     value={search}
                                     onChange={setSearch}

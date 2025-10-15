@@ -22,7 +22,7 @@ export default function Pagination({ currentPage, pageCount, onPageChange }: Pag
     if (pageCount <= 1) return null;
 
     return (
-        <div className="flex flex-wrap justify-center items-center gap-2">
+        <div className="flex text-nowrap lg:justify-center items-center gap-2">
             {/* First Page */}
             <PaginationButton
                 label="First Page"
@@ -41,15 +41,15 @@ export default function Pagination({ currentPage, pageCount, onPageChange }: Pag
             />
 
             {/* Page Numbers */}
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex text-nowrap justify-center gap-2">
                 {generatePagination(currentPage, pageCount).map((item, idx) =>
                     item === '...' ? (
-                        <span key={idx} className="px-3 py-2 font-bold text-secondary">...</span>
+                        <span key={idx} className="lg:px-3 lg:py-2 text-sm  lg:text-base font-bold text-secondary">...</span>
                     ) : (
                         <button
                             key={idx}
                             onClick={() => onPageChange(Number(item))}
-                            className={`px-3 py-2 w-[40px] h-[40px] rounded-[8px] duration-300 hover:scale-[1.05] ${currentPage === item
+                            className={`px-2 py-[6px]  lg:px-3 lg:py-2 text-sm  lg:text-base min-w-[32px] min-h-[32px] lg:min-w-[42px] lg:min-h-[42px] rounded-[8px] duration-300 hover:scale-[1.05] ${currentPage === item
                                 ? 'bg-[var(--primary)] text-white font-semibold'
                                 : 'bg-white border border-gray-500 text-gray-500 hover:bg-lighter'
                                 }`}

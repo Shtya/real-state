@@ -16,7 +16,7 @@ export default function KeywordSearch({
     inputRef,
 }: KeywordSearchProps) {
     return (
-        <div className="flex items-center justify-between rounded-[8px] border border-gray-200 px-3 py-2 w-full  md:w-[320px]">
+        <div className="flex items-center justify-between rounded-[8px] border border-gray-200 px-3 py-2 w-full  md:max-w-[310px]">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"
@@ -33,7 +33,7 @@ export default function KeywordSearch({
             </svg>
             <input
                 ref={inputRef} // ✅ استخدام ref من prop
-                className="w-full bg-transparent focus:outline-none ms-[3px]"
+                className="flex-1  w-full bg-transparent focus:outline-none ms-[3px]"
                 placeholder={searchPlaceholder}
                 type="text"
                 value={value}

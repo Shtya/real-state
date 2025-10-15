@@ -96,27 +96,29 @@ export default function DataView<T = Record<string, any>>({
 
             />
 
-            {isLoading ? (
-                <TableSkeleton columns={columns} rowCount={pageSize} />
-            ) : error ? (
-                <TableError message={error} onRetry={fetchRows} />
-            ) : (
-                <Table<T>
-                    columns={columns}
-                    rows={rows ?? []}
-                    showActions={showActions}
-                    actionsMenuItems={actionsMenuItems}
-                />
-            )}
+            <div className='overflow-x-auto thin-scrollbar '>
+                {isLoading ? (
+                    <TableSkeleton columns={columns} rowCount={pageSize} />
+                ) : error ? (
+                    <TableError message={error} onRetry={fetchRows} />
+                ) : (
+                    <Table<T>
+                        columns={columns}
+                        rows={rows ?? []}
+                        showActions={showActions}
+                        actionsMenuItems={actionsMenuItems}
+                    />
+                )}
 
-            {totalRowsCount > 0 && (
-                <div className="flex justify-between items-center gap-3 pt-5 lg:pt-7 flex-wrap">
-                    {pageCount > 1 ? <TablePagination pageCount={pageCount} /> : <div></div>}
-                    <span className="text-sm text-gray-500">
-                        Showing {startEntry} to {endEntry} of {totalRowsCount} entries
-                    </span>
-                </div>
-            )}
+                {totalRowsCount > 0 && (
+                    <div className="flex justify-between flex-col-reverse flex-nowrap lg:flex-row lg:items-center gap-3 pt-5 lg:pt-7 mb-2">
+                        {pageCount > 1 ? <TablePagination pageCount={pageCount} /> : <div></div>}
+                        <span className="text-sm text-gray-500 lg:text-nowrap">
+                            Showing {startEntry} to {endEntry} of {totalRowsCount} entries
+                        </span>
+                    </div>
+                )}
+            </div>
         </DashboardCard>
 
     );

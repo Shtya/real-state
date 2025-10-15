@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PlanCard from "./PlanCard";
 import FormActions from "./StepActions";
 import StepTitle from "./StepTitle";
@@ -6,7 +7,11 @@ import { useTranslations } from 'next-intl';
 
 export default function Step1({ nextStep }: { nextStep: () => void }) {
     const t = useTranslations('bookings.step1');
+    const [dates, setDate] = useState<{ startDate: Date | undefined, endDate: Date | undefined }>({ startDate: undefined, endDate: undefined })
 
+    function handleDateChange(dates: { startDate?: Date; endDate?: Date }) {
+        setDate({ startDate: dates.startDate, endDate: dates.endDate })
+    }
     return (
         <div className="flex-1  flex flex-col justify-between gap-y-6">
             <div className="space-y-6">
@@ -30,7 +35,7 @@ export default function Step1({ nextStep }: { nextStep: () => void }) {
                 <div className="flex-center">
                     <div className="w-fit space-y-3">
                         <p className="text-input">{t('pickDate')}</p>
-                        <DateRangePicker />
+                        <DateRangePicker value={dates} onChange={handleDateChange} />
                     </div>
                 </div>
 

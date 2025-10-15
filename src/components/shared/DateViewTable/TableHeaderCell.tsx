@@ -4,19 +4,19 @@ import React from 'react';
 import { IoMdArrowUp } from 'react-icons/io';
 import { TableColumnType } from '@/types/table';
 
-interface TableHeaderCellProps {
-    col: TableColumnType<any>;
+interface TableHeaderCellProps<T> {
+    col: TableColumnType<T>;
     isSorted: boolean;
     isAsc: boolean;
     onSort?: (key: string) => void;
 }
 
-export default function TableHeaderCell({
+export default function TableHeaderCell<T>({
     col,
     isSorted,
     isAsc,
     onSort,
-}: TableHeaderCellProps) {
+}: TableHeaderCellProps<T>) {
 
     return (
         <th

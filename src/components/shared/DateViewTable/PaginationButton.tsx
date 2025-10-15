@@ -21,7 +21,7 @@ export default function PaginationButton({
         <button
             onClick={() => onPageChange()}
             disabled={isDisabled}
-            className={`border border-gray-500 flex items-center justify-center gap-1 text-gray-500 px-3 py-2 rounded-[8px] duration-300 hover:scale-[1.05] ${isDisabled ? 'opacity-30 cursor-not-allowed' : 'hover:bg-lighter'
+            className={`border border-gray-500 flex items-center justify-center gap-1 text-gray-500 px-2 py-[6px] lg:px-3 lg:py-2 text-sm  lg:text-base  rounded-[8px] duration-300 hover:scale-[1.05] ${isDisabled ? 'opacity-30 cursor-not-allowed' : 'hover:bg-lighter'
                 }`}
         >
             {icon}

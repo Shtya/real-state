@@ -4,7 +4,6 @@ import React from 'react';
 import { TableColumnType } from '@/types/table';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { updateUrlParams } from '@/utils/helpers';
-import { IoMdArrowUp } from 'react-icons/io';
 import TableHeaderCell from './TableHeaderCell';
 
 interface TableHeaderProps<T> {
@@ -45,7 +44,7 @@ export default function TableHeader<T>({ columns, showActions }: TableHeaderProp
                     const isAsc = dir === 'asc';
 
                     return (
-                        <TableHeaderCell
+                        <TableHeaderCell<T>
                             key={String(col.key)}
                             col={col}
                             isSorted={isSorted}
