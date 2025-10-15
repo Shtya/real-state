@@ -55,7 +55,10 @@ export default function Header() {
             className={`fixed xl:absolute left-0 w-full z-50 top-0 xl:top-[18px]  transition-colors ${isSticky ? "!fixed !top-0 left-0 w-full md:backdrop-blur-md md:bg-white/60 md:shadow-md z-50" : ""}`}>
             <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 transition-colors ${isSticky ? 'max-md:bg-white' : 'bg-[#FAFAFA]'} xl:rounded-full px-5 lg:px-8  py-3 md:py-5`}>
                 {/* Logo */}
+
+
                 <Logo />
+
 
                 {/* Desktop nav */}
                 <nav className="navbar hidden md:flex items-center gap-4 sm:gap-5 lg:gap-7 text-base sm:text-lg md:text-xl text-dark font-bold">

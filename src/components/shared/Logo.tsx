@@ -18,7 +18,7 @@ export default function Logo({ className, small = false }: LogoProps) {
             {/* Logo */}
             <Link
                 href="/"
-                className={`flex items-center flex-shrink-0 lg:ms-[50px] ${className}`}
+                className={`flex items-center flex-shrink-0  ${className}`}
             >
                 <h1 className={`${textSize} font-bold text-primary`}>
                     {t('logo')}
