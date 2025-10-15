@@ -1,6 +1,6 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { getSafeNumberInRange, getSafeString } from "@/utils/helpers";
+import { getSafeNumberInRange, getSafeString, updateUrlParams } from "@/utils/helpers";
 import {
     PeriodType, FurnishedType, PropertyType, FilterState,
     MAX_PRICE, MIN_PRICE, MAX_SCQUAREFEET, MIN_SCQUAREFEET, MAX_YEARBUILD, MIN_YEARBUILD,
@@ -160,8 +160,7 @@ function useFilterProperties() {
                 params.set(key, String(value));
             }
         });
-        const newUrl = `${pathname}?${params.toString()}`;
-        window.history.replaceState(null, '', newUrl);
+        updateUrlParams(pathname, params);
     }, [filters]);
 
     function resetFilters() {

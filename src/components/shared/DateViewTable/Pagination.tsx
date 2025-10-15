@@ -1,0 +1,82 @@
+'use client';
+
+import React from 'react';
+import { generatePagination } from '@/utils/helpers';
+import {
+    MdFirstPage,
+    MdLastPage,
+    MdChevronLeft,
+    MdChevronRight,
+} from 'react-icons/md';
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
+import { LuArrowLeftToLine, LuArrowRightToLine } from 'react-icons/lu';
+import PaginationButton from './PaginationButton';
+
+interface PaginationProps {
+    currentPage: number;
+    pageCount: number;
+    onPageChange: (page: number) => void;
+}
+
+export default function Pagination({ currentPage, pageCount, onPageChange }: PaginationProps) {
+    if (pageCount <= 1) return null;
+
+    return (
+        <div className="flex flex-wrap justify-center items-center gap-2">
+            {/* First Page */}
+            <PaginationButton
+                label="First Page"
+                icon={<LuArrowLeftToLine size={20} />}
+                isDisabled={currentPage === 1}
+                currentPage={currentPage}
+                onPageChange={() => onPageChange(1)}
+            />
+            {/* Previous Page */}
+            <PaginationButton
+                label="Previous"
+                icon={<GoArrowLeft size={20} />}
+                isDisabled={currentPage === 1}
+                currentPage={currentPage}
+                onPageChange={() => onPageChange(currentPage > 1 ? currentPage - 1 : 1)}
+            />
+
+            {/* Page Numbers */}
+            <div className="flex flex-wrap justify-center gap-2">
+                {generatePagination(currentPage, pageCount).map((item, idx) =>
+                    item === '...' ? (
+                        <span key={idx} className="px-3 py-2 font-bold text-secondary">...</span>
+                    ) : (
+                        <button
+                            key={idx}
+                            onClick={() => onPageChange(Number(item))}
+                            className={`px-3 py-2 w-[40px] h-[40px] rounded-[8px] duration-300 hover:scale-[1.1] ${currentPage === item
+                                ? 'bg-[var(--primary)] text-white font-semibold'
+                                : 'bg-white border text-secondary hover:bg-lighter'
+                                }`}
+                        >
+                            {item}
+                        </button>
+                    )
+                )}
+            </div>
+
+            {/* Next Page */}
+            <PaginationButton
+                label="Next"
+                icon={<GoArrowRight size={20} />}
+                isDisabled={currentPage === pageCount}
+                currentPage={currentPage}
+                onPageChange={() => onPageChange(currentPage < pageCount ? currentPage + 1 : pageCount)}
+            />
+
+            {/* Last Page */}
+            <PaginationButton
+                label="Last Page"
+                icon={<GoArrowRight size={20} />}
+                isDisabled={currentPage === pageCount}
+                currentPage={currentPage}
+                onPageChange={() => onPageChange(pageCount)}
+            />
+        </div>
+    );
+}

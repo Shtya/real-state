@@ -13,7 +13,7 @@ export default function NotificationDropdown() {
 
 function NotificationTrigger({ isOpen, onToggle }: TriggerProps) {
     return (
-        <div className="relative inline-flex bg-white p-3 rounded-full custom-shadow">
+        <div className="relative inline-flex bg-card-bg p-3 rounded-full custom-shadow">
             {/* Notification Dot */}
             <PingIndicator />
             {/* Bell Button */}

@@ -34,7 +34,7 @@ export default function DashboardSidebar() {
                 <Logo small />
             </div>
 
-            <div className='bg-white rounded-[55px] p-2 space-y-2 lg:space-y-1 max-lg:w-full lg:mt-10'>
+            <div className='bg-card-bg rounded-[55px] p-2 space-y-2 lg:space-y-1 max-lg:w-full lg:mt-10'>
                 {items.map(({ href, key, Icon }) => {
                     const isActive = normalizedPath === href;
                     return (
@@ -96,7 +96,7 @@ export default function DashboardSidebar() {
                 <div className="hidden lg:block group relative">
                     <Tooltip content={t("logout")}>
                         <button
-                            className="w-[44px] h-[44px] flex items-center justify-center rounded-full bg-lighter hover:bg-gray text-dark"
+                            className="w-[44px] h-[44px] flex items-center justify-center rounded-full  hover:bg-gray text-dark"
                             aria-label={t("logout")}
                         >
                             <IoLogOutOutline className="w-6 h-6" />

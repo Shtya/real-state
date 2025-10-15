@@ -13,11 +13,15 @@
   --placeholder: #948888;
   --dark: #2A2A2A;
 
+
   --secondary-80: rgba(138, 110, 78, 0.8);
   --light-80: rgba(240, 230, 140, 0.8);
 
   --secondary-hover: #73583C;
   --primary-hover: #5C472C;
+
+  --dashboard-bg: #F1E3D3;
+  --card-bg: #FFFFFF;
 
 }
 
@@ -37,6 +41,10 @@
 
   --color-secondary-hover: var(--secondary-hover);
   --color-primary-hover: var(--primary-hover);
+
+
+  --color-dashboard-bg: var(--dashboard-bg);
+  --color-card-bg: var(--card-bg);
 
   --breakpoint-xs: 480px;
   --animate-fadeInUp: fadeInUp 1s ease-in-out forwards;

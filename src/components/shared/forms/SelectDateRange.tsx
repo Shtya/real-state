@@ -13,17 +13,26 @@ interface CustomDateInputProps extends React.HTMLProps<HTMLButtonElement> {
     onClick?: () => void;
 }
 
-export default function DateRangePicker() {
+interface DateRangePickerProps {
+    DateInputComponent?: React.FC<DateInputShowComponentProps>;
+    onChange: (dates: { startDate?: Date; endDate?: Date }) => void;
+    value: { startDate: Date | undefined, endDate: Date | undefined };
+}
+
+export default function DateRangePicker({ DateInputComponent, onChange, value }: DateRangePickerProps) {
+
     const t = useTranslations('comman');
-    const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
-    const [startDate, setStartDate] = useState<Date | undefined>();
-    const [endDate, setEndDate] = useState<Date | undefined>();
+
+    const [startDate, setStartDate] = useState<Date | undefined>(value.startDate);
+    const [endDate, setEndDate] = useState<Date | undefined>(value.endDate);
+
     const locale = useLocale();
     const dateFnsLocale = locale === 'ar' ? arSA : enUS;
-
+    const InputComponent = DateInputComponent || DefaultDateInputComponent;
     const CustomDateInput = forwardRef<HTMLButtonElement, CustomDateInputProps>(
+
         ({ onClick }, ref) => (
-            <DateInputShowComponent
+            <InputComponent
                 id="date-picker"
                 placeholder={
                     startDate && endDate
@@ -46,9 +55,9 @@ export default function DateRangePicker() {
             startDate={startDate}
             endDate={endDate}
             onChange={(update: [Date | null, Date | null]) => {
-                setDateRange(update);
                 setStartDate(update[0] ?? undefined);
                 setEndDate(update[1] ?? undefined);
+                onChange({ startDate: update[0] ?? undefined, endDate: update[1] ?? undefined })
             }}
             calendarStartDay={1}
             customInput={<CustomDateInput />}
@@ -75,15 +84,18 @@ type DateInputShowComponentProps = {
     ref: React.Ref<HTMLDivElement>;
 };
 
-const DateInputShowComponent: React.FC<DateInputShowComponentProps> = ({
+const DefaultDateInputComponent: React.FC<DateInputShowComponentProps> = ({
+    id,
     placeholder,
     onClick,
+    ref
 }) => {
     const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
         onClick?.(event);
     };
     return (
         <button
+            id={id}
             type="button"
             onClick={onClickHandler}
             className="flex items-center w-[320px] h-[45px] rounded-md bg-[#F5F6F8]  gap-3"

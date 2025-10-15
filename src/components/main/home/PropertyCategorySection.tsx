@@ -12,6 +12,7 @@ import { useSearchParams } from "next/navigation";
 import PropertyCategorySkeleton from "@/components/shared/properties/PropertyCategorySkeleton";
 import { useNormalizedPath } from "@/hooks/useNormalizedPath";
 import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
+import { updateUrlParams } from "@/utils/helpers";
 
 const properties = [
     {
@@ -95,8 +96,7 @@ export default function PropertyCategorySection() {
         params.set("category", value);
         setActiveCategory(value)
 
-        const newUrl = `${pathname}?${params.toString()}`;
-        window.history.replaceState(null, '', newUrl);
+        updateUrlParams(pathname, params);
     };
 
 

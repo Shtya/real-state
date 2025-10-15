@@ -12,7 +12,7 @@ export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () =
     const t = useTranslations('dashboard.header')
 
     return (
-        <header className="px-4 md:px-6 bg-lighter">
+        <header className="px-4 md:px-6 bg-dashboard-bg">
             <div className=" ">
                 <div className="py-[21px] flex justify-between items-center">
                     <div>
@@ -32,7 +32,7 @@ export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () =
                         <LocaleSwitcher Trigger={LocaleTrigger} />
 
                         <Link href='chats'>
-                            <div className="relative bg-white custom-shadow rounded-full p-3">
+                            <div className="relative bg-card-bg custom-shadow rounded-full p-3">
                                 <PingIndicator />
                                 <IoChatbubbleEllipsesOutline size={20} className="text-primary" />
                             </div>
@@ -66,7 +66,7 @@ function LocaleTrigger({
         <button
             onClick={onClick}
             disabled={disabled}
-            className="relative bg-white custom-shadow rounded-full p-3 transition hover:scale-105 disabled:opacity-50"
+            className="relative bg-card-bg custom-shadow rounded-full p-3 transition hover:scale-105 disabled:opacity-50"
             aria-label="Toggle locale"
         >
             <GrLanguage size={20} className="text-primary" />

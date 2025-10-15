@@ -7,13 +7,14 @@ interface SidebarProps {
     open: boolean;
     onClose: () => void;
     children: React.ReactNode;
+    className?: string
 }
 
-export default function Sidebar({ title, open, onClose, children }: SidebarProps) {
+export default function Sidebar({ title, open, onClose, children, className }: SidebarProps) {
     return (
         <>
             {/* Inline content on desktop */}
-            <div className="hidden lg:block">{children}</div>
+            <div className={`hidden lg:block ${className}`}>{children}</div>
 
             {/* Mobile sidebar via portal */}
             {typeof window !== 'undefined' &&

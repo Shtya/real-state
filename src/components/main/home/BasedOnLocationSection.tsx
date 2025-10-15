@@ -2,6 +2,7 @@
 
 import PropertyCardPreview from "@/components/shared/properties/PropertyCardPreview";
 import { useIndicatorPosition } from "@/hooks/useIndicatorPosition";
+import { updateUrlParams } from "@/utils/helpers";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -218,8 +219,7 @@ export default function BasedOnLocationSection() {
         const params = new URLSearchParams(searchParams.toString());
         params.set("rentalType", value);
         setActiveRentalType(value);
-        const newUrl = `${pathname}?${params.toString()}`;
-        window.history.replaceState(null, '', newUrl);
+        updateUrlParams(pathname, params);
     };
 
     // Filter properties based on rental type
