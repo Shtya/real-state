@@ -3,6 +3,7 @@ import DataView from "@/components/shared/DateViewTable/DataView";
 import { TenantContractColumns } from "@/constants/dashboard/tenant/tenantContracts";
 import { useTenantContracts } from "@/hooks/dashboard/tenant/useTenantContracts";
 import { TenantContractRow } from "@/types/dashboard/tenant";
+import { CiEdit } from "react-icons/ci";
 
 export default function TenantContractDataView() {
     const { getRows } = useTenantContracts();
@@ -16,7 +17,8 @@ export default function TenantContractDataView() {
             actionButton={{
                 show: true,
                 label: "Add Reservation",
-                href: "/"
+                href: "/",
+                MobileIcon: CiEdit
             }}
             searchPlaceholder="Search contracts..."
         />

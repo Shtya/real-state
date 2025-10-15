@@ -46,6 +46,7 @@ export default function TableHeader<T>({ columns, showActions }: TableHeaderProp
 
                     return (
                         <TableHeaderCell
+                            key={String(col.key)}
                             col={col}
                             isSorted={isSorted}
                             isAsc={isAsc}

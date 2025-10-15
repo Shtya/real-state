@@ -18,13 +18,18 @@ import { FilterConfig } from '@/types/table';
 import DateRangePicker from '../forms/SelectDateRange';
 import SearchField from '../forms/SearchField';
 import useTableFilter from '@/hooks/dashboard/useTableFilter';
-import ExportExel from '../ExportExel';
-import SecondaryButton from '../buttons/SecondaryButton';
+
+import Sidebar from '../Sidebar';
+import { useState } from 'react';
+import { CiFilter } from 'react-icons/ci';
+import { IconType } from 'react-icons';
+import TableActions from './TableActions';
 
 export type actionButton = {
     show?: boolean;
     label?: string;
     href?: string;
+    MobileIcon?: IconType;
 }
 
 type Props = {
@@ -39,6 +44,7 @@ export default function FilterContainer({
     showSearch = true,
     actionButton = { show: false }
 }: Props) {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const {
         search,
@@ -48,85 +54,90 @@ export default function FilterContainer({
         handleReset,
         handleDateChange
     } = useTableFilter({ filters })
-
     return (
-        <div className='flex items-center gap-3 '>
-            <div className="flex-1 flex flex-row flex-wrap items-center justify-between gap-3 mb-5">
-                <div className=" order-first w-full md:w-auto flex items-center gap-3 "
+        <div>
+            <div className='flex max-md:flex-wrap items-start flex-row gap-3 mb-5 max-lg:p-2'>
+                <button
+                    onClick={() => setSidebarOpen(true)}
+                    className="me-auto inline-flex  lg:hidden bg-primary hover:bg-primary-hover py-2 px-4 text-white gap-1 items-center justify-center rounded-[8px] transition-colors duration-200 "
                 >
-                    {/* {(showSearch || filters.length > 0) && <button
-                    onClick={handleReset}
-                    className=" inline-flex items-center justify-center w-12 h-12 rounded-full bg-[var(--btn-bg)] text-[var(--dark)] transition-colors duration-200 hover:bg-[var(--primary-light)] hover:text-[var(--primary)]"
-                >
-                    <TbFilterCancel size={24} />
-                </button>} */}
+                    <CiFilter size={20} className='shrink-0' />
+                    <span className='text-base'>Filter</span>
+                </button>
 
-                    <div className="flex-1 md:flex-none">
-                        {showSearch && <SearchField
-                            value={search}
-                            onChange={setSearch}
-                            searchPlaceholder={searchPlaceholder}
-                        />}
+                <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} className='flex-1'
+                    title={
+                        <div className='text-primary flex items-center gap-1'>
+                            <CiFilter size={20} className='shrink-0' />
+                            <span className='text-lg'>Filter</span>
+                        </div>
+                    }>
+
+                    <div className="flex-1 flex flex-col max-lg:m-4 max-lg:mt-6 lg:flex-row flex-wrap items-center justify-between gap-3 ">
+                        <div className=" order-first w-full md:w-auto flex items-center gap-3 " >
+                            <div className="flex-1 md:flex-none">
+                                {showSearch && <SearchField
+                                    value={search}
+                                    onChange={setSearch}
+                                    searchPlaceholder={searchPlaceholder}
+                                />}
+                            </div>
+
+                        </div>
+                        {/* 3) Other filters, each direct child */}
+                        {filters.map((filter) => {
+
+                            const current = allFilters[filter.key];
+                            const handleChange = (value: string | undefined) => {
+                                updateFilter(filter.key, value);
+                            };
+                            if (filter.type === 'custom' && filter.Component) {
+                                const CustomComponent = filter.Component;
+                                return (
+                                    <div key={filter.key} className="w-full md:w-fit">
+                                        <CustomComponent value={current} onChange={handleChange} />
+                                    </div>
+                                );
+                            }
+
+                            // if (filter.type === "select" && filter.options) {
+                            //     return (
+                            //         <div key={filter.key} className="w-full md:w-fit">
+                            //             <SelectDropdown
+                            //                 label={filter.label}
+                            //                 options={filter.options}
+                            //                 value={current}
+                            //                 onChange={handleChange}
+                            //             />
+                            //         </div>
+                            //     )
+                            // }
+
+                            if (filter.type === "dateRange") {
+                                const fromDate = allFilters[`${filter.key}_from`]
+                                    ? parse(allFilters[`${filter.key}_from`], 'yyyy-MM-dd', new Date())
+                                    : undefined;
+                                const toDate = allFilters[`${filter.key}_to`]
+                                    ? parse(allFilters[`${filter.key}_to`], 'yyyy-MM-dd', new Date())
+                                    : undefined;
+
+                                return (
+                                    <div key={filter.key} className="w-full md:w-fit">
+                                        <DateRangePicker
+                                            // DateInputComponent={filter.label}
+                                            value={{ startDate: fromDate, endDate: toDate }}
+                                            onChange={(dates) => handleDateChange({ filter, dates })}
+                                        />
+                                    </div>
+                                )
+                            }
+
+                            return null
+                        })}
                     </div>
-                </div>
+                </Sidebar >
 
-
-                {/* 3) Other filters, each direct child */}
-                {filters.map((filter) => {
-
-                    const current = allFilters[filter.key];
-                    const handleChange = (value: string | undefined) => {
-                        updateFilter(filter.key, value);
-                    };
-                    if (filter.type === 'custom' && filter.Component) {
-                        const CustomComponent = filter.Component;
-                        return (
-                            <div key={filter.key} className="w-full md:w-fit">
-                                <CustomComponent value={current} onChange={handleChange} />
-                            </div>
-                        );
-                    }
-
-                    // if (filter.type === "select" && filter.options) {
-                    //     return (
-                    //         <div key={filter.key} className="w-full md:w-fit">
-                    //             <SelectDropdown
-                    //                 label={filter.label}
-                    //                 options={filter.options}
-                    //                 value={current}
-                    //                 onChange={handleChange}
-                    //             />
-                    //         </div>
-                    //     )
-                    // }
-
-                    if (filter.type === "dateRange") {
-                        const fromDate = allFilters[`${filter.key}_from`]
-                            ? parse(allFilters[`${filter.key}_from`], 'yyyy-MM-dd', new Date())
-                            : undefined;
-                        const toDate = allFilters[`${filter.key}_to`]
-                            ? parse(allFilters[`${filter.key}_to`], 'yyyy-MM-dd', new Date())
-                            : undefined;
-
-                        return (
-                            <div key={filter.key} className="w-full md:w-fit">
-                                <DateRangePicker
-                                    // DateInputComponent={filter.label}
-                                    value={{ startDate: fromDate, endDate: toDate }}
-                                    onChange={(dates) => handleDateChange({ filter, dates })}
-                                />
-                            </div>
-                        )
-                    }
-
-                    return null
-                })}
-            </div>
-            <div className='flex gap-3 items-center'>
-                <ExportExel />
-                {actionButton.show && actionButton.href && actionButton.label && <SecondaryButton href={actionButton.href} className='bg-primary hover:bg-primary-hover text-white'>
-                    {actionButton.label}
-                </SecondaryButton>}
+                <TableActions actionButton={actionButton} />
             </div>
         </div>
     )

@@ -96,7 +96,6 @@ export default function DataView<T = Record<string, any>>({
 
             />
 
-
             {isLoading ? (
                 <TableSkeleton columns={columns} rowCount={pageSize} />
             ) : error ? (

@@ -15,14 +15,14 @@ export interface MenuProps {
 
 interface DropdownProps {
     position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left' | 'bottom-center';
-    style?: string;
+    className?: string;
     Trigger: ComponentType<TriggerProps>;
     Menu: ComponentType<MenuProps>;
 }
 
 export default function Dropdown({
     position = 'bottom-left',
-    style,
+    className,
     Trigger,
     Menu,
 }: DropdownProps) {
@@ -53,7 +53,7 @@ export default function Dropdown({
     const dropdownClass = `${baseClass} ${positionClass}`;
 
     return (
-        <div ref={dropdownRef} className={`relative ${style}`}>
+        <div ref={dropdownRef} className={`relative ${className}`}>
             <Trigger onToggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
             {isOpen && (
                 <div className={dropdownClass}>
