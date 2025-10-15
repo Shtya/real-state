@@ -2,7 +2,8 @@
     "root": {
         "siteName": "قنوف",
         "logo": "قنوف",
-        "description": "اكتشف وأدر العقارات مع قنوف."
+        "description": "اكتشف وأدر العقارات مع قنوف.",
+        "lang": "English"
     },
     "comman": {
         "datePlaceholder": "حدد نطاق التاريخ",
@@ -411,17 +412,26 @@
         }
     },
     "dashboard": {
-        "greeting": "مرحبًا بك في لوحة التحكم الخاصة بك، {name}!",
+        "notification": {
+            "title": "آخر الإشعارات"
+        },
+        "header": {
+            "greeting": "مرحبًا، {name}!",
+            "description": "استكشاف المعلومات والنشاطات"
+        },
         "sidebar": {
             "dashboard": "لوحة التحكم",
             "contracts": "العقود",
             "renewRequests": "طلبات التجديد",
-            "accountSetting": "إعدادات الحساب",
             "paymentHistory": "سجل المدفوعات",
-            "customerSupport": "الدعم الفني",
+            "support": "الدعم الفني",
+            "settings": "إعدادات الحساب",
             "rentalsContracts": "الإيجارات والعقود",
             "properties": "العقارات",
-            "revenueSummary": "ملخص الإيرادات"
+            "revenueSummary": "ملخص الإيرادات",
+            "notifications": "الإشعارات",
+            "chat": "المحادثة",
+            "logout": "تسجيل الخروج"
         }
     }
 }

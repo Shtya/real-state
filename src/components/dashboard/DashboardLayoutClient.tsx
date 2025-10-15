@@ -4,18 +4,20 @@ import { useState } from 'react';
 import DashboardHeader from '@/components/dashboard/DashboardHeader';
 import DashboardSidebar from '@/components/dashboard/DashboardSidebar';
 import Sidebar from '@/components/shared/Sidebar';
+import { useTranslations } from 'next-intl';
 
 export default function DashboardLayoutClient({ children }: { children: React.ReactNode }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const t = useTranslations('dashboard.sidebar');
 
     return (
-        <div>
-            <DashboardHeader onOpenSidebar={() => setSidebarOpen(true)} />
-            <div className="flex">
-                <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} title="Dashboard">
-                    <DashboardSidebar />
-                </Sidebar>
-                <main className="flex-1 p-4 lg:py-6">{children}</main>
+        <div className='bg-lighter flex h-screen'>
+            <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} title={t('dashboard')}>
+                <DashboardSidebar />
+            </Sidebar>
+            <div className="flex-1">
+                <DashboardHeader onOpenSidebar={() => setSidebarOpen(true)} />
+                <main className="flex-1 p-2">{children}</main>
             </div>
         </div>
     );

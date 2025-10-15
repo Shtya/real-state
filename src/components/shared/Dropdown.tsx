@@ -39,9 +39,9 @@ export default function Dropdown({
 
     let positionClass = '';
     if (position === 'bottom-right') {
-        positionClass = 'top-full right-0 mt-2';
+        positionClass = 'top-full end-0 mt-2';
     } else if (position === 'bottom-left') {
-        positionClass = 'top-full left-0 mt-2';
+        positionClass = 'top-full start-0 mt-2';
     } else if (position === 'top-right') {
         positionClass = 'bottom-full right-0 mb-2';
     } else if (position === 'top-left') {

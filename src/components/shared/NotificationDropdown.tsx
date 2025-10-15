@@ -1,6 +1,8 @@
 import { BsBell } from "react-icons/bs";
 import Dropdown, { MenuProps, TriggerProps } from "./Dropdown";
 import { FaRegNewspaper } from "react-icons/fa";
+import PingIndicator from "./PingIndicator";
+import { useTranslations } from "use-intl";
 
 
 export default function NotificationDropdown() {
@@ -11,19 +13,15 @@ export default function NotificationDropdown() {
 
 function NotificationTrigger({ isOpen, onToggle }: TriggerProps) {
     return (
-        <div className="relative inline-flex mt-2">
+        <div className="relative inline-flex bg-white p-3 rounded-full custom-shadow">
             {/* Notification Dot */}
-            <span className="absolute top-[-4px] right-0 flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#EB5757] opacity-75"></span>
-                <span className="absolute inline-flex size-2 rounded-full bg-[#EB5757]"></span>
-            </span>
-
+            <PingIndicator />
             {/* Bell Button */}
             <button
                 type="button"
                 aria-label="فتح الإشعارات"
                 onClick={onToggle}
-                className="text-secondary inline-flex justify-center rounded-3xl text-sm hover:bg-opacity-30"
+                className="text-primary inline-flex justify-center rounded-3xl text-sm hover:bg-opacity-30"
             >
                 <BsBell className="w-5 h-5" />
             </button>
@@ -56,6 +54,7 @@ const notifications: Notification[] = [
 
 
 function NotificationMenu({ isOpen, onClose }: MenuProps) {
+    const t = useTranslations('dashboard.notification')
     return (
         <div>
             <div className="">
@@ -63,7 +62,7 @@ function NotificationMenu({ isOpen, onClose }: MenuProps) {
                     style={{
                         background: 'linear-gradient(90deg, var(--secondary) 0%, var(--lightGold) 100%)',
                     }}>
-                    Last Notifications
+                    {t('title')}
                 </header>
                 <div className="p-6 bg-white">
                     {notifications.map((item) => (

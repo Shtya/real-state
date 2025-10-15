@@ -2,7 +2,8 @@
     "root": {
         "siteName": "Real State",
         "logo": "QUNUF",
-        "description": "Discover, list, and manage properties with Real State."
+        "description": "Discover, list, and manage properties with Real State.",
+        "lang": "عربي"
     },
     "comman": {
         "datePlaceholder": "Select Date Range",
@@ -411,17 +412,26 @@
         }
     },
     "dashboard": {
-        "greeting": "Welcome to your dashboard, {name}!",
+        "notification": {
+            "title": "Last Notifications"
+        },
+        "header": {
+            "greeting": "Hello, {name}!",
+            "description": "Explore information and activity"
+        },
         "sidebar": {
             "dashboard": "Dashboard",
             "contracts": "Contracts",
             "renewRequests": "Renew Requests",
-            "accountSetting": "Account Setting",
+            "settings": "Account Setting",
             "paymentHistory": "Payment History",
-            "customerSupport": "Customer Support",
+            "support": "Customer Support",
             "rentalsContracts": "Rentals & Contracts",
             "properties": "Properties",
-            "revenueSummary": "Revenue Summary"
+            "revenueSummary": "Revenue Summary",
+            "notifications": "Notifications",
+            "chat": "Chat",
+            "logout": "Logout"
         }
     }
 }
