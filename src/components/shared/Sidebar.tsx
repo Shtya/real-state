@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { HiX } from "react-icons/hi";
 
 interface SidebarProps {
-    title: string;
+    title: string | ReactNode;
     open: boolean;
     onClose: () => void;
     children: React.ReactNode;
