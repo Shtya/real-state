@@ -16,7 +16,7 @@
 import { useSearchParams } from 'next/navigation';
 import { FilterConfig, TableColumnType, TableRowType } from '@/types/table';
 import TableSkeleton from './TableSkeleton';
-import FilterContainer from './FilterContainer';
+import FilterContainer, { actionButton } from './FilterContainer';
 import { useEffect, useState } from 'react';
 import Table from './Table';
 import TableError from './TableError';
@@ -32,6 +32,7 @@ type DataViewProps<T = Record<string, any>> = {
     actionsMenuItems?: (row: T, onClose?: () => void) => MenuActionItem[];
     showActions?: boolean;
     pageSize?: number;
+    actionButton?: actionButton
     getRows: (signal?: AbortSignal) => Promise<{
         rows: TableRowType<T>[];
         error?: Error | null;
@@ -49,6 +50,7 @@ export default function DataView<T = Record<string, any>>({
     actionsMenuItems,
     showActions = false,
     pageSize = 10,
+    actionButton,
     getRows,
 }: DataViewProps<T>) {
     const searchParams = useSearchParams();
@@ -90,6 +92,7 @@ export default function DataView<T = Record<string, any>>({
                 filters={filters}
                 showSearch={showSearch}
                 searchPlaceholder={searchPlaceholder}
+                actionButton={actionButton}
 
             />
 
@@ -108,7 +111,7 @@ export default function DataView<T = Record<string, any>>({
             )}
 
             {totalRowsCount > 0 && (
-                <div className="flex justify-between items-center gap-3 pt-5 lg:pt-5 flex-wrap">
+                <div className="flex justify-between items-center gap-3 pt-5 lg:pt-7 flex-wrap">
                     {pageCount > 1 ? <TablePagination pageCount={pageCount} /> : <div></div>}
                     <span className="text-sm text-gray-500">
                         Showing {startEntry} to {endEntry} of {totalRowsCount} entries

@@ -13,6 +13,11 @@ export default function TenantContractDataView() {
             getRows={getRows}
             showActions={false}
             pageSize={10}
+            actionButton={{
+                show: true,
+                label: "Add Reservation",
+                href: "/"
+            }}
             searchPlaceholder="Search contracts..."
         />
     );

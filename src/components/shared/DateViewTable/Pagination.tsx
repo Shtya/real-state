@@ -49,9 +49,9 @@ export default function Pagination({ currentPage, pageCount, onPageChange }: Pag
                         <button
                             key={idx}
                             onClick={() => onPageChange(Number(item))}
-                            className={`px-3 py-2 w-[40px] h-[40px] rounded-[8px] duration-300 hover:scale-[1.1] ${currentPage === item
+                            className={`px-3 py-2 w-[40px] h-[40px] rounded-[8px] duration-300 hover:scale-[1.05] ${currentPage === item
                                 ? 'bg-[var(--primary)] text-white font-semibold'
-                                : 'bg-white border text-secondary hover:bg-lighter'
+                                : 'bg-white border border-gray-500 text-gray-500 hover:bg-lighter'
                                 }`}
                         >
                             {item}
