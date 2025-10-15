@@ -7,6 +7,7 @@ import { useOutsideClick } from "@/hooks/useOutsideClick";
 import LocaleSwitcher from "../LocaleSwitcher";
 import { useTranslations } from "next-intl";
 import Logo from "../Logo";
+import SecondaryButton from "../buttons/SecondaryButton";
 
 
 export default function Header() {
@@ -40,12 +41,11 @@ export default function Header() {
 
     const navLinks = [
         { label: t("nav.home"), href: "/" },
-        { label: t("nav.about"), href: "/about" },
         { label: t("nav.realEstate"), href: "/properties" },
         { label: t("nav.blog"), href: "/blog" },
+        { label: t("nav.about"), href: "/about" },
         { label: t("nav.contact"), href: "/contact" },
         { label: t("nav.dashboard"), href: "/dashboard" },
-        { label: t("nav.login"), href: "/sign-in" }
     ];
 
     return (
@@ -56,9 +56,7 @@ export default function Header() {
             <div className={`w-full xl:max-w-[1208px] mx-auto flex items-center justify-between gap-4 transition-colors ${isSticky ? 'max-md:bg-white' : 'bg-[#FAFAFA]'} xl:rounded-full px-5 lg:px-8  py-3 md:py-5`}>
                 {/* Logo */}
 
-
                 <Logo />
-
 
                 {/* Desktop nav */}
                 <nav className="navbar hidden md:flex items-center gap-4 sm:gap-5 lg:gap-7 text-base sm:text-lg md:text-xl text-dark font-bold">
@@ -76,6 +74,9 @@ export default function Header() {
 
                 {/* Language (desktop) */}
                 <div className="flex items-center gap-2 ">
+                    <SecondaryButton href="/sign-in" className="bg-secondary hover:bg-secondary-hover text-white">
+                        {t("nav.login")}
+                    </SecondaryButton>
                     <LocaleSwitcher />
 
                     {/* Mobile controls */}
