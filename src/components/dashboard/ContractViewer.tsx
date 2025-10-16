@@ -26,7 +26,7 @@ export default function ContractViewer({ images }: ContractViewerProps) {
     return (
         <div>
             <button
-                className="text-primary py-1 px-2 border border-lightGold rounded-full text-sm disabled:opacity-50"
+                className="text-primary py-1 px-2 border border-dark rounded-full text-sm disabled:opacity-50"
                 onClick={() => hasImages && setMenuOpen(true)}
                 disabled={!hasImages}
             >

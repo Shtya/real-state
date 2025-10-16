@@ -21,7 +21,7 @@ export default function DashboardCard({
                         <p className="font-medium text-lg md:text-xl">{title}</p>
                     )}
                     {linkLabel && linkHref && (
-                        <a href={linkHref} className="text-input">
+                        <a href={linkHref} className="text-dark">
                             {linkLabel}
                         </a>
                     )}

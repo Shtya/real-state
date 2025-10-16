@@ -22,15 +22,15 @@ export default function TableRow<T>({
     return (
         <tr
             key={idx}
-            className="hover:bg-lighter border-b border-gray-200 group/row transition-colors duration-200"
+            className="hover:bg-lighter border-b border-gray-500 group/row transition-colors duration-200"
         >
-            {allColumns.map((col) => {
+            {allColumns.map((col, index) => {
                 const value = row[col.key];
 
                 return (
                     <td
-                        key={String(col.key)}
-                        className={`align-middle group-hover/row:bg-lighter py-4 px-4 text-input ${col.className || ''}`}
+                        key={index}
+                        className={`align-middle group-hover/row:bg-lighter py-4 px-4 text-dark ${col.className || ''}`}
                     >
 
 

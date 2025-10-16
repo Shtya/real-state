@@ -34,13 +34,13 @@ export default function RenewRequestCard({ data, onCancel, onRenew }: RenewReque
                 />
                 <div className="flex flex-col justify-between">
                     <div>
-                        <p className="text-xs text-gray-500">{data.type}</p>
+                        <p className="text-xs text-dark">{data.type}</p>
                         <h2 className="text-base font-semibold text-dark">{data.title}</h2>
                     </div>
                     <div className="flex items-center gap-1 text-sm text-gray-600">
                         <FaStar className="text-yellow-500" size={14} />
                         <span className="font-medium">{data.rating.toFixed(2)}</span>
-                        <span className="text-gray-400">({data.reviews} reviews)</span>
+                        <span className="text-gray-600">({data.reviews} reviews)</span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ export default function RenewRequestCard({ data, onCancel, onRenew }: RenewReque
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 items-center mt-6 p-4">
                 <SecondaryButton
-                    className="border border-gray-500 text-gray-700 w-full sm:w-auto sm:flex-1 max-w-[320px]"
+                    className="border border-gray-500 text-gray-700 w-full sm:w-auto sm:flex-1 max-w-[320px] hover:bg-gray"
                     onClick={onCancel}
                 >
                     Cancel

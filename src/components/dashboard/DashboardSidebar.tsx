@@ -34,7 +34,7 @@ export default function DashboardSidebar() {
                 <Logo small />
             </div>
 
-            <div className='bg-card-bg rounded-[55px] p-2 space-y-2 lg:space-y-1 max-lg:w-full lg:mt-10'>
+            <div className='lg:bg-card-bg rounded-[55px] p-2 space-y-2 lg:space-y-1 max-lg:w-full lg:mt-10'>
                 {items.map(({ href, key, Icon }) => {
                     const isActive = normalizedPath === href;
                     return (

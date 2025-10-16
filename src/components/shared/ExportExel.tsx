@@ -22,7 +22,7 @@ export default function ExportExel() {
             {/* Mobile trigger */}
             <div className="block md:hidden w-fit">
                 <Tooltip content=" Export  Excel">
-                    <button className="px-4 py-2 rounded-[8px]  border border-gray " onClick={() => setShowPopup(true)}>
+                    <button className="px-4 py-2 rounded-[8px]  border border-dark " onClick={() => setShowPopup(true)}>
                         <CiExport size={24} className='shrink-0 text-dark' />
                     </button>
                 </Tooltip>
@@ -40,7 +40,7 @@ export default function ExportExel() {
 
 function ExportExelTrigger({ isOpen, onToggle }: TriggerProps) {
     return (
-        <SecondaryButton className="text-nowrap flex gap-2 items-center border border-gray hover:bg-gray text-dark" onClick={onToggle} >
+        <SecondaryButton className="text-nowrap flex gap-2 items-center border border-dark hover:bg-gray text-dark" onClick={onToggle} >
             Export  Excel
         </SecondaryButton>
     )

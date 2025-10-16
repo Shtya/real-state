@@ -21,7 +21,7 @@ export default function TableHeaderCell<T>({
     return (
         <th
             key={String(col.key)}
-            className={`group text-start py-4 px-4 font-semibold text-sm uppercase tracking-wide border-b  border-gray-400 transition duration-200  ${!isSorted && "hover:opacity-70"}
+            className={`group text-start py-4 px-4 font-semibold text-sm uppercase tracking-wide border-b  border-gray-500 transition duration-200  ${!isSorted && "hover:opacity-70"}
                 ${col.className || ''} ${col.sortable ? 'cursor-pointer select-none' : ''}`}
             onClick={() => col.sortable && onSort?.(String(col.key))}
         >

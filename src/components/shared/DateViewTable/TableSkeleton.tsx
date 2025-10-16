@@ -22,11 +22,11 @@ export default function TableSkeleton<T = Record<string, any>>({
         <div className="overflow-x-auto">
             <table className="min-w-full table-fixed whitespace-nowrap overflow-hidden">
                 <thead>
-                    <tr className="bg-[var(--primary-light)] text-right text-[var(--dark)]">
+                    <tr className="bg-[var(--primary-light)] text-right text-dark">
                         {allColumns.map((col) => (
                             <th
                                 key={String(col.key)}
-                                className={`py-4 px-4 font-semibold text-sm uppercase tracking-wide border-b border-[var(--border)] ${col.className || ''}`}
+                                className={`py-4 px-4 font-semibold text-sm uppercase tracking-wide border-b border-gray-500 ${col.className || ''}`}
                             >
                                 {col.label}
                             </th>
@@ -39,9 +39,9 @@ export default function TableSkeleton<T = Record<string, any>>({
                             {allColumns.map((col) => (
                                 <td
                                     key={String(col.key)}
-                                    className={`py-4 px-4 text-right align-top text-[var(--dark)] ${col.className || ''}`}
+                                    className={`py-4 px-4 text-right align-top text-gray-500 ${col.className || ''}`}
                                 >
-                                    <div className="h-4 bg-gray-200 rounded w-full" />
+                                    <div className="h-4 bg-gray-500 rounded w-full" />
                                 </td>
                             ))}
                         </tr>

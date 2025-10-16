@@ -34,13 +34,13 @@ export default function TableHeader<T>({ columns }: TableHeaderProps<T>) {
     return (
         <thead>
             <tr className="">
-                {columns.map((col) => {
+                {columns.map((col, index) => {
                     const isSorted = sort === col.key;
                     const isAsc = dir === 'asc';
 
                     return (
                         <TableHeaderCell<T>
-                            key={String(col.key)}
+                            key={index}
                             col={col}
                             isSorted={isSorted}
                             isAsc={isAsc}
