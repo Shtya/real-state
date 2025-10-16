@@ -8,6 +8,7 @@ interface PaginationButtonProps {
     currentPage: number;
     isDisabled: boolean,
     onPageChange: () => void;
+    iconPosition?: 'left' | 'right'
 }
 
 export default function PaginationButton({
@@ -15,17 +16,28 @@ export default function PaginationButton({
     icon,
     isDisabled,
     onPageChange,
+    iconPosition = 'left'
 }: PaginationButtonProps) {
 
     return (
         <button
             onClick={() => onPageChange()}
             disabled={isDisabled}
-            className={`border border-gray-500 flex items-center justify-center gap-1 text-gray-500 px-2 py-[6px] lg:px-3 lg:py-2 text-sm  lg:text-base  rounded-[8px] duration-300 hover:scale-[1.05] ${isDisabled ? 'opacity-30 cursor-not-allowed' : 'hover:bg-lighter'
+            className={`border border-gray-500 flex items-center justify-center gap-1 text-gray-500 px-2 py-[6px] lg:px-3 lg:py-2 text-sm  lg:text-base  rounded-[8px] duration-300  ${isDisabled ? 'opacity-30 cursor-not-allowed' : 'hover:bg-lighter'
                 }`}
         >
-            {icon}
-            <span>{label}</span>
-        </button>
+            {iconPosition === 'left' ? (
+                <>
+                    {icon}
+                    <span>{label}</span>
+                </>
+            ) : (
+                <>
+                    <span>{label}</span>
+                    {icon}
+                </>
+            )}
+
+        </button >
     );
 }

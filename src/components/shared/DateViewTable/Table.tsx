@@ -36,7 +36,7 @@ export default function Table<T = Record<string, any>>({
 
     return (
         <div className="">
-            <table className="min-w-full bg-white table-fixed whitespace-nowrap overflow-hidden">
+            <table className="min-w-full bg-card-bg table-fixed whitespace-nowrap overflow-hidden">
                 <TableHeader<T> columns={allColumns} showActions={showActions} />
                 <tbody>
                     {rows.length === 0 ? (
