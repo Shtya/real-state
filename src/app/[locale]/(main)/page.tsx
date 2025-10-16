@@ -2,7 +2,7 @@ import BasedOnLocationSection from "@/components/main/home/BasedOnLocationSectio
 import ContactUsSection from "@/components/main/home/ContactUsSection";
 import Features from "@/components/main/home/Features";
 import HeroSection from "@/components/main/home/HeroSection";
-import PaymentsRow from "@/components/main/home/PaymentsRow";
+import PaymentsCompanyRow from "@/components/main/home/PaymentsCompanyRow";
 import PropertyCategorySection from "@/components/main/home/PropertyCategorySection";
 import RecentPropertiesSection from "@/components/main/home/RecentPropertiesSection";
 
@@ -16,7 +16,7 @@ export default async function Home() {
       <RecentPropertiesSection />
       <PropertyCategorySection />
       <BasedOnLocationSection />
-      <PaymentsRow />
+      <PaymentsCompanyRow />
       <Features />
       <ContactUsSection />
     </div>

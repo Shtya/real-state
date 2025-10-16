@@ -6,6 +6,7 @@ const rows: TenantContractRow[] = [
     {
         id: "contract-1",
         property: {
+            id: 'property-1',
             imagePath: '/properties/property-3.jpg',
             name: 'Luxury Family Home'
         },
@@ -23,6 +24,7 @@ const rows: TenantContractRow[] = [
     {
         id: "contract-2",
         property: {
+            id: 'property-1',
             imagePath: '/properties/property-3.jpg',
             name: 'Luxury Family Home'
         },
@@ -40,6 +42,7 @@ const rows: TenantContractRow[] = [
     {
         id: "contract-3",
         property: {
+            id: 'property-1',
             imagePath: '/properties/property-3.jpg',
             name: 'Luxury Family Home'
         },
@@ -57,6 +60,7 @@ const rows: TenantContractRow[] = [
     {
         id: "contract-4",
         property: {
+            id: 'property-1',
             imagePath: '/properties/property-3.jpg',
             name: 'Luxury Family Home'
         },

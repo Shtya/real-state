@@ -9,18 +9,16 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-
-      {
-        source: '/ar/dashboard',
-        destination: '/ar/dashboard/tenant',
-        permanent: true,
-      },
-      // Wildcard path matching
       {
         source: '/en/dashboard',
         destination: '/en/dashboard/tenant',
         permanent: true,
       },
+      {
+        source: '/ar/dashboard',
+        destination: '/ar/dashboard/tenant',
+        permanent: true
+      }
     ]
   },
 };

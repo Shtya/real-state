@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function PaymentsRow() {
+export default function PaymentsCompanyRow() {
     return (
         <div className="bg-secondary">
             <div className="px-4 py-4 lg:py-6 sm:px-6 lg:px-8 xl:px-10 container overflow-x-auto">

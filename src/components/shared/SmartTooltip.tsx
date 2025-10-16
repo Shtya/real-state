@@ -1,3 +1,5 @@
+'use client'
+
 import { DropMenuPosition, getDropMenuPosition } from "@/utils/helpers";
 import { ReactNode, useEffect, useState } from "react";
 

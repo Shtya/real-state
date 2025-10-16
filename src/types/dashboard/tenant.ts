@@ -5,6 +5,7 @@ import { ContractStatus } from "../global";
 export type TenantContractRow = {
     id: string;
     property: {
+        id: string;
         imagePath: string;
         name: string;
     }
@@ -17,7 +18,5 @@ export type TenantContractRow = {
         src: string;
         alt?: string;
     }[];
-
-
     location: string;
 };

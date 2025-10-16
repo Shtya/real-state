@@ -1,43 +1,16 @@
 
 import ContractViewer from '@/components/dashboard/ContractViewer';
-import SmartTooltip from '@/components/shared/SmartTooltip';
+import { PropertyCell } from '@/components/shared/properties/PropertyCell';
 import { TenantContractRow } from '@/types/dashboard/tenant';
 import { ContractStatus } from '@/types/global';
 import { TableColumnType } from '@/types/table';
 import { format } from 'date-fns';
-import Image from 'next/image';
 
 export const TenantContractColumns: TableColumnType<TenantContractRow>[] = [
     {
         key: 'property', label: 'Property',
         cell(value) {
-            return (
-                <div>
-
-                    <div className="flex items-center gap-2 min-w-fit">
-                        <Image
-                            src={value.imagePath}
-                            width={40}
-                            height={40}
-                            alt={value.name}
-                            className="w-[40px] h-[40px] rounded-[8px] shrink-0"
-                        />
-                        <SmartTooltip
-                            value={value.name}
-                            maxLength={{
-                                xs: 10,  // <640px (mobile)
-                                sm: 15,    // ≥640px
-                                md: 20,    // ≥768px
-                                lg: 30,    // ≥1024px
-                                xl: 40     // ≥1280px
-                            }}
-                            className="text-dark"
-                        />
-                    </div>
-
-                </div>
-
-            )
+            return <PropertyCell {...value} />;
         }
     },
     {
