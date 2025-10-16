@@ -17,7 +17,7 @@ export type SidebarLink = {
 const tenantLinks: SidebarLink[] = [
     { href: '/dashboard/tenant', key: 'dashboard', Icon: LuLayoutDashboard },
     { href: '/dashboard/tenant/contracts', key: 'contracts', Icon: TbContract },
-    { href: '/dashboard/tenant/renewals', key: 'renewRequests', Icon: MdOutlineFactCheck },
+    { href: '/dashboard/tenant/renew-requests', key: 'renewRequests', Icon: MdOutlineFactCheck },
     { href: '/dashboard/tenant/payments', key: 'paymentHistory', Icon: MdOutlinePayments },
 ];
 
@@ -26,7 +26,7 @@ const landlordLinks: SidebarLink[] = [
     { href: '/dashboard/landlord', key: 'dashboard', Icon: LuLayoutDashboard },
     { href: '/dashboard/landlord/contracts', key: 'rentalsContracts', Icon: TbContract },
     { href: '/dashboard/landlord/properties', key: 'properties', Icon: PiBuildingApartment },
-    { href: '/dashboard/landlord/renewals', key: 'renewRequests', Icon: MdOutlineFactCheck },
+    { href: '/dashboard/landlord/renew-requests', key: 'renewRequests', Icon: MdOutlineFactCheck },
     { href: '/dashboard/landlord/revenue', key: 'revenueSummary', Icon: IoAnalytics },
 ];
 
