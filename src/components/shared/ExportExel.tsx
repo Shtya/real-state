@@ -93,7 +93,7 @@ function ExportExelMenu({ onClose }: { onClose?: () => void }) {
                     id="max-rows"
                     type="number"
                     min={1}
-                    className={`input input-bordered w-full ${scope !== 'more' && 'select-none'}`}
+                    className={`input input-bordered w-full  border border-gray py-1 px-2 rounded-[8px] focus:outline-0 ${scope !== 'more' && 'select-none'}`}
                     value={maxRows}
                     disabled={scope !== 'more'}
                     onChange={(e) => setMaxRows(Math.max(1, Number(e.target.value) || 0))}
