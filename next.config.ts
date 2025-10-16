@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
       // Wildcard path matching
       {
         source: '/en/dashboard',
-        destination: '/ar/dashboard/tenant',
+        destination: '/en/dashboard/tenant',
         permanent: true,
       },
     ]

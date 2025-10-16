@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
 import { ComponentType } from 'react';
+import { DropMenuPosition, getDropMenuPosition } from '@/utils/helpers';
 
 export interface TriggerProps {
     isOpen: boolean;
@@ -14,7 +15,7 @@ export interface MenuProps {
 
 
 interface DropdownProps {
-    position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left' | 'bottom-center';
+    position?: DropMenuPosition;
     className?: string;
     Trigger: ComponentType<TriggerProps>;
     Menu: ComponentType<MenuProps>;
@@ -35,20 +36,10 @@ export default function Dropdown({
     );
 
     const baseClass =
-        'absolute  w-max overflow-y-auto rounded shadow-md z-10';
+        'absolute w-max overflow-y-auto rounded shadow-md z-10';
 
-    let positionClass = '';
-    if (position === 'bottom-right') {
-        positionClass = 'top-full end-0 mt-2';
-    } else if (position === 'bottom-left') {
-        positionClass = 'top-full start-0 mt-2';
-    } else if (position === 'top-right') {
-        positionClass = 'bottom-full right-0 mb-2';
-    } else if (position === 'top-left') {
-        positionClass = 'bottom-full left-0 mb-2';
-    } else if (position === 'bottom-center') {
-        positionClass = 'top-full left-1/2 -translate-x-1/2 mt-2';
-    }
+    const positionClass = getDropMenuPosition(position);
+
 
     const dropdownClass = `${baseClass} ${positionClass}`;
 

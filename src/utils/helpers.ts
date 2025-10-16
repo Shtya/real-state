@@ -70,3 +70,31 @@ export function updateUrlParams(pathname: string, params: URLSearchParams) {
     const newUrl = `${pathname}?${params.toString()}`;
     window.history.replaceState(null, '', newUrl);
 }
+
+export type DropMenuPosition =
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-right'
+    | 'top-left'
+    | 'bottom-center'
+    | 'top-center';
+
+export function getDropMenuPosition(position: DropMenuPosition) {
+    let className = '';
+
+    if (position === 'bottom-right') {
+        className = 'top-full end-0 mt-2';
+    } else if (position === 'bottom-left') {
+        className = 'top-full start-0 mt-2';
+    } else if (position === 'top-right') {
+        className = 'bottom-full end-0 mb-2';
+    } else if (position === 'top-left') {
+        className = 'bottom-full start-0 mb-2';
+    } else if (position === 'bottom-center') {
+        className = 'top-full -start-1/2  mt-2';
+    } else if (position === 'top-center') {
+        className = 'bottom-full -start-1/2  mb-2';
+    }
+
+    return className;
+}

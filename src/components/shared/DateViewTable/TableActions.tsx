@@ -16,7 +16,7 @@ export default function TableActions({ actionButton }: { actionButton: actionBut
                         {actionButton.label}
                     </SecondaryButton>
                     <div className="block md:hidden">
-                        <Tooltip content={actionButton.label}>
+                        <Tooltip content={actionButton.label}   >
                             <Link href={actionButton.href} className="block px-4 p-2 bg-primary hover:bg-primary-hover rounded-[8px]  border border-gray">
                                 <MobileIcon size={24} className='shrink-0 text-white' />
                             </Link>
