@@ -94,7 +94,8 @@ export default function DashboardSidebar() {
 
                 {/* Desktop: Logout icon with tooltip */}
                 <div className="hidden lg:block group relative">
-                    <Tooltip content={t("logout")}>
+                    <Tooltip content={t("logout")}
+                        position="top-left">
                         <button
                             className="w-[44px] h-[44px] flex items-center justify-center rounded-full  hover:bg-gray text-dark"
                             aria-label={t("logout")}

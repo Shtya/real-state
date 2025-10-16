@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import React, { ComponentType, ReactElement, useState } from 'react';
 import Popup from '../Popup';
+import { IconType } from 'react-icons';
+import Tooltip from '../Tooltip';
 
 export type ActionType =
     | 'primary'
@@ -29,7 +31,7 @@ const getColorClass = (type?: ActionType) => {
 
 export type MenuActionItem = {
     label: string;
-    icon?: ReactElement;
+    Icon?: IconType;
     type?: ActionType;
     link?: string;
     Child?: ComponentType<{ onClose: () => void }>;
@@ -40,6 +42,7 @@ type Props = {
     onClose?: () => void;
 };
 
+//for drop dwon action version 
 export default function MenuActionList({ items, onClose }: Props) {
     const [activeChild, setActiveChild] = useState<{ Child: ComponentType<{ onClose: () => void }> | undefined }>({ Child: undefined });
     const [menuOpen, setMenuOpen] = useState(false);
@@ -52,11 +55,13 @@ export default function MenuActionList({ items, onClose }: Props) {
     if (items?.length == 0) return null;
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 bg-white p-2">
             {items?.map((item, index) => {
+                const Icon = item.Icon;
                 const content = (
                     <>
-                        {item.icon && <span className="w-4 h-4">{item.icon}</span>}
+                        {Icon && <Icon size={16} />}
+
                         <span>{item.label}</span>
                     </>
                 );
@@ -82,6 +87,68 @@ export default function MenuActionList({ items, onClose }: Props) {
                             setMenuOpen(true);
                         }}
                         className={`flex items-center gap-2 text-sm ${getColorClass(item.type)}`}
+                    >
+                        {content}
+                    </button>
+                );
+            })}
+
+            {/* Render child if active */}
+            {activeChild?.Child && (
+                <Popup onClose={handleOnClose} show={menuOpen}>
+                    <activeChild.Child onClose={handleOnClose} />
+                </Popup>
+            )}
+
+        </div>
+    );
+}
+
+
+// for icon version
+export function ActionList({ items }: Props) {
+    const [activeChild, setActiveChild] = useState<{ Child: ComponentType<{ onClose: () => void }> | undefined }>({ Child: undefined });
+    const [menuOpen, setMenuOpen] = useState(false);
+
+
+    function handleOnClose() {
+        setMenuOpen(false);
+    }
+
+    if (items?.length == 0) return null;
+
+    return (
+        <div className="flex flex-row gap-4 p-2">
+            {items?.map((item, index) => {
+                const Icon = item.Icon;
+                const content = (
+                    <>
+                        <Tooltip content={item.label}>
+                            {Icon && <Icon size={20} className={`${getColorClass(item.type)}`} />}
+                        </Tooltip>
+                    </>
+                );
+
+                if (item.link) {
+                    return (
+                        <Link
+                            key={index}
+                            href={item.link}
+                            className={`flex items-center gap-2 text-sm  disabled:opacity-50`}
+                        >
+                            {content}
+                        </Link>
+                    );
+                }
+
+                return (
+                    <button
+                        key={index}
+                        onClick={() => {
+                            setActiveChild({ Child: item.Child });
+                            setMenuOpen(true);
+                        }}
+                        className={`flex items-center gap-2 text-sm `}
                     >
                         {content}
                     </button>

@@ -35,7 +35,7 @@ export default function SidebarItem({
 
             {/* Desktop view with tooltip */}
             <div className="hidden lg:block">
-                <Tooltip content={label}>
+                <Tooltip content={label} position="top-left">
                     <Link href={href}>
                         <div className={desktopClass}>
                             {Icon && <Icon className={iconClass} />}

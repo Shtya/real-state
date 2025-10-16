@@ -104,7 +104,6 @@ export default async function TenantPage() {
                     ))}
                 </div>
             </DashboardCard>
-            <TenantContractDataView />
 
         </div>
     );

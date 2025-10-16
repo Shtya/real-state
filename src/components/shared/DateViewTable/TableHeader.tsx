@@ -8,19 +8,14 @@ import TableHeaderCell from './TableHeaderCell';
 
 interface TableHeaderProps<T> {
     columns: TableColumnType<T>[];
-    showActions?: boolean;
 }
 
-export default function TableHeader<T>({ columns, showActions }: TableHeaderProps<T>) {
+export default function TableHeader<T>({ columns }: TableHeaderProps<T>) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
     const sort = searchParams.get('sort');
     const dir = searchParams.get('dir') ?? 'asc';
-
-    const allColumns: TableColumnType<T>[] = showActions
-        ? [...columns, { key: 'actions' as keyof T, label: '', className: 'w-12' }]
-        : columns;
 
     const handleSort = (key: string) => {
         const isSameKey = sort === key;
@@ -38,8 +33,8 @@ export default function TableHeader<T>({ columns, showActions }: TableHeaderProp
 
     return (
         <thead>
-            <tr className="bg- text-">
-                {allColumns.map((col) => {
+            <tr className="">
+                {columns.map((col) => {
                     const isSorted = sort === col.key;
                     const isAsc = dir === 'asc';
 

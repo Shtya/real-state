@@ -10,7 +10,7 @@ export default function DashboardLayoutClient({ children }: { children: React.Re
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <div className='relative bg-dashboard-bg  h-full'>
+        <div className='relative bg-dashboard-bg  h-full min-h-screen'>
             <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} title={<Logo small />} className='lg:w-[140px] absolute top-0 left-0 bottom-0'>
                 <DashboardSidebar />
             </Sidebar>
