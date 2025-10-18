@@ -65,20 +65,7 @@ export default function DashboardSidebar() {
                         Icon={FaHeadset}
                     />
                 </div>
-                <div className="mt-6 space-y-1 lg:hidden w-full">
-                    <SidebarItem
-                        href={getHref('notifications')}
-                        label={t("notifications")}
-                        isActive={isPathActive(normalizedPath, role, 'notifications')}
-                        Icon={IoNotificationsOutline}
-                    />
-                    <SidebarItem
-                        href={getHref('chats')}
-                        label={t("chat")}
-                        isActive={isPathActive(normalizedPath, role, 'chats')}
-                        Icon={IoChatbubbleEllipsesOutline}
-                    />
-                </div>
+
             </div>
 
             <div className="mt-8 flex flex-col items-center gap-4 lg:gap-[35px] w-full max-lg:p-2">

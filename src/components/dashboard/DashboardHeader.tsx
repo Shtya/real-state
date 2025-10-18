@@ -8,51 +8,70 @@ import { GrLanguage } from "react-icons/gr";
 import { useTranslations } from "next-intl";
 import { useRoleFromPath } from "@/hooks/dashboard/useRoleFromPath";
 import { useDashboardHref } from "@/hooks/dashboard/useDashboardHref";
+import MobileDashboardIcons from "./MobileDashboardIcons";
+import { RxDotsHorizontal } from "react-icons/rx";
+import { useState } from "react";
 
 
 export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () => void }) {
     const t = useTranslations('dashboard.header')
-
+    const [subHeaderOpen, setSubHeaderOpen] = useState(false);
     const { getHref } = useDashboardHref();
 
+    function toggleSubHeader() {
+        setSubHeaderOpen(p => !p)
+    }
     return (
-        <header className="px-4 md:px-6 bg-dashboard-bg ">
-            <div className=" ">
-                <div className="py-[21px] flex justify-between items-center h-[98px] sm:h-[107px] md:h-[112px]">
-                    <div>
-                        <h1 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-dark">
-                            {t('greeting', { name: 'Bassem' })}
-                        </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-dark font-medium">
-                            {t('description')}
-                            {/* Mock description untill now */}
-                        </p>
+        <div>
+
+
+            <header className="px-4 md:px-6 bg-dashboard-bg ">
+                <div className=" ">
+                    <div className="py-[21px] flex justify-between items-center h-[98px] sm:h-[107px] md:h-[112px]">
+                        <button
+                            onClick={toggleSubHeader}
+                            className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary/30"
+                            aria-label="فتح القائمة الجانبية"
+                        >
+                            <RxDotsHorizontal className="text-xl text-primary" />
+                        </button>
+
+                        <div>
+                            <h1 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-dark">
+                                {t('greeting', { name: 'Bassem' })}
+                            </h1>
+                            <p className="text-base sm:text-lg md:text-xl text-dark font-medium">
+                                {t('description')}
+                                {/* Mock description untill now */}
+                            </p>
+                        </div>
+
+                        {/* Right: Notification + Profile (hidden on very small screens) */}
+                        <div className="hidden lg:flex gap-3 items-center">
+                            <LocaleSwitcher Trigger={LocaleTrigger} />
+
+                            <Link href={getHref('chats')}>
+                                <div className="relative bg-card-bg custom-shadow rounded-full p-3">
+                                    <PingIndicator />
+                                    <IoChatbubbleEllipsesOutline size={20} className="text-primary" />
+                                </div>
+                            </Link>
+                            <NotificationDropdown />
+
+                        </div>
+
+                        <button
+                            onClick={onOpenSidebar}
+                            className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary/30"
+                            aria-label="فتح القائمة الجانبية"
+                        >
+                            <FaBars className="text-xl text-primary" />
+                        </button>
                     </div>
-
-                    {/* Right: Notification + Profile (hidden on very small screens) */}
-                    <div className="hidden lg:flex gap-3 items-center">
-                        <LocaleSwitcher Trigger={LocaleTrigger} />
-
-                        <Link href={getHref('chats')}>
-                            <div className="relative bg-card-bg custom-shadow rounded-full p-3">
-                                <PingIndicator />
-                                <IoChatbubbleEllipsesOutline size={20} className="text-primary" />
-                            </div>
-                        </Link>
-                        <NotificationDropdown />
-
-                    </div>
-
-                    <button
-                        onClick={onOpenSidebar}
-                        className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary/30"
-                        aria-label="فتح القائمة الجانبية"
-                    >
-                        <FaBars className="text-xl text-primary" />
-                    </button>
                 </div>
-            </div>
-        </header>
+            </header>
+            <MobileDashboardIcons open={subHeaderOpen} onClose={() => setSubHeaderOpen(false)} />
+        </div>
     );
 }
 
@@ -72,6 +91,7 @@ function LocaleTrigger({
             aria-label="Toggle locale"
         >
             <GrLanguage size={20} className="text-primary" />
+
         </button>
     );
 }

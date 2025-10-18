@@ -4,7 +4,6 @@ import { FaRegNewspaper } from "react-icons/fa";
 import PingIndicator from "./PingIndicator";
 import { useTranslations } from "use-intl";
 import Link from "next/link";
-import { useRoleFromPath } from "@/hooks/dashboard/useRoleFromPath";
 import { useDashboardHref } from "@/hooks/dashboard/useDashboardHref";
 
 
