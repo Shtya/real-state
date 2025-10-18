@@ -10,14 +10,18 @@ export default function DashboardLayoutClient({ children }: { children: React.Re
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <div className='relative bg-dashboard-bg  h-full min-h-screen'>
-            <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} title={<Logo small />} className='lg:w-[140px] absolute top-0 left-0 bottom-0'>
+        <div className='relative bg-dashboard-bg  h-full'>
+            <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} title={<Logo small />} className='lg:w-[140px] absolute top-0 start-0 bottom-0'>
                 <DashboardSidebar />
             </Sidebar>
-            <div className="flex-1 lg:ml-[140px]">
+            <div className="dashboard-layout  h-full">
                 <DashboardHeader onOpenSidebar={() => setSidebarOpen(true)} />
-                <main className="flex-1 p-2">{children}</main>
+                <main className="p-2 ">
+                    {children}
+                </main>
             </div>
         </div>
     );
 }
+
+//

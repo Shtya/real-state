@@ -17,17 +17,17 @@ export const PaymentColumns: TableColumnType<PaymentRow>[] = [
         },
     },
     {
-        key: "property",
+        key: "address",
         label: "Property Address",
         cell(value) {
-            return value.address;
+            return value;
         },
     },
     {
-        key: "property",
+        key: "type",
         label: "Property Type",
         cell(value) {
-            return value.type;
+            return value;
         },
     },
     {

@@ -158,7 +158,7 @@ body {
 
   .thin-scrollbar::-webkit-scrollbar {
     height: 7px;
-
+    width: 7px;
     /* horizontal scrollbar height */
   }
 
@@ -173,6 +173,21 @@ body {
     /* gray-100 */
   }
 
+  .viewport-minus-header {
+    @apply min-h-[calc(100vh-98px)] sm:min-h-[calc(100vh-107px)] md:min-h-[calc(100vh-112px)]
+  }
+
+  .viewport-under-main {
+    @apply min-h-[calc(100vh-114px)] sm:min-h-[calc(100vh-123px)] md:min-h-[calc(100vh-128px)]
+  }
+
+  @media (width >=64rem) {
+    .dashboard-layout {
+      /* 1024px */
+      margin-inline-start: 140px;
+    }
+
+  }
 }
 
 

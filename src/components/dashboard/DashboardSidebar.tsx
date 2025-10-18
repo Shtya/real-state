@@ -28,7 +28,7 @@ export default function DashboardSidebar() {
 
     return (
 
-        <div className="sticky top-0 flex items-center flex-col gap-4 px-2 lg:px-8  my-4 lg:my-12 ">
+        <div className="sticky top-4 flex items-center flex-col gap-4 px-2 lg:px-8  my-4 lg:my-12 ">
             <div className="flex items-center justify-center gap-4 max-lg:hidden">
                 {/* Logo */}
                 <Logo small />

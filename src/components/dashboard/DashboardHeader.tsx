@@ -6,22 +6,23 @@ import PingIndicator from "../shared/PingIndicator";
 import LocaleSwitcher from "../shared/LocaleSwitcher";
 import { GrLanguage } from "react-icons/gr";
 import { useTranslations } from "next-intl";
+import { useRoleFromPath } from "@/hooks/dashboard/useRoleFromPath";
 
 
 export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () => void }) {
     const t = useTranslations('dashboard.header')
 
+    const role = useRoleFromPath();
+
     return (
-        <header className="px-4 md:px-6 bg-dashboard-bg">
+        <header className="px-4 md:px-6 bg-dashboard-bg ">
             <div className=" ">
-                <div className="py-[21px] flex justify-between items-center">
+                <div className="py-[21px] flex justify-between items-center h-[98px] sm:h-[107px] md:h-[112px]">
                     <div>
                         <h1 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-dark">
                             {t('greeting', { name: 'Bassem' })}
-
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-dark font-medium">
-
                             {t('description')}
                             {/* Mock description untill now */}
                         </p>
@@ -31,7 +32,7 @@ export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () =
                     <div className="hidden lg:flex gap-3 items-center">
                         <LocaleSwitcher Trigger={LocaleTrigger} />
 
-                        <Link href='chats'>
+                        <Link href={`/dashboard/${role}/chats`}>
                             <div className="relative bg-card-bg custom-shadow rounded-full p-3">
                                 <PingIndicator />
                                 <IoChatbubbleEllipsesOutline size={20} className="text-primary" />

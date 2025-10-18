@@ -6,9 +6,9 @@ export type PaymentRow = {
         id: string;
         imagePath: string;
         name: string;
-        type: 'Apartment' | 'House';
-        address: string;
     };
+    type: 'Apartment' | 'House';
+    address: string;
     price: number;
     date: Date;
 };
