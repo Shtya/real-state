@@ -25,7 +25,7 @@ export default function ChatInterface({
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
-    const initialChatId = Number(searchParams.get("chat"));
+    const initialChatId = searchParams.get("chat") ? Number(searchParams.get("chat")) : undefined;
     const [selectedChatId, setSelectedChatId] = useState<number | undefined>(initialChatId);
 
     const selectedUser = users?.find((u) => u.id === selectedChatId);
@@ -49,6 +49,7 @@ export default function ChatInterface({
         const updatedMessages = [...(messagesMap[selectedChatId] || []), newMessage];
         onUpdateMessages(selectedChatId, updatedMessages);
     };
+
 
     return (
         <div className="flex-1  grid grid-cols-1 md:grid-cols-12 mx-auto px-4 py-6  gap-6 h-full">
