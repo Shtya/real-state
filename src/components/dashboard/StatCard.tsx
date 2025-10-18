@@ -19,17 +19,17 @@ export default function StatCard({
     subtext,
 }: StatCardProps) {
     return (
-        <div className="bg-card-bg  rounded-[20px] p-4 md:p-5 space-y-4">
+        <div className="bg-card-bg  rounded-[20px] p-4 md:p-5 space-y-4 h-full">
             <div className="flex items-center gap-2">
                 <div className="p-2 bg-dashboard-bg rounded-full">{icon}</div>
-                <p className="text-lg sm:text-xl font-medium">{label}</p>
+                <p className="text-lg md:text-xl font-medium">{label}</p>
             </div>
 
             <div className="flex items-center justify-between">
-                <p className="text-[28px] sm:text-[32px] md:text-[36px] font-bold">{value}</p>
-                <div className="flex gap-2 items-center flex-wrap sm:flex-nowrap">
+                <p className="text-[28px] md:text-[32px] lg:text-[36px] font-bold">{value}</p>
+                <div className="flex gap-2 items-center flex-wrap md:flex-nowrap">
                     <div
-                        className="px-1 py-0.5 flex gap-1 items-center rounded-[8px] text-sm sm:text-base"
+                        className="px-1 py-0.5 flex gap-1 items-center rounded-[8px] text-sm md:text-base"
                         style={{ background: trendColor }}
                     >
                         {trendIcon}

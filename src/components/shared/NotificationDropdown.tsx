@@ -3,6 +3,9 @@ import Dropdown, { MenuProps, TriggerProps } from "./Dropdown";
 import { FaRegNewspaper } from "react-icons/fa";
 import PingIndicator from "./PingIndicator";
 import { useTranslations } from "use-intl";
+import Link from "next/link";
+import { useRoleFromPath } from "@/hooks/dashboard/useRoleFromPath";
+import { useDashboardHref } from "@/hooks/dashboard/useDashboardHref";
 
 
 export default function NotificationDropdown() {
@@ -50,11 +53,13 @@ const notifications: Notification[] = [
         message: 'Your weekly summary is now available. Click to view insights and updates.',
         isRead: true,
     },
+
 ];
 
 
 function NotificationMenu({ isOpen, onClose }: MenuProps) {
     const t = useTranslations('dashboard.notification')
+    const { getHref } = useDashboardHref();
     return (
         <div>
             <div className="">
@@ -64,7 +69,7 @@ function NotificationMenu({ isOpen, onClose }: MenuProps) {
                     }}>
                     {t('title')}
                 </header>
-                <div className="p-6 bg-white">
+                <div className="p-6 bg-white max-h-[250px] overflow-y-auto thin-scrollbar">
                     {notifications.map((item) => (
                         <button
                             key={item.id}
@@ -83,6 +88,11 @@ function NotificationMenu({ isOpen, onClose }: MenuProps) {
                             </div>
                         </button>
                     ))}
+                    <div className="flex justify-center mt-2">
+                        <Link href={getHref('notifications')} className="text-sm text-secondary text-center ">
+                            Show More
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@ export default async function TenantPage() {
         <div className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <StatCard
-                    icon={<BiBuildings size={26} className="text-secondary" />}
+                    icon={<BiBuildings size={26} className="text-secondary w-[22px] h-[22px] md:w-[26px] md:h-[26px]" />}
                     label="Reserved Property"
                     value={111}
                     trend="10% Increase"
@@ -75,7 +75,7 @@ export default async function TenantPage() {
                 />
 
                 <StatCard
-                    icon={<BiBuildings size={26} className="text-secondary" />}
+                    icon={<BiBuildings size={26} className="text-secondary w-[22px] h-[22px] md:w-[26px] md:h-[26px]" />}
                     label="Reserved Property"
                     value={111}
                     trend="10% Increase"
@@ -85,7 +85,7 @@ export default async function TenantPage() {
                 />
 
                 <StatCard
-                    icon={<IoCardOutline size={26} className="text-secondary" />}
+                    icon={<IoCardOutline size={26} className="text-secondary w-[22px] h-[22px] md:w-[26px] md:h-[26px]s" />}
                     label="Total Payment Amount"
                     value="$20"
                     trend="1 new listing"

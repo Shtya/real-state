@@ -1,7 +1,8 @@
 import { MdClose } from "react-icons/md";
 
-import ConversationThread, { Message, User } from "./ConversationThread";
+import ConversationThread from "./ConversationThread";
 import EmptyChatState from "./EmptyChatState";
+import { Message, User } from "@/types/dashboard/chat";
 
 interface MobileChatPanelProps {
     selectedUser?: User;

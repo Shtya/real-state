@@ -1,5 +1,6 @@
 
-import ConversationThread, { Message, User } from "./ConversationThread";
+import { Message, User } from "@/types/dashboard/chat";
+import ConversationThread from "./ConversationThread";
 import EmptyChatState from "./EmptyChatState";
 
 interface DesktopChatPanelProps {

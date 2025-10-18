@@ -3,6 +3,7 @@ import SecondaryButton from "@/components/shared/buttons/SecondaryButton";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { IconType } from "react-icons";
 import { Color } from "maplibre-gl";
+import ActionButtons from "./ActionButtons";
 
 interface ActionPopupProps {
     title: string;
@@ -28,14 +29,14 @@ export default function ActionPopup({
     onAction,
 }: ActionPopupProps) {
     return (
-        <div className="max-w-2xl mx-auto">
+        <div className="md:min-w-lg lg:min-w-xl mx-auto ">
             {/* Icon */}
             <div className="flex justify-center mb-2 ">
                 <MainIcon className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" style={{ color: mainIconColor }} />
             </div>
 
             {/* Title + Subtitle */}
-            <div className="text-center flex flex-col gap-2 mb-6 sm:mb-8">
+            <div className="text-center flex flex-col gap-2 mb-4 sm:mb-6">
                 <h1 className="text-2xl sm:text-3xl lg:text-[32px] font-bold">
                     {title}
                 </h1>
@@ -53,22 +54,13 @@ export default function ActionPopup({
             )}
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 items-center mt-6">
-                {cancelText && (
-                    <SecondaryButton
-                        className="border border-gray-500 text-gray-700 w-full sm:w-auto sm:flex-1 max-w-[320px]"
-                        onClick={onCancel}
-                    >
-                        {cancelText}
-                    </SecondaryButton>
-                )}
-                <SecondaryButton
-                    className="bg-secondary hover:bg-secondary-hover text-white w-full sm:w-auto sm:flex-1 max-w-[320px]"
-                    onClick={onAction}
-                >
-                    {actionText}
-                </SecondaryButton>
-            </div>
+            <ActionButtons
+                onAction={onCancel}
+                onCancel={onAction}
+                actionText="Save Changes"
+                cancelText="Discard"
+                isDisabled={false}
+            />
         </div>
     );
 }

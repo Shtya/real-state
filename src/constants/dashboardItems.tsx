@@ -5,7 +5,8 @@ import { Role } from '@/types/global';
 import { ComponentType, SVGProps } from 'react';
 import { TbContract } from 'react-icons/tb';
 import { PiBuildingApartment } from 'react-icons/pi';
-import { IoAnalytics, IoSettingsOutline } from 'react-icons/io5';
+import { IoAnalytics } from 'react-icons/io5';
+import { getDashboardHref } from '@/utils/dashboardPaths';
 
 
 export type SidebarLink = {
@@ -15,19 +16,19 @@ export type SidebarLink = {
 };
 
 const tenantLinks: SidebarLink[] = [
-    { href: '/dashboard/tenant', key: 'dashboard', Icon: LuLayoutDashboard },
-    { href: '/dashboard/tenant/contracts', key: 'contracts', Icon: TbContract },
-    { href: '/dashboard/tenant/renew-requests', key: 'renewRequests', Icon: MdOutlineFactCheck },
-    { href: '/dashboard/tenant/payments', key: 'paymentHistory', Icon: MdOutlinePayments },
+    { href: getDashboardHref('tenant', 'root'), key: 'dashboard', Icon: LuLayoutDashboard },
+    { href: getDashboardHref('tenant', 'contracts'), key: 'contracts', Icon: TbContract },
+    { href: getDashboardHref('tenant', 'renewRequests'), key: 'renewRequests', Icon: MdOutlineFactCheck },
+    { href: getDashboardHref('tenant', 'paymentHistory'), key: 'paymentHistory', Icon: MdOutlinePayments },
 ];
 
 
 const landlordLinks: SidebarLink[] = [
-    { href: '/dashboard/landlord', key: 'dashboard', Icon: LuLayoutDashboard },
-    { href: '/dashboard/landlord/contracts', key: 'rentalsContracts', Icon: TbContract },
-    { href: '/dashboard/landlord/properties', key: 'properties', Icon: PiBuildingApartment },
-    { href: '/dashboard/landlord/renew-requests', key: 'renewRequests', Icon: MdOutlineFactCheck },
-    { href: '/dashboard/landlord/revenue', key: 'revenueSummary', Icon: IoAnalytics },
+    { href: getDashboardHref('landlord', 'root'), key: 'dashboard', Icon: LuLayoutDashboard },
+    { href: getDashboardHref('landlord', 'contracts'), key: 'rentalsContracts', Icon: TbContract },
+    { href: getDashboardHref('landlord', 'properties'), key: 'properties', Icon: PiBuildingApartment },
+    { href: getDashboardHref('tenant', 'renewRequests'), key: 'renewRequests', Icon: MdOutlineFactCheck },
+    { href: getDashboardHref('tenant', 'revenueSummary'), key: 'revenueSummary', Icon: IoAnalytics },
 ];
 
 

@@ -1,17 +1,18 @@
 'use client';
 
-import { useRoleFromPath } from '@/hooks/dashboard/useRoleFromPath';
 import { useNormalizedPath } from '@/hooks/useNormalizedPath';
 import { dashboardItems, SidebarLink } from '@/constants/dashboardItems';
 import { useTranslations } from 'next-intl';
 import Logo from '../shared/Logo';
 import Tooltip from '../shared/Tooltip';
-import { IoChatbubbleEllipsesOutline, IoLanguageOutline, IoLogOutOutline, IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5';
+import { IoChatbubbleEllipsesOutline, IoLogOutOutline, IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5';
 import { FaHeadset } from 'react-icons/fa';
 import FallbackImage from '../shared/FallbackImage';
 import SidebarItem from '../shared/SidebarItem';
 import LocaleSwitcher from '../shared/LocaleSwitcher';
 import { GrLanguage } from 'react-icons/gr';
+import { useDashboardHref } from '@/hooks/dashboard/useDashboardHref';
+import { isPathActive } from '@/utils/dashboardPaths';
 
 
 
@@ -19,7 +20,7 @@ export default function DashboardSidebar() {
     const t = useTranslations('dashboard.sidebar');
     const { normalizedPath } = useNormalizedPath();
 
-    const role = useRoleFromPath();
+    const { getHref, role } = useDashboardHref();
     let items: SidebarLink[] = [];
 
     if (role) {
@@ -51,30 +52,30 @@ export default function DashboardSidebar() {
 
                 <div className="lg:mt-12 space-y-1">
                     <SidebarItem
-                        href="/settings"
+                        href={getHref('settings')}
                         label={t("settings")}
-                        isActive={normalizedPath === "/settings"}
+                        isActive={isPathActive(normalizedPath, role, 'settings')}
                         Icon={IoSettingsOutline}
                     />
 
                     <SidebarItem
-                        href="/support"
+                        href={getHref('support')}
                         label={t("support")}
-                        isActive={normalizedPath === "/support"}
+                        isActive={isPathActive(normalizedPath, role, 'support')}
                         Icon={FaHeadset}
                     />
                 </div>
                 <div className="mt-6 space-y-1 lg:hidden w-full">
                     <SidebarItem
-                        href="/notifications"
+                        href={getHref('notifications')}
                         label={t("notifications")}
-                        isActive={normalizedPath === "/notifications"}
+                        isActive={isPathActive(normalizedPath, role, 'notifications')}
                         Icon={IoNotificationsOutline}
                     />
                     <SidebarItem
-                        href="/chat"
+                        href={getHref('chats')}
                         label={t("chat")}
-                        isActive={normalizedPath === "/chat"}
+                        isActive={isPathActive(normalizedPath, role, 'chats')}
                         Icon={IoChatbubbleEllipsesOutline}
                     />
                 </div>

@@ -1,20 +1,8 @@
+import { Message } from "@/types/dashboard/chat";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { BsSendFill } from "react-icons/bs";
 
-export type User = {
-    id: number;
-    imageSrc: string;
-    name: string;
-    lastMessage: string;
-}
-
-export type Message = {
-    sender: string;
-    role: "guest" | "host";
-    timestamp: string;
-    content: string;
-};
 
 type ConversationThreadProps = {
     messages: Message[];
@@ -72,7 +60,7 @@ export default function ConversationThread({
                     </div>
                 ) : (
                     <div className="space-y-2">
-                        {messages.map((msg, index) => (
+                        {messages?.map((msg, index) => (
                             <div key={index}>
                                 <p className="text-input text-center font-bold">
                                     {new Date(msg.timestamp).toLocaleDateString("en-US", {

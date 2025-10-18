@@ -1,7 +1,7 @@
 import { Role } from '@/types/global';
 import { usePathname } from 'next/navigation';
 
-export function useRoleFromPath(): Role | undefined {
+export function useRoleFromPath(): Role {
     const pathname = usePathname();
     const segments = pathname.split('/').filter(Boolean); // removes empty strings
 
@@ -12,5 +12,5 @@ export function useRoleFromPath(): Role | undefined {
         return role;
     }
 
-    return undefined;
+    return 'tenant';
 }

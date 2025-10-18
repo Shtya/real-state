@@ -7,12 +7,13 @@ import LocaleSwitcher from "../shared/LocaleSwitcher";
 import { GrLanguage } from "react-icons/gr";
 import { useTranslations } from "next-intl";
 import { useRoleFromPath } from "@/hooks/dashboard/useRoleFromPath";
+import { useDashboardHref } from "@/hooks/dashboard/useDashboardHref";
 
 
 export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () => void }) {
     const t = useTranslations('dashboard.header')
 
-    const role = useRoleFromPath();
+    const { getHref } = useDashboardHref();
 
     return (
         <header className="px-4 md:px-6 bg-dashboard-bg ">
@@ -32,7 +33,7 @@ export default function DashboardHeader({ onOpenSidebar }: { onOpenSidebar: () =
                     <div className="hidden lg:flex gap-3 items-center">
                         <LocaleSwitcher Trigger={LocaleTrigger} />
 
-                        <Link href={`/dashboard/${role}/chats`}>
+                        <Link href={getHref('chats')}>
                             <div className="relative bg-card-bg custom-shadow rounded-full p-3">
                                 <PingIndicator />
                                 <IoChatbubbleEllipsesOutline size={20} className="text-primary" />

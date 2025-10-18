@@ -11,8 +11,7 @@ type ChatPreviewProps = {
 export default function ChatPreviewCard({ imageSrc, name, lastMessage, onClick, selected }: ChatPreviewProps) {
     return (
         <div
-            className={`border-b border-b-gray cursor-pointer ${selected ? "bg-gray-100" : ""
-                }`}
+            className={`border-b border-b-gray cursor-pointer ${selected ? "bg-gray-100" : ""}`}
             onClick={onClick}
         >
             <div className="flex items-center gap-4 p-4 hover:bg-gray-50 rounded-lg transition ">
